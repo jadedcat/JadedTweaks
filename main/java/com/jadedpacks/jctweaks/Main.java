@@ -28,7 +28,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(modid = Main.MODID, version = Main.VERSION, name = Main.NAME,  dependencies = "required-after:Forge@[10.13.3.1384,11.14);" +
-		"required-after:TConstruct;" +
+		"after:TConstruct;" +
 		"after:MineFactoryReloaded;" +
 		"after:SolarFLux;" +
 		"after:Forestry;" +
@@ -71,7 +71,6 @@ public class Main {
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.bucket),
 					"IXI",
 					"XIX",
-					"XXX",
 					'I', "ingotTin"
 					));
 			Main.log.info("Alternative Bucket Recipe tin loaded");
