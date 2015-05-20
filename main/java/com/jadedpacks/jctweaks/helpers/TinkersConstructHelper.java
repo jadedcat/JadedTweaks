@@ -42,11 +42,11 @@ public class TinkersConstructHelper {
 		ItemStack heart4  = new ItemStack(ticheartcanister, 1, 4);
 		ItemStack heart5  = new ItemStack(ticheartcanister, 1, 5);
 		ItemStack heart6  = new ItemStack(ticheartcanister, 1, 6);
-		FluidStack emerald = FluidRegistry.getFluidStack("emerald", 288);
+		FluidStack emerald = FluidRegistry.getFluidStack("emerald.liquid", 288);
 		ItemStack earthelement = GameRegistry.findItemStack("customnpcs", "npcEarthElement", 1);
 		ItemStack earthrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 2);
 		LiquidCasting tableCasting = TConstructRegistry.instance.getTableCasting();
-		tableCasting.addCastingRecipe(earthelement, (emerald), earthrune, 80);
+		tableCasting.addCastingRecipe(earthelement, emerald, earthrune, 80);
 
 		RecipeRemover.removeAnyRecipe(heart2);
 		GameRegistry.addRecipe(new ShapedOreRecipe(heart6,
@@ -77,9 +77,17 @@ public class TinkersConstructHelper {
 				));
 
 		FluidStack iron = FluidRegistry.getFluidStack("iron.molten", 288);
+		if (iron == null)
+			throw new RuntimeException("No Iron fluid");
 		FluidStack gold = FluidRegistry.getFluidStack("gold.molten", 720);
+		if (gold == null)
+			throw new RuntimeException("No gold fluid");
 		FluidStack bronze = FluidRegistry.getFluidStack("bronze.molten", 144);
+		if (bronze == null)
+			throw new RuntimeException("No bronze fluid");
 		FluidStack ardite = FluidRegistry.getFluidStack("ardite.molten", 144);
+		if (ardite == null)
+			throw new RuntimeException("No ardite fluid");
 
 		if (Loader.isModLoaded("harvestcraft"))
 		{
@@ -90,11 +98,23 @@ public class TinkersConstructHelper {
 		if (Loader.isModLoaded("ExtraUtilities"))
 		{
 			ItemStack superwand = GameRegistry.findItemStack("ExtraUtilities", "creativebuilderswand", 1);
+			if (superwand == null)
+				throw new RuntimeException("No superwand");
 			ItemStack builderswand = GameRegistry.findItemStack("ExtraUtilities", "builderswand", 1);
+			if (builderswand == null)
+				throw new RuntimeException("No builderswand ");
 			ItemStack spikebase = GameRegistry.findItemStack("ExtraUtilities", "spike_base_wood", 1);
+			if (spikebase == null)
+				throw new RuntimeException("No wood spike");
 			ItemStack spikediamond = GameRegistry.findItemStack("ExtraUtilities", "spike_base_diamond", 1);
+			if (spikediamond == null)
+				throw new RuntimeException("No diamond spike");
 			ItemStack spikegold = GameRegistry.findItemStack("ExtraUtilities", "spike_base_gold", 1);
+			if (spikegold == null)
+				throw new RuntimeException("No goldspike");
 			ItemStack spikeiron = GameRegistry.findItemStack("ExtraUtilities", "spike_base", 1);
+			if (spikeiron == null)
+				throw new RuntimeException("No Iron spike");
 			//remove default spike recipes
 			RecipeRemover.removeAnyRecipe(spikegold);
 			RecipeRemover.removeAnyRecipe(spikediamond);
