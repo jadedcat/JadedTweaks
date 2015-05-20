@@ -19,6 +19,8 @@ import com.jadedpacks.jctweaks.helpers.RecipeRemover;
 import com.jadedpacks.jctweaks.helpers.ThaumcraftHelper;
 import com.jadedpacks.jctweaks.helpers.ThermalExpansionHelper;
 import com.jadedpacks.jctweaks.helpers.TinkersConstructHelper;
+import com.jadedpacks.jctweaks.helpers.Parts;
+import com.jadedpacks.jctweaks.helpers.CustomNpcsHelper;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -53,6 +55,8 @@ public class Main {
 		BloodMagicHelper.preInit();
 		HarvestCraftHelper.preInit();
 		FurnaceHelper.preInit();
+		Parts.preInit();
+		CustomNpcsHelper.preInit();
 	}
 	@Mod.EventHandler
 	public void init (FMLInitializationEvent event)
@@ -66,6 +70,8 @@ public class Main {
 		BloodMagicHelper.init();
 		HarvestCraftHelper.init();
 		FurnaceHelper.init();
+		Parts.init();
+		CustomNpcsHelper.init();
 
 		if (OreDictionary.getOres("oreTin").size() > 0)
 		{
@@ -179,6 +185,8 @@ public class Main {
 		BloodMagicHelper.postInit();
 		HarvestCraftHelper.postInit();
 		FurnaceHelper.postInit();
+		Parts.postInit();
+		CustomNpcsHelper.postInit();
 	}
 }
 

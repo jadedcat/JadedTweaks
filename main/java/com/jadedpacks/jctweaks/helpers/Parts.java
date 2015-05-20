@@ -47,6 +47,7 @@ public class Parts {
 		}
 
 
+
 	}
 	public static void getItems() {
 
@@ -70,7 +71,18 @@ public class Parts {
 		bucket = new ItemStack(GameRegistry.findItem("minecraft", "bucket"), 1, 0);
 		flint = GameRegistry.findItemStack("minecraft", "flint", 1);
 		furnace = GameRegistry.findItemStack("minecraft", "furnace", 1);
+		wheat = GameRegistry.findItemStack("minecraft", "wheat", 1);
 
+		if (Loader.isModLoaded("MineFactoryReloaded"))
+		{
+			Item mfrUpgrade = GameRegistry.findItem("MineFactoryReloaded", "upgrade.radius");
+
+			upgradeEFlux   = new ItemStack(mfrUpgrade, 1, 6);
+			upgradeEnder = new ItemStack(mfrUpgrade, 1, 7);
+			upgradeMany   = new ItemStack(mfrUpgrade, 1, 8);
+			upgradeThaum   = new ItemStack(mfrUpgrade, 1, 9);
+			upgradeMSteel   = new ItemStack(mfrUpgrade, 1, 10);
+		}
 
 		if (Loader.isModLoaded("HardcoreQuesting"))
 		{
@@ -106,6 +118,13 @@ public class Parts {
 		if (Loader.isModLoaded("Botania"))
 		{
 			earthrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 2);
+			woodmortar = new ItemStack (GameRegistry.findItem("Botania", "pestleAndMortar"), 1, 0);
+			firerune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 1);
+			waterrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 0);
+			wrathrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 13);
+			bluepetal = GameRegistry.findItemStack("Botania", "petalblue", 1);
+			airrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 3);
+
 		}
 		if (Loader.isModLoaded("TConstruct"))
 		{
@@ -176,17 +195,13 @@ public class Parts {
 		{
 			fireelement = GameRegistry.findItemStack("customnpcs", "npcFireElement", 1);
 			waterelement = GameRegistry.findItemStack("customnpcs", "npcWaterElement", 1);
-			firerune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 1);
-			waterrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 0);
 			bloodblock = GameRegistry.findItemStack("customnpcs", "npcBloodBlock", 1);
 			demoningot = GameRegistry.findItemStack("customnpcs", "npcDemonicIngot", 1);
 			airelement = GameRegistry.findItemStack("customnpcs", "npcAirElement", 1);
-			wrathrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 13);
-			airrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 3);
 			saphire = GameRegistry.findItemStack("customnpcs", "npcSaphire", 1);
 			amethyst = GameRegistry.findItemStack("customnpcs", "npcAmethyst", 1);
 			npcmana = GameRegistry.findItemStack("customnpcs", "npcMana", 1);
-			bluepetal = GameRegistry.findItemStack("Botania", "petalblue", 1);
+
 		}
 		if (Loader.isModLoaded("AWWayofTime"))
 		{
@@ -195,6 +210,12 @@ public class Parts {
 			searedbrick = new ItemStack(GameRegistry.findItem("TConstruct", "Smeltery"), 1, 2);
 		}
 	}
+	//------------MFR-----------
+	public static ItemStack upgradeEFlux;
+	public static ItemStack upgradeEnder;
+	public static ItemStack upgradeMany;
+	public static ItemStack upgradeThaum;
+	public static ItemStack upgradeMSteel;
 	//--------Vanilla---------------
 	public static ItemStack spawnCow;
 	public static ItemStack spawnChicken;
@@ -213,6 +234,7 @@ public class Parts {
 	public static ItemStack wool2;
 	public static ItemStack bucket;
 	public static ItemStack hearts;
+	public static ItemStack wheat;
 	//----------BloodMagic---------
 	public static ItemStack knife;
 	public static ItemStack flint;
@@ -235,6 +257,7 @@ public class Parts {
 	public static ItemStack waterrune;
 	public static ItemStack firerune;
 	public static ItemStack earthrune;
+	public static ItemStack woodmortar;
 	//---------ThermalExpansion----------
 	public static ItemStack mithrilOre;
 	public static ItemStack platDust;
