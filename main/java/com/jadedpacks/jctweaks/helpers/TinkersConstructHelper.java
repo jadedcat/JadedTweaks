@@ -79,7 +79,7 @@ public class TinkersConstructHelper {
 		FluidStack iron = FluidRegistry.getFluidStack("iron", 288);
 		FluidStack gold = FluidRegistry.getFluidStack("gold", 720);
 		FluidStack bronze = FluidRegistry.getFluidStack("bronze", 144);
-		FluidStack platinum = FluidRegistry.getFluidStack("platinum", 288);
+		FluidStack platinum = FluidRegistry.getFluidStack("shiny", 288);
 
 		if (Loader.isModLoaded("harvestcraft"))
 		{
