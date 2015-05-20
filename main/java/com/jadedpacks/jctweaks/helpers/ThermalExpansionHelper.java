@@ -6,7 +6,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.jadedpacks.jctweaks.Main;
 
@@ -173,7 +172,7 @@ public class ThermalExpansionHelper {
 		tfOre.writeToNBT(toSend.getCompoundTag("input"));
 		mithrilOre.writeToNBT(toSend.getCompoundTag("output"));
 		mana.writeToNBT(toSend.getCompoundTag("fluid"));
-		FMLInterModComms.sendMessage("ThermalExpansion", "TransposerRecipe", toSend);
+		FMLInterModComms.sendMessage("ThermalExpansion", "TransposerFillRecipe", toSend);
 		//water element
 		toSend.setInteger("energy", 2000);
 		toSend.setTag("input", new NBTTagCompound());
@@ -182,7 +181,7 @@ public class ThermalExpansionHelper {
 		waterrune.writeToNBT(toSend.getCompoundTag("input"));
 		waterelement.writeToNBT(toSend.getCompoundTag("output"));
 		mana.writeToNBT(toSend.getCompoundTag("fluid"));
-		FMLInterModComms.sendMessage("ThermalExpansion", "TransposerRecipe", toSend);
+		FMLInterModComms.sendMessage("ThermalExpansion", "TransposerFillRecipe", toSend);
 
 		Main.log.info("Jaded is adding mystical metals");
 		Main.log.info("JadedTweaks Thermal Expansion tweaks loaded");
