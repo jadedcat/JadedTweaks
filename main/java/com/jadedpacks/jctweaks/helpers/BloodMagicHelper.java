@@ -99,31 +99,22 @@ public class BloodMagicHelper {
 		//RecipeRemover.removeAnyRecipe(knife);
 		//RecipeRemover.removeAnyRecipe(altar);
 		
-		GameRegistry.addRecipe(new ShapedOreRecipe((knife), new Object[]
-				{
+		GameRegistry.addRecipe(new ShapedOreRecipe((knife),
 				"GGG", 
 				"XFG", 
 				"FXG", 
-				"F", flint, 
-				"G", "blockGlass"
-				}));
+				'F', flint, 
+				'G', "blockGlass"
+				));
 		
-		GameRegistry.addRecipe(new ShapedOreRecipe((altar), new Object[]
-				{
+		GameRegistry.addRecipe(new ShapedOreRecipe((altar),
 				"SXS", 
 				"SFS", 
 				"TLT", 
-				"S", "stone", 
-				"F", furnace,
-				"T", searedbrick,
-				"L", flint
-				
-				}));
-		
-		
-		
-		
+				'S', "stone", 
+				'F', furnace,
+				'T', searedbrick,
+				'L', flint
+				));		
 	}
-	
-
 }
