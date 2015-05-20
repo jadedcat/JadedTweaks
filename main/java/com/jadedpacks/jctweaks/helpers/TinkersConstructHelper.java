@@ -79,7 +79,7 @@ public class TinkersConstructHelper {
 		FluidStack iron = FluidRegistry.getFluidStack("iron", 288);
 		FluidStack gold = FluidRegistry.getFluidStack("gold", 720);
 		FluidStack bronze = FluidRegistry.getFluidStack("bronze", 144);
-		FluidStack ardite = FluidRegistry.getFluidStack("ardite", 144);
+		FluidStack platinum = FluidRegistry.getFluidStack("shiny", 144);
 
 		if (Loader.isModLoaded("harvestcraft"))
 		{
@@ -100,10 +100,10 @@ public class TinkersConstructHelper {
 			RecipeRemover.removeAnyRecipe(spikediamond);
 			RecipeRemover.removeAnyRecipe(spikeiron);
 			//add smeltery spike recipes
-			tableCasting.addCastingRecipe(superwand, (ardite), builderswand, 80);
-			tableCasting.addCastingRecipe(spikeiron, (iron), spikebase, 80);
-			tableCasting.addCastingRecipe(spikegold, (gold), spikeiron, 80);
-			tableCasting.addCastingRecipe(spikediamond, (ardite), spikegold, 80);
+			tableCasting.addCastingRecipe(superwand, platinum, builderswand, true, 80);
+			tableCasting.addCastingRecipe(spikeiron, iron, spikebase, true, 80);
+			tableCasting.addCastingRecipe(spikegold, gold, spikeiron, true, 80);
+			tableCasting.addCastingRecipe(spikediamond, platinum, spikegold, true, 80);
 			Main.log.info("Jaded made spikes need a smeltery");
 
 		}
@@ -121,13 +121,13 @@ public class TinkersConstructHelper {
 			{
 				FluidStack aluminumbrass = FluidRegistry.getFluidStack("aluminumbrass", 288);
 				FluidStack aluminum = FluidRegistry.getFluidStack("aluminum", 288);
-				tableCasting.addCastingRecipe(pot, (aluminumbrass), clayBucket, 80);
-				tableCasting.addCastingRecipe(saucepan, (aluminumbrass), rawclayBucket, 80);
+				tableCasting.addCastingRecipe(pot, aluminumbrass, clayBucket, true, 80);
+				tableCasting.addCastingRecipe(saucepan, aluminumbrass, rawclayBucket, true, 80);
 
 				if (OreDictionary.getOres("gearWood").size() > 0)
 				{
 					ItemStack gearWood = new ItemStack (GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 40);
-					tableCasting.addCastingRecipe(gearCast, (aluminumbrass), gearWood, 80);
+					tableCasting.addCastingRecipe(gearCast, aluminumbrass, gearWood, true, 80);
 				}
 			}
 
@@ -135,13 +135,13 @@ public class TinkersConstructHelper {
 			{
 				FluidStack aluminumbrass = FluidRegistry.getFluidStack("aluminiumbrass", 288);
 				FluidStack aluminum = FluidRegistry.getFluidStack("aluminium", 288);
-				tableCasting.addCastingRecipe(pot, (aluminumbrass), clayBucket, 80);
-				tableCasting.addCastingRecipe(saucepan, (aluminumbrass), rawclayBucket, 80);
+				tableCasting.addCastingRecipe(pot, aluminumbrass, clayBucket, true, 80);
+				tableCasting.addCastingRecipe(saucepan, aluminumbrass, rawclayBucket, true, 80);
 
 				if (OreDictionary.getOres("gearWood").size() > 0)
 				{
 					ItemStack gearWood = new ItemStack (GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 40);
-					tableCasting.addCastingRecipe(gearCast, (aluminumbrass), gearWood, 80);
+					tableCasting.addCastingRecipe(gearCast, aluminumbrass, gearWood, true, 80);
 				}
 			}
 		}
