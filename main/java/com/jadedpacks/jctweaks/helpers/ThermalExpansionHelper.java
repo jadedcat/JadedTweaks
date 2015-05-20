@@ -1,12 +1,12 @@
 package com.jadedpacks.jctweaks.helpers;
 
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 import com.jadedpacks.jctweaks.Main;
 
@@ -85,7 +85,7 @@ public class ThermalExpansionHelper {
 		{
 			ItemStack mirror = GameRegistry.findItemStack("SolarFlux", "mirror", 1);
 			RecipeRemover.removeAnyRecipe(mirror);
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.bucket),
+			GameRegistry.addRecipe(new ShapedOreRecipe(mirror,
 					"III",
 					"XSX",
 					'I', "blockGlass",

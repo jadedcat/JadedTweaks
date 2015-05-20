@@ -1,6 +1,7 @@
 package com.jadedpacks.jctweaks.helpers;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -36,17 +37,17 @@ public class HarvestCraftHelper {
 		{
 			ItemStack woodmortar = GameRegistry.findItemStack("Botania", "pestleAndMortar", 1);
 
-			GameRegistry.addRecipe(flour,
+			GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
 					"MG",
 					'M', woodmortar,
 					'G', "listAllgrains"
-					);
+					));
 		}
-		GameRegistry.addRecipe(flour,
+		GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
 				"MG",
 				'M', "toolMortarandpestle",
 				'G', "cropPotato"
-				);
+				));
 
 		if (Loader.isModLoaded("TConstruct"))
 		{

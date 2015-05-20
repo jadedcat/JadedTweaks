@@ -38,7 +38,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class Main {
 	public static final String MODID = "JCTweaks";
 	public static final String NAME = "JCTweaks";
-	public static final String VERSION = "1.3";
+	public static final String VERSION = "1.4";
 	public static final Logger log = LogManager.getLogger(MODID);
 
 	@Mod.EventHandler
@@ -112,14 +112,13 @@ public class Main {
 		{
 			ItemStack builderswand = GameRegistry.findItemStack("ExtraUtilities", "builderswand", 1);
 
-			GameRegistry.addRecipe(new ShapedOreRecipe((builderswand), new Object[]
-					{
+			GameRegistry.addRecipe(new ShapedOreRecipe(builderswand,
 					"XXD",
 					"XDX",
 					"OXX",
 					'D', "gemDiamond",
 					'O', "obsidian"
-					}));
+					));
 		}
 		if (Loader.isModLoaded("Natura"))
 		{
@@ -133,7 +132,7 @@ public class Main {
 			ItemStack journal = GameRegistry.findItemStack("AgriCraft", "journal", 1);
 			ItemStack cropsticks = GameRegistry.findItemStack("AgriCraft", "cropsItem", 1);
 			RecipeRemover.removeAnyRecipe(journal);
-			GameRegistry.addRecipe(new ShapedOreRecipe((journal),
+			GameRegistry.addRecipe(new ShapedOreRecipe(journal,
 					"CSC",
 					"SWS",
 					"CSC",
