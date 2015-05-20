@@ -61,35 +61,35 @@ public class ThermalExpansionHelper {
 		ItemStack gearEnderium = new ItemStack(teMaterial, 1, 140);
 
 		if (Loader.isModLoaded("TConstruct"))
+			//not working yet
 		{
-			RecipeRemover.removeAnyRecipe(gearCopper);
-			RecipeRemover.removeAnyRecipe(gearIron);
-			RecipeRemover.removeAnyRecipe(gearTin);
-			RecipeRemover.removeAnyRecipe(gearGold);
-			RecipeRemover.removeAnyRecipe(gearSilver);
-			RecipeRemover.removeAnyRecipe(gearBronze);
-			RecipeRemover.removeAnyRecipe(gearNickel);
-			RecipeRemover.removeAnyRecipe(gearPlatinum);
-			RecipeRemover.removeAnyRecipe(gearMithril);
-			RecipeRemover.removeAnyRecipe(gearElectrum);
-			RecipeRemover.removeAnyRecipe(gearInvar);
-			RecipeRemover.removeAnyRecipe(gearSignalum);
-			RecipeRemover.removeAnyRecipe(gearLumium);
-			RecipeRemover.removeAnyRecipe(gearEnderium);
+			RecipeRemover.removeShapedRecipe(gearCopper);
+			RecipeRemover.removeShapedRecipe(gearIron);
+			RecipeRemover.removeShapedRecipe(gearTin);
+			RecipeRemover.removeShapedRecipe(gearGold);
+			RecipeRemover.removeShapedRecipe(gearSilver);
+			RecipeRemover.removeShapedRecipe(gearBronze);
+			RecipeRemover.removeShapedRecipe(gearNickel);
+			RecipeRemover.removeShapedRecipe(gearPlatinum);
+			RecipeRemover.removeShapedRecipe(gearMithril);
+			RecipeRemover.removeShapedRecipe(gearElectrum);
+			RecipeRemover.removeShapedRecipe(gearInvar);
+			RecipeRemover.removeShapedRecipe(gearSignalum);
+			RecipeRemover.removeShapedRecipe(gearLumium);
+			RecipeRemover.removeShapedRecipe(gearEnderium);
 			Main.log.info("Jaded says use the smeltery for gear making");
 
 		}
 
 		if (Loader.isModLoaded("SolarFlux"))
 		{
-			ItemStack mirror = GameRegistry.findItemStack("SolarFlux", "mirror", 1);
+			ItemStack mirror = GameRegistry.findItemStack("SolarFlux", "mirror", 2);
 			RecipeRemover.removeAnyRecipe(mirror);
 			GameRegistry.addRecipe(new ShapedOreRecipe(mirror,
 					"III",
 					"XSX",
 					'I', "blockGlass",
 					'S', "ingotSilver"
-
 					));
 
 			Main.log.info("Jaded has changed the SolarCell recipes");
@@ -136,7 +136,6 @@ public class ThermalExpansionHelper {
 		platDust.writeToNBT(toSend.getCompoundTag("secondaryInput"));
 		platinumIngot.writeToNBT(toSend.getCompoundTag("primaryOutput"));
 		mithrilOre.writeToNBT(toSend.getCompoundTag("secondaryOutput"));
-		toSend.setInteger("secondaryChance", 15);
 		FMLInterModComms.sendMessage("ThermalExpansion", "SmelterRecipe", toSend);
 		toSend = new NBTTagCompound();
 
@@ -156,7 +155,7 @@ public class ThermalExpansionHelper {
 		toSend.setTag("primaryOutput", new NBTTagCompound());
 		toSend.setInteger("energy", 3000);
 		firerune.writeToNBT(toSend.getCompoundTag("input"));
-		fireelement.writeToNBT(toSend.getCompoundTag("output"));
+		fireelement.writeToNBT(toSend.getCompoundTag("primaryOutput"));
 		FMLInterModComms.sendMessage("ThermalExpansion", "PulverizerRecipe", toSend);
 		toSend = new NBTTagCompound();
 

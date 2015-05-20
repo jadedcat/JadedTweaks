@@ -98,8 +98,8 @@ public class BloodMagicHelper {
 		ItemStack altar = GameRegistry.findItemStack("AWWayofTime", "Altar", 1);
 		ItemStack searedbrick = new ItemStack(GameRegistry.findItem("TConstruct", "Smeltery"), 1, 2);
 
-		//RecipeRemover.removeAnyRecipe(knife);
-		//RecipeRemover.removeAnyRecipe(altar);
+		RecipeRemover.removeAnyRecipe(knife);
+		RecipeRemover.removeAnyRecipe(altar);
 
 		GameRegistry.addRecipe(new ShapedOreRecipe((knife),
 				"GGG",

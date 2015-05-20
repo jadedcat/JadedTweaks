@@ -30,6 +30,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = Main.MODID, version = Main.VERSION, name = Main.NAME,  dependencies = "required-after:Forge@[10.13.3.1384,11.14);" +
 		"after:TConstruct;" +
 		"after:MineFactoryReloaded;" +
+		"after:ExtraUtilities;" +
 		"after:SolarFLux;" +
 		"after:Forestry;" +
 		"after:harvestcraft;" +
@@ -38,7 +39,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class Main {
 	public static final String MODID = "JCTweaks";
 	public static final String NAME = "JCTweaks";
-	public static final String VERSION = "1.19";
+	public static final String VERSION = "1.20";
 	public static final Logger log = LogManager.getLogger(MODID);
 
 	@Mod.EventHandler
@@ -159,8 +160,8 @@ public class Main {
 					"LMW",
 					"SSS",
 					'S', "stone",
-					'L', "lava",
-					'M', "miner",
+					'L', lava,
+					'M', miner,
 					'W', "listAllwater"
 					));
 			Main.log.info("cheaper cobble gen for the miner");

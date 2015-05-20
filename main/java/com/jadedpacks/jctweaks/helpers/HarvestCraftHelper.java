@@ -45,11 +45,7 @@ public class HarvestCraftHelper {
 			if (OreDictionary.getOres("listAllgrain").size() > 0)
 			{	Item woodmortar = GameRegistry.findItem("Botania", "pestleAndMortar");
 
-			GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
-					"MG",
-					'M', woodmortar,
-					'G', "listAllgrain"
-					));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(flour, woodmortar,"listAllgrain"));
 			}
 			else
 			{
@@ -66,20 +62,7 @@ public class HarvestCraftHelper {
 
 		if (OreDictionary.getOres("toolMortarandpestle").size() > 0)
 		{
-			GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
-					"MG",
-					'M', "toolMortarandpestle",
-					'G', "cropPotato"
-					));
-		}
-
-		if (Loader.isModLoaded("TConstruct"))
-		{
-			ItemStack pot = GameRegistry.findItemStack("harvestcraft", "potItem", 1);
-			ItemStack saucepan = GameRegistry.findItemStack("harvestcraft", "saucepanItem", 1);
-			RecipeRemover.removeAnyRecipe(pot);
-			RecipeRemover.removeAnyRecipe(saucepan);
-			ItemStack raisins = GameRegistry.findItemStack("harvestcraft", "raisinsItem", 1);
+			GameRegistry.addRecipe(new ShapelessOreRecipe(flour,"toolMortarandpestle","cropPotato"));
 		}
 		Main.log.info("Harvestcraft Tweaks Loaded");
 	}

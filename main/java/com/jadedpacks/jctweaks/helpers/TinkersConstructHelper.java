@@ -78,16 +78,16 @@ public class TinkersConstructHelper {
 
 		FluidStack iron = FluidRegistry.getFluidStack("iron.molten", 288);
 		if (iron == null)
-			throw new RuntimeException("No Iron fluid");
+			Main.log.info("No Iron fluid");
 		FluidStack gold = FluidRegistry.getFluidStack("gold.molten", 720);
 		if (gold == null)
-			throw new RuntimeException("No gold fluid");
+			Main.log.info("No gold fluid");
 		FluidStack bronze = FluidRegistry.getFluidStack("bronze.molten", 144);
 		if (bronze == null)
-			throw new RuntimeException("No bronze fluid");
+			Main.log.info("No bronze fluid");
 		FluidStack ardite = FluidRegistry.getFluidStack("ardite.molten", 144);
 		if (ardite == null)
-			throw new RuntimeException("No ardite fluid");
+			Main.log.info("No ardite fluid");
 
 		if (Loader.isModLoaded("harvestcraft"))
 		{
@@ -99,31 +99,34 @@ public class TinkersConstructHelper {
 		{
 			ItemStack superwand = GameRegistry.findItemStack("ExtraUtilities", "creativebuilderswand", 1);
 			if (superwand == null)
-				throw new RuntimeException("No superwand");
+				Main.log.info("No superwand");
 			ItemStack builderswand = GameRegistry.findItemStack("ExtraUtilities", "builderswand", 1);
 			if (builderswand == null)
-				throw new RuntimeException("No builderswand ");
+				Main.log.info("No builderswand ");
 			ItemStack spikebase = GameRegistry.findItemStack("ExtraUtilities", "spike_base_wood", 1);
 			if (spikebase == null)
-				throw new RuntimeException("No wood spike");
-			ItemStack spikediamond = GameRegistry.findItemStack("ExtraUtilities", "spike_base_diamond", 1);
+				Main.log.info("No wood spike");
+			ItemStack spikediamond = GameRegistry.findItemStack("ExtraUtilities", "spike_base_diamond", 4);
 			if (spikediamond == null)
-				throw new RuntimeException("No diamond spike");
-			ItemStack spikegold = GameRegistry.findItemStack("ExtraUtilities", "spike_base_gold", 1);
+				Main.log.info("No diamond spike");
+			ItemStack spikegold = GameRegistry.findItemStack("ExtraUtilities", "spike_base_gold", 4);
 			if (spikegold == null)
-				throw new RuntimeException("No goldspike");
-			ItemStack spikeiron = GameRegistry.findItemStack("ExtraUtilities", "spike_base", 1);
+				Main.log.info("No goldspike");
+			ItemStack spikeiron = GameRegistry.findItemStack("ExtraUtilities", "spike_base", 4);
 			if (spikeiron == null)
-				throw new RuntimeException("No Iron spike");
+				Main.log.info("No Iron spike");
+			ItemStack spikediamond1 = GameRegistry.findItemStack("ExtraUtilities", "spike_base_diamond", 1);
+			ItemStack spikegold1 = GameRegistry.findItemStack("ExtraUtilities", "spike_base_gold", 1);
+			ItemStack spikeiron1 = GameRegistry.findItemStack("ExtraUtilities", "spike_base", 1);
 			//remove default spike recipes
-			RecipeRemover.removeAnyRecipe(spikegold);
-			RecipeRemover.removeAnyRecipe(spikediamond);
-			RecipeRemover.removeAnyRecipe(spikeiron);
+			RecipeRemover.removeShapedRecipe(spikegold);
+			RecipeRemover.removeShapedRecipe(spikediamond);
+			RecipeRemover.removeShapedRecipe(spikeiron);
 			//add smeltery spike recipes
 			tableCasting.addCastingRecipe(superwand, ardite, builderswand, true, 80);
-			tableCasting.addCastingRecipe(spikeiron, iron, spikebase, true, 80);
-			tableCasting.addCastingRecipe(spikegold, gold, spikeiron, true, 80);
-			tableCasting.addCastingRecipe(spikediamond, ardite, spikegold, true, 80);
+			tableCasting.addCastingRecipe(spikeiron1, iron, spikebase, true, 80);
+			tableCasting.addCastingRecipe(spikegold1, gold, spikeiron1, true, 80);
+			tableCasting.addCastingRecipe(spikediamond1, ardite, spikegold1, true, 80);
 			Main.log.info("Jaded made spikes need a smeltery");
 
 		}
@@ -135,6 +138,8 @@ public class TinkersConstructHelper {
 			ItemStack rawclayBucket = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketUnfired", 1);
 			ItemStack pot = GameRegistry.findItemStack("harvestcraft", "potItem", 1);
 			ItemStack saucepan = GameRegistry.findItemStack("harvestcraft", "saucepanItem", 1);
+			RecipeRemover.removeAnyRecipe(pot);
+			RecipeRemover.removeAnyRecipe(saucepan);
 			ItemStack gearCast = GameRegistry.findItemStack("TConstruct", "gearCast", 1);
 
 			if (OreDictionary.getOres("oreAluminum").size() > 0)
@@ -149,6 +154,9 @@ public class TinkersConstructHelper {
 					ItemStack gearWood = new ItemStack (GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 40);
 					tableCasting.addCastingRecipe(gearCast, aluminumbrass, gearWood, true, 80);
 				}
+				else
+					Main.log.info("No Wood Gear");
+
 			}
 
 			else if (OreDictionary.getOres("oreAluminium").size() > 0)
