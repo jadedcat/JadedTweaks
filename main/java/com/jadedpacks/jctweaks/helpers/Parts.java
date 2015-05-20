@@ -108,11 +108,9 @@ public class Parts {
 			flour = GameRegistry.findItemStack("harvestcraft", "flourItem", 1);
 			freshwater = GameRegistry.findItemStack("harvestcraft", "freshwaterItem", 4);
 			claywater = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketWater", 1);
+			pot = GameRegistry.findItemStack("harvestcraft", "potItem", 1);
+			saucepan = GameRegistry.findItemStack("harvestcraft", "saucepanItem", 1);
 
-		}
-		if(Loader.isModLoaded("customnpcs"))
-		{
-			earthelement = GameRegistry.findItemStack("customnpcs", "npcEarthElement", 1);
 		}
 
 		if (Loader.isModLoaded("Botania"))
@@ -140,13 +138,12 @@ public class Parts {
 			heart5  = new ItemStack(ticheartcanister, 1, 5);
 			heart6  = new ItemStack(ticheartcanister, 1, 6);
 			gearCast = GameRegistry.findItemStack("TConstruct", "gearCast", 1);
+			searedbrick = new ItemStack(GameRegistry.findItem("TConstruct", "Smeltery"), 1, 2);
 		}
-		if (Loader.isModLoaded("harvestcraft") && (Loader.isModLoaded("IguanaTweaksTConstruct")))
+		if (Loader.isModLoaded("IguanaTweaksTConstruct"))
 		{
 			clayBucket = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketFired", 1);
 			rawclayBucket = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketUnfired", 1);
-			pot = GameRegistry.findItemStack("harvestcraft", "potItem", 1);
-			saucepan = GameRegistry.findItemStack("harvestcraft", "saucepanItem", 1);
 		}
 		if (Loader.isModLoaded("ThermalExpansion"))
 		{
@@ -201,13 +198,15 @@ public class Parts {
 			saphire = GameRegistry.findItemStack("customnpcs", "npcSaphire", 1);
 			amethyst = GameRegistry.findItemStack("customnpcs", "npcAmethyst", 1);
 			npcmana = GameRegistry.findItemStack("customnpcs", "npcMana", 1);
+			earthelement = GameRegistry.findItemStack("customnpcs", "npcEarthElement", 1);
 
 		}
 		if (Loader.isModLoaded("AWWayofTime"))
 		{
 			knife = GameRegistry.findItemStack("AWWayofTime", "sacrificialKnife", 1);
 			altar = GameRegistry.findItemStack("AWWayofTime", "Altar", 1);
-			searedbrick = new ItemStack(GameRegistry.findItem("TConstruct", "Smeltery"), 1, 2);
+
+
 		}
 	}
 	//------------MFR-----------
