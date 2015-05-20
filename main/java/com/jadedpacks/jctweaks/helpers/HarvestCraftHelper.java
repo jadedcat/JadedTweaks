@@ -1,6 +1,7 @@
 package com.jadedpacks.jctweaks.helpers;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -35,19 +36,36 @@ public class HarvestCraftHelper {
 
 		if (Loader.isModLoaded("Botania"))
 		{
-			ItemStack woodmortar = GameRegistry.findItemStack("Botania", "pestleAndMortar", 1);
+			if (OreDictionary.getOres("listAllgrain").size() > 0)
+			{	ItemStack woodmortar = GameRegistry.findItemStack("Botania", "pestleAndMortar", 1);
 
 			GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
 					"MG",
 					'M', woodmortar,
-					'G', "listAllgrains"
+					'G', "listAllgrain"
+					));
+			}
+			else
+			{
+				ItemStack woodmortar = GameRegistry.findItemStack("Botania", "pestleAndMortar", 1);
+				ItemStack wheat = GameRegistry.findItemStack("minecraft", "wheat", 1);
+
+				GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
+						"MG",
+						'M', woodmortar,
+						'G', wheat
+						));
+			}
+		}
+
+		if (OreDictionary.getOres("toolMortarandpestle").size() > 0)
+		{
+			GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
+					"MG",
+					'M', "toolMortarandpestle",
+					'G', "cropPotato"
 					));
 		}
-		GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
-				"MG",
-				'M', "toolMortarandpestle",
-				'G', "cropPotato"
-				));
 
 		if (Loader.isModLoaded("TConstruct"))
 		{
@@ -56,4 +74,6 @@ public class HarvestCraftHelper {
 			RecipeRemover.removeAnyRecipe(pot);
 			RecipeRemover.removeAnyRecipe(saucepan);
 			ItemStack raisins = GameRegistry.findItemStack("harvestcraft", "raisinsItem", 1);
-		}}}
+		}
+	}
+}

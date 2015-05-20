@@ -38,7 +38,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class Main {
 	public static final String MODID = "JCTweaks";
 	public static final String NAME = "JCTweaks";
-	public static final String VERSION = "1.4";
+	public static final String VERSION = "1.6";
 	public static final Logger log = LogManager.getLogger(MODID);
 
 	@Mod.EventHandler
@@ -74,6 +74,7 @@ public class Main {
 					"XXX",
 					'I', "ingotTin"
 					));
+			Main.log.info("Alternative Bucket Recipe tin loaded");
 		}
 
 		if (OreDictionary.getOres("oreAluminum").size() > 0)
@@ -83,6 +84,7 @@ public class Main {
 					"XIX",
 					'I', "ingotAluminum"
 					));
+			Main.log.info("Alternative Bucket Recipe aluminum loaded");
 		}
 
 		else if (OreDictionary.getOres("oreAluminium").size() > 0)
@@ -92,6 +94,7 @@ public class Main {
 					"XIX",
 					'I', "ingotAluminium"
 					));
+			Main.log.info("Alternative Bucket aluminium Recipe loaded");
 		}
 		if (OreDictionary.getOres("oreCopper").size() > 0)
 		{
@@ -100,6 +103,7 @@ public class Main {
 					"XIX",
 					'I', "ingotCopper"
 					));
+			Main.log.info("Alternative Bucket Recipe copper loaded");
 		}
 
 		if (Loader.isModLoaded("Botania"))
@@ -119,11 +123,13 @@ public class Main {
 					'D', "gemDiamond",
 					'O', "obsidian"
 					));
+			Main.log.info("Jaded added a recipe for the builders wand");
 		}
 		if (Loader.isModLoaded("Natura"))
 		{
 			ItemStack wartbag = GameRegistry.findItemStack("Natura", "wartbag", 1);
 			RecipeRemover.removeAnyRecipe(wartbag);
+			Main.log.info("Jaded removed wart bags, they were creepy");
 		}
 
 		if (Loader.isModLoaded("AgriCraft"))
@@ -140,6 +146,7 @@ public class Main {
 					'S', "listAllseed",
 					'W', "plankWood"
 					));
+			Main.log.info("Alternative journal recipe loaded");
 		}
 		if (Loader.isModLoaded("progressiveautomation"))
 		{
@@ -157,6 +164,7 @@ public class Main {
 					'M', "miner",
 					'W', "listAllwater"
 					));
+			Main.log.info("cheaper cobble gen for the miner");
 		}}
 
 	@Mod.EventHandler
