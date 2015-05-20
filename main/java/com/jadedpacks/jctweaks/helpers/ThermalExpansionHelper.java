@@ -124,27 +124,32 @@ public class ThermalExpansionHelper {
 
 		//platinum mithril
 		NBTTagCompound toSend = new NBTTagCompound();
-		toSend.setInteger("energy", 2000);
+
+
 		toSend.setTag("primaryInput", new NBTTagCompound());
 		toSend.setTag("secondaryInput", new NBTTagCompound());
 		toSend.setTag("primaryOutput", new NBTTagCompound());
 		toSend.setTag("secondaryOutput", new NBTTagCompound());
 		toSend.setInteger("secondaryChance", 10);
+		toSend.setInteger("energy", 2000);
 		silverOre.writeToNBT(toSend.getCompoundTag("primaryInput"));
 		platDust.writeToNBT(toSend.getCompoundTag("secondaryInput"));
 		platinumIngot.writeToNBT(toSend.getCompoundTag("primaryOutput"));
 		mithrilOre.writeToNBT(toSend.getCompoundTag("secondaryOutput"));
 		toSend.setInteger("secondaryChance", 15);
 		FMLInterModComms.sendMessage("ThermalExpansion", "SmelterRecipe", toSend);
+		toSend = new NBTTagCompound();
+
 		//demonic ingot
-		toSend.setInteger("energy", 2000);
 		toSend.setTag("primaryInput", new NBTTagCompound());
 		toSend.setTag("secondaryInput", new NBTTagCompound());
 		toSend.setTag("primaryOutput", new NBTTagCompound());
+		toSend.setInteger("energy", 2000);
 		bloodblock.writeToNBT(toSend.getCompoundTag("primaryInput"));
 		richslag.writeToNBT(toSend.getCompoundTag("secondaryInput"));
 		demoningot.writeToNBT(toSend.getCompoundTag("primaryOutput"));
 		FMLInterModComms.sendMessage("ThermalExpansion", "SmelterRecipe", toSend);
+		toSend = new NBTTagCompound();
 
 		//fire element
 		toSend.setTag("input", new NBTTagCompound());
@@ -153,16 +158,7 @@ public class ThermalExpansionHelper {
 		firerune.writeToNBT(toSend.getCompoundTag("input"));
 		fireelement.writeToNBT(toSend.getCompoundTag("output"));
 		FMLInterModComms.sendMessage("ThermalExpansion", "PulverizerRecipe", toSend);
-
-		//Transposer Recipes
-		//NBTTagCompound toSend = new NBTTagCompound();
-		//toSend.setTag("input", new NBTTagCompound());
-		//toSend.setTag("output", new NBTTagCompound());
-		//toSend.setTag("fluid", new NBTTagCompound());
-		//toSend.setInteger("energy", 2000);
-		//writeToNBT(toSend.getCompoundTag("input"));
-		//writeToNBT(toSend.getCompoundTag("output"));
-		//FMLInterModComms.sendMessage("ThermalExpansion", "TransposerRecipe", toSend);
+		toSend = new NBTTagCompound();
 
 		//mithril ore
 		toSend.setInteger("energy", 2000);
@@ -173,6 +169,8 @@ public class ThermalExpansionHelper {
 		mithrilOre.writeToNBT(toSend.getCompoundTag("output"));
 		mana.writeToNBT(toSend.getCompoundTag("fluid"));
 		FMLInterModComms.sendMessage("ThermalExpansion", "TransposerFillRecipe", toSend);
+		toSend = new NBTTagCompound();
+
 		//water element
 		toSend.setInteger("energy", 2000);
 		toSend.setTag("input", new NBTTagCompound());
@@ -182,6 +180,7 @@ public class ThermalExpansionHelper {
 		waterelement.writeToNBT(toSend.getCompoundTag("output"));
 		mana.writeToNBT(toSend.getCompoundTag("fluid"));
 		FMLInterModComms.sendMessage("ThermalExpansion", "TransposerFillRecipe", toSend);
+		toSend = new NBTTagCompound();
 
 		Main.log.info("Jaded is adding mystical metals");
 		Main.log.info("JadedTweaks Thermal Expansion tweaks loaded");
