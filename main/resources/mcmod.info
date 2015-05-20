@@ -1,0 +1,16 @@
+[
+{
+  "modid": "jctweaks",
+  "name": "JC Tweaks",
+  "description": "Tweaks mod for JadedPacks",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Jadedcat"],
+  "credits": "pahimar, mDiyo, LexManos, AbrarSyed, skyboy, MysteriousAges, ProfMobius for answering weird random questions about types and enums",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
