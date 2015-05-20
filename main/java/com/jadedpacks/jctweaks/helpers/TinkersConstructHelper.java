@@ -79,7 +79,7 @@ public class TinkersConstructHelper {
 		FluidStack iron = FluidRegistry.getFluidStack("iron", 288);
 		FluidStack gold = FluidRegistry.getFluidStack("gold", 720);
 		FluidStack bronze = FluidRegistry.getFluidStack("bronze", 144);
-		FluidStack platinum = FluidRegistry.getFluidStack("shiny", 144);
+		FluidStack ardite = FluidRegistry.getFluidStack("ardite", 144);
 
 		if (Loader.isModLoaded("harvestcraft"))
 		{
@@ -100,10 +100,10 @@ public class TinkersConstructHelper {
 			RecipeRemover.removeAnyRecipe(spikediamond);
 			RecipeRemover.removeAnyRecipe(spikeiron);
 			//add smeltery spike recipes
-			tableCasting.addCastingRecipe(superwand, platinum, builderswand, true, 80);
+			tableCasting.addCastingRecipe(superwand, ardite, builderswand, true, 80);
 			tableCasting.addCastingRecipe(spikeiron, iron, spikebase, true, 80);
 			tableCasting.addCastingRecipe(spikegold, gold, spikeiron, true, 80);
-			tableCasting.addCastingRecipe(spikediamond, platinum, spikegold, true, 80);
+			tableCasting.addCastingRecipe(spikediamond, ardite, spikegold, true, 80);
 			Main.log.info("Jaded made spikes need a smeltery");
 
 		}
