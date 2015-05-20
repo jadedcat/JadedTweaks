@@ -36,26 +36,26 @@ public class HarvestCraftHelper {
 
 		if (Loader.isModLoaded("Botania"))
 		{
-			if (OreDictionary.getOres("listAllgrain").size() > 0)
-			{	ItemStack woodmortar = GameRegistry.findItemStack("Botania", "pestleAndMortar", 1);
+			//if (OreDictionary.getOres("listAllgrain").size() > 0)
+			//{	ItemStack woodmortar = GameRegistry.findItemStack("Botania", "pestleAndMortar", 1);
 
-			GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
+			//GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
+			//"MG",
+			//'M', woodmortar,
+			//'G', "listAllgrain"
+			//));
+			//}
+			//else
+			//{
+			ItemStack woodmortar = GameRegistry.findItemStack("Botania", "pestleAndMortar", 1);
+			ItemStack wheat = GameRegistry.findItemStack("minecraft", "wheat", 1);
+
+			GameRegistry.addRecipe(flour,
 					"MG",
 					'M', woodmortar,
-					'G', "listAllgrain"
-					));
-			}
-			else
-			{
-				ItemStack woodmortar = GameRegistry.findItemStack("Botania", "pestleAndMortar", 1);
-				ItemStack wheat = GameRegistry.findItemStack("minecraft", "wheat", 1);
-
-				GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
-						"MG",
-						'M', woodmortar,
-						'G', wheat
-						));
-			}
+					'G', wheat
+					);
+			//}
 		}
 
 		if (OreDictionary.getOres("toolMortarandpestle").size() > 0)
