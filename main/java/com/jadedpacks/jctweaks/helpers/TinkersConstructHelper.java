@@ -76,10 +76,10 @@ public class TinkersConstructHelper {
 				'C', heart2
 				));
 
-		FluidStack iron = FluidRegistry.getFluidStack("iron", 288);
-		FluidStack gold = FluidRegistry.getFluidStack("gold", 720);
-		FluidStack bronze = FluidRegistry.getFluidStack("bronze", 144);
-		FluidStack ardite = FluidRegistry.getFluidStack("ardite", 144);
+		FluidStack iron = FluidRegistry.getFluidStack("iron.molten", 288);
+		FluidStack gold = FluidRegistry.getFluidStack("gold.molten", 720);
+		FluidStack bronze = FluidRegistry.getFluidStack("bronze.molten", 144);
+		FluidStack ardite = FluidRegistry.getFluidStack("ardite.molten", 144);
 
 		if (Loader.isModLoaded("harvestcraft"))
 		{
@@ -119,8 +119,8 @@ public class TinkersConstructHelper {
 
 			if (OreDictionary.getOres("oreAluminum").size() > 0)
 			{
-				FluidStack aluminumbrass = FluidRegistry.getFluidStack("aluminumbrass", 288);
-				FluidStack aluminum = FluidRegistry.getFluidStack("aluminum", 288);
+				FluidStack aluminumbrass = FluidRegistry.getFluidStack("aluminumbrass.molten", 288);
+				FluidStack aluminum = FluidRegistry.getFluidStack("aluminum.molten", 288);
 				tableCasting.addCastingRecipe(pot, aluminumbrass, clayBucket, true, 80);
 				tableCasting.addCastingRecipe(saucepan, aluminumbrass, rawclayBucket, true, 80);
 
@@ -133,8 +133,8 @@ public class TinkersConstructHelper {
 
 			else if (OreDictionary.getOres("oreAluminium").size() > 0)
 			{
-				FluidStack aluminumbrass = FluidRegistry.getFluidStack("aluminiumbrass", 288);
-				FluidStack aluminum = FluidRegistry.getFluidStack("aluminium", 288);
+				FluidStack aluminumbrass = FluidRegistry.getFluidStack("aluminiumbrass.molten", 288);
+				FluidStack aluminum = FluidRegistry.getFluidStack("aluminium.molten", 288);
 				tableCasting.addCastingRecipe(pot, aluminumbrass, clayBucket, true, 80);
 				tableCasting.addCastingRecipe(saucepan, aluminumbrass, rawclayBucket, true, 80);
 
