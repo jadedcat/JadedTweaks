@@ -96,6 +96,7 @@ public class MFRHelper {
 				'G', "nuggetGold"
 				));
 		Main.log.info("Jaded has changed the MFR upgrade recipes.. for... reasons");
+		Main.log.info("MFR Tweaks Loaded");
 
 	}
 

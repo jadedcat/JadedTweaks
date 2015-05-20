@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 import tconstruct.library.TConstructRegistry;
 import tconstruct.library.crafting.LiquidCasting;
 //import tconstruct.library.crafting.DryingRackRecipes.DryingRecipe;
@@ -49,7 +49,7 @@ public class TinkersConstructHelper {
 		tableCasting.addCastingRecipe(earthelement, (emerald), earthrune, 80);
 
 		RecipeRemover.removeAnyRecipe(heart2);
-		GameRegistry.addRecipe(new ShapelessOreRecipe((heart6),
+		GameRegistry.addRecipe(new ShapedOreRecipe(heart6,
 				"EH",
 				"CX",
 
@@ -58,7 +58,7 @@ public class TinkersConstructHelper {
 				'C', heart4
 				));
 
-		GameRegistry.addRecipe(new ShapelessOreRecipe((heart2),
+		GameRegistry.addRecipe(new ShapedOreRecipe(heart2,
 				"EH",
 				"CX",
 
@@ -67,7 +67,7 @@ public class TinkersConstructHelper {
 				'C', heart
 				));
 
-		GameRegistry.addRecipe(new ShapelessOreRecipe((heart4),
+		GameRegistry.addRecipe(new ShapedOreRecipe(heart4,
 				"EH",
 				"CX",
 
@@ -130,27 +130,23 @@ public class TinkersConstructHelper {
 					tableCasting.addCastingRecipe(gearCast, (aluminumbrass), gearWood, 80);
 				}
 			}
-		}
-		else if (OreDictionary.getOres("oreAluminium").size() > 0)
-		{
 
-			ItemStack clayBucket = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketFired", 1);
-			ItemStack rawclayBucket = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketUnfired", 1);
-			ItemStack pot = GameRegistry.findItemStack("harvestcraft", "potItem", 1);
-			ItemStack saucepan = GameRegistry.findItemStack("harvestcraft", "saucepanItem", 1);
-			ItemStack gearCast = GameRegistry.findItemStack("TConstruct", "gearCast", 1);
-			FluidStack aluminumbrass = FluidRegistry.getFluidStack("aluminiumbrass", 288);
-			FluidStack aluminum = FluidRegistry.getFluidStack("aluminium", 288);
-			tableCasting.addCastingRecipe(pot, (aluminumbrass), clayBucket, 80);
-			tableCasting.addCastingRecipe(saucepan, (aluminumbrass), rawclayBucket, 80);
-
-			if (OreDictionary.getOres("gearWood").size() > 0)
+			else if (OreDictionary.getOres("oreAluminium").size() > 0)
 			{
-				ItemStack gearWood = new ItemStack (GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 40);
-				tableCasting.addCastingRecipe(gearCast, (aluminumbrass), gearWood, 80);
+				FluidStack aluminumbrass = FluidRegistry.getFluidStack("aluminiumbrass", 288);
+				FluidStack aluminum = FluidRegistry.getFluidStack("aluminium", 288);
+				tableCasting.addCastingRecipe(pot, (aluminumbrass), clayBucket, 80);
+				tableCasting.addCastingRecipe(saucepan, (aluminumbrass), rawclayBucket, 80);
+
+				if (OreDictionary.getOres("gearWood").size() > 0)
+				{
+					ItemStack gearWood = new ItemStack (GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial"), 1, 40);
+					tableCasting.addCastingRecipe(gearCast, (aluminumbrass), gearWood, 80);
+				}
 			}
 		}
 		Main.log.info("Jaded made harvestcraft tools require a smeltery");
+		Main.log.info("JCTinker Tweaks Loaded");
 	}
 }
 

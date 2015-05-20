@@ -1,8 +1,12 @@
 package com.jadedpacks.jctweaks.helpers;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+
+import com.jadedpacks.jctweaks.Main;
+
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 
@@ -17,11 +21,13 @@ public class HarvestCraftHelper {
 	{
 		if (Loader.isModLoaded("harvestcraft"))
 		{
-			addRecipes();
+
 		}
 	}
 
-	public static void postInit() {}
+	public static void postInit() {
+		addRecipes();
+	}
 
 	private static void addRecipes()
 
@@ -36,26 +42,26 @@ public class HarvestCraftHelper {
 
 		if (Loader.isModLoaded("Botania"))
 		{
-			//if (OreDictionary.getOres("listAllgrain").size() > 0)
-			//{	ItemStack woodmortar = GameRegistry.findItemStack("Botania", "pestleAndMortar", 1);
+			if (OreDictionary.getOres("listAllgrain").size() > 0)
+			{	Item woodmortar = GameRegistry.findItem("Botania", "pestleAndMortar");
 
-			//GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
-			//"MG",
-			//'M', woodmortar,
-			//'G', "listAllgrain"
-			//));
-			//}
-			//else
-			//{
-			ItemStack woodmortar = GameRegistry.findItemStack("Botania", "pestleAndMortar", 1);
-			ItemStack wheat = GameRegistry.findItemStack("minecraft", "wheat", 1);
-
-			GameRegistry.addRecipe(flour,
+			GameRegistry.addRecipe(new ShapelessOreRecipe(flour,
 					"MG",
 					'M', woodmortar,
-					'G', wheat
-					);
-			//}
+					'G', "listAllgrain"
+					));
+			}
+			else
+			{
+				Item woodmortar = GameRegistry.findItem("Botania", "pestleAndMortar");
+				ItemStack wheat = GameRegistry.findItemStack("minecraft", "wheat", 1);
+
+				GameRegistry.addRecipe(flour,
+						"MG",
+						'M', woodmortar,
+						'G', wheat
+						);
+			}
 		}
 
 		if (OreDictionary.getOres("toolMortarandpestle").size() > 0)
@@ -75,5 +81,6 @@ public class HarvestCraftHelper {
 			RecipeRemover.removeAnyRecipe(saucepan);
 			ItemStack raisins = GameRegistry.findItemStack("harvestcraft", "raisinsItem", 1);
 		}
+		Main.log.info("Harvestcraft Tweaks Loaded");
 	}
 }
