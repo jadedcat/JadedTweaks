@@ -26,34 +26,23 @@ public class ThermalExpansionHelper {
 		}
 	}
 
-	public static void postInit(){}
+	public static void postInit(){
+
+	}
 
 	private static void removeRecipes() {
 
-		if (Loader.isModLoaded("TConstruct"))
-			//not working yet
-			//check TE helper classes see if there's an IMC for removing crafting recipes
-		{
-			RecipeRemover.removeShapedRecipe(Parts.gearCopper);
-			RecipeRemover.removeShapedRecipe(Parts.gearIron);
-			RecipeRemover.removeShapedRecipe(Parts.gearTin);
-			RecipeRemover.removeShapedRecipe(Parts.gearGold);
-			RecipeRemover.removeShapedRecipe(Parts.gearSilver);
-			RecipeRemover.removeShapedRecipe(Parts.gearBronze);
-			RecipeRemover.removeShapedRecipe(Parts.gearNickel);
-			RecipeRemover.removeShapedRecipe(Parts.gearPlatinum);
-			RecipeRemover.removeShapedRecipe(Parts.gearMithril);
-			RecipeRemover.removeShapedRecipe(Parts.gearElectrum);
-			RecipeRemover.removeShapedRecipe(Parts.gearInvar);
-			RecipeRemover.removeShapedRecipe(Parts.gearSignalum);
-			RecipeRemover.removeShapedRecipe(Parts.gearLumium);
-			RecipeRemover.removeShapedRecipe(Parts.gearEnderium);
-			Main.log.info("Jaded says use the smeltery for gear making");
-		}
-		if (Loader.isModLoaded("SolarFlux"))
-		{
-			RecipeRemover.removeAnyRecipe(Parts.mirror);
-		}
+
+		//if (Loader.isModLoaded("SolarFlux"))
+		//{
+		//RecipeRemover.removeAnyRecipe(Parts.mirror);
+		//}
+
+
+
+
+
+
 		if (Loader.isModLoaded("Forestry"))
 		{
 			RecipeRemover.removeAnyRecipe(Parts.copperBlock);
@@ -82,6 +71,7 @@ public class ThermalExpansionHelper {
 
 		if (Parts.mirror !=null)
 		{
+			RecipeRemover.removeAnyRecipe(Parts.mirror);
 			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.mirror,
 					"III",
 					"XSX",
@@ -115,6 +105,31 @@ public class ThermalExpansionHelper {
 
 		Main.log.info("Jaded is adding mystical metals");
 		Main.log.info("JadedTweaks Thermal Expansion tweaks loaded");
+
+	}
+
+	public static void loadComplete() {
+
+		if (Loader.isModLoaded("TConstruct"))
+			//not working yet
+		{
+			RecipeRemover.removeAnyRecipe(Parts.gearCopper);
+			RecipeRemover.removeShapedRecipe(Parts.gearIron);
+			RecipeRemover.removeShapedRecipe(Parts.gearTin);
+			RecipeRemover.removeAnyRecipe(Parts.gearGold);
+			RecipeRemover.removeShapedRecipe(Parts.gearSilver);
+			RecipeRemover.removeShapedRecipe(Parts.gearBronze);
+			RecipeRemover.removeShapedRecipe(Parts.gearNickel);
+			RecipeRemover.removeShapedRecipe(Parts.gearPlatinum);
+			RecipeRemover.removeShapedRecipe(Parts.gearMithril);
+			RecipeRemover.removeShapedRecipe(Parts.gearElectrum);
+			RecipeRemover.removeShapedRecipe(Parts.gearInvar);
+			RecipeRemover.removeShapedRecipe(Parts.gearSignalum);
+			RecipeRemover.removeShapedRecipe(Parts.gearLumium);
+			RecipeRemover.removeShapedRecipe(Parts.gearEnderium);
+			Main.log.info("Jaded says use the smeltery for gear making");
+		}
+
 
 	}
 

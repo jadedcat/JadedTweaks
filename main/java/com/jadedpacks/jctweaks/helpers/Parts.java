@@ -77,9 +77,9 @@ public class Parts {
 		emerald = GameRegistry.findItemStack("minecraft", "emerald", 0);
 		blockDiamond = GameRegistry.findItemStack("minecraft", "diamond_block", 0);
 		goldingot = GameRegistry.findItemStack("minecraft", "gold_ingot", 0);
-
-
-
+		bed = GameRegistry.findItemStack("minecraft", "bed", 0);
+		tnt = GameRegistry.findItemStack("minecraft", "tnt", 0);
+		slimeball = GameRegistry.findItemStack("minecraft", "slimeball", 0);
 
 		if (Loader.isModLoaded("recallstones"))
 		{
@@ -139,6 +139,7 @@ public class Parts {
 			claywater = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketWater", 1);
 			pot = GameRegistry.findItemStack("harvestcraft", "potItem", 1);
 			saucepan = GameRegistry.findItemStack("harvestcraft", "saucepanItem", 1);
+			beefwellington = GameRegistry.findItemStack("harvescraft", "beefwellingtonItem", 0);
 
 		}
 
@@ -305,6 +306,9 @@ public class Parts {
 	public static ItemStack goldingot;
 	public static ItemStack emerald;
 	public static ItemStack blockDiamond;
+	public static ItemStack bed;
+	public static ItemStack tnt;
+	public static ItemStack slimeball;
 	//----------BloodMagic---------
 	public static ItemStack knife;
 	public static ItemStack flint;
@@ -369,6 +373,7 @@ public class Parts {
 	public static ItemStack flour;
 	public static ItemStack freshwater;
 	public static ItemStack claywater;
+	public static ItemStack beefwellington;
 	//-------TiCOn---------------
 	public static ItemStack heart;
 	public static ItemStack heart1;
