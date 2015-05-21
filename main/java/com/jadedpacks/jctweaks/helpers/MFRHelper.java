@@ -32,6 +32,7 @@ public class MFRHelper {
 
 		if (Loader.isModLoaded("RedstoneArsenal"))
 		{
+			//change upgrade cost, localize later
 			RecipeRemover.removeAnyRecipe(Parts.upgradeEFlux);
 			GameRegistry.addRecipe(new ShapedOreRecipe((Parts.upgradeEFlux),
 					"FFF",

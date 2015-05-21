@@ -26,6 +26,7 @@ import com.jadedpacks.jctweaks.helpers.Parts;
 
 
 public class ThaumcraftHelper {
+	// not loading into game correctly... not sure why
 
 
 	public static void preInit(){
