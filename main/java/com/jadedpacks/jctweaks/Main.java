@@ -28,6 +28,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 
 @Mod(modid = Main.MODID, version = Main.VERSION, name = Main.NAME,  dependencies = "required-after:Forge@[10.13.3.1384,11.14);" +
 		"after:TConstruct;" +
@@ -39,12 +40,14 @@ import cpw.mods.fml.common.registry.GameRegistry;
 		"after:AWWayofTime;" +
 		"after:customnpcs;" +
 		"after:Botania;" +
+		"after:exnihilo;" +
+		"after:ThermalFoundation;" +
 		"after:ThermalExpansion;")
 
 public class Main {
 	public static final String MODID = "JCTweaks";
 	public static final String NAME = "JCTweaks";
-	public static final String VERSION = "1.21";
+	public static final String VERSION = "1.23";
 	public static final Logger log = LogManager.getLogger(MODID);
 
 	@Mod.EventHandler
@@ -192,6 +195,13 @@ public class Main {
 		HarvestCraftHelper.postInit();
 		FurnaceHelper.postInit();
 		CustomNpcsHelper.postInit();
+	}
+
+	@Mod.EventHandler
+	public void loadComplete(FMLLoadCompleteEvent event)
+	{
+		ThermalExpansionHelper.loadComplete();
+
 	}
 }
 
