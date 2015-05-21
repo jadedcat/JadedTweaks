@@ -111,7 +111,7 @@ public class ThermalExpansionHelper {
 	public static void loadComplete() {
 
 		if (Loader.isModLoaded("TConstruct"))
-			//not working yet
+			//not working yet ... removes smeltery recipes but not TE vanilla crafting... wtf
 		{
 			RecipeRemover.removeAnyRecipe(Parts.gearCopper);
 			RecipeRemover.removeShapedRecipe(Parts.gearIron);

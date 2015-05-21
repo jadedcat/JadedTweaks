@@ -1,0 +1,7 @@
+tc.research_category.AGRIMANCY=Agrimancy
+jctweaks.research_name.RECALLSTONE=Recall Stones
+jctweaks.research_page.RECALLSTONE=A basic recall stone can store 10 charges and costs 2 charges per teleport. By sneak right clicking you will set the stones stored location to where you are currently standing<BR>You can also rename the stone at this point. Right clicking with the stone will then teleport you back to the location set.Basic stones cannot travel between dimensions.<BR> To recharge a stone you will need to put it in a crafting grid with ender pearls.Each ender pearl adds 5 charges to the stone
+jctweaks.research_text.RECALLSTONE=[MT] Teleportation Gems!
+jctweaks.research_page.DIMENSIONSTONE=Dimension stones can teleport between dimensions. They can store 25 charges and cost 5 charges for every cross dimensional trip.");
+jctweaks.research_text.DIMENSIONSTONE=Cross Dimension Teleportation!
+jctweaks.research_name.DIMENSIONSTONE= Dimension Stone

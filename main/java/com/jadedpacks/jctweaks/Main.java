@@ -47,7 +47,7 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 public class Main {
 	public static final String MODID = "JCTweaks";
 	public static final String NAME = "JCTweaks";
-	public static final String VERSION = "1.23";
+	public static final String VERSION = "1.25";
 	public static final Logger log = LogManager.getLogger(MODID);
 
 	@Mod.EventHandler
@@ -55,7 +55,7 @@ public class Main {
 	{
 		Parts.preInit();
 		ThermalExpansionHelper.preInit();
-		//ThaumcraftHelper.preInit();
+		ThaumcraftHelper.preInit();
 		TinkersConstructHelper.preInit();
 		MFRHelper.preInit();
 		BotaniaHelper.preInit();
@@ -72,7 +72,7 @@ public class Main {
 		Main.log.info("parts");
 		ThermalExpansionHelper.init();
 		Main.log.info("TE");
-		//ThaumcraftHelper.init();
+		ThaumcraftHelper.init();
 		TinkersConstructHelper.init();
 		MFRHelper.init();
 		//BotaniaHelper.init();
@@ -187,7 +187,7 @@ public class Main {
 	{
 		Parts.postInit();
 		ThermalExpansionHelper.postInit();
-		//ThaumcraftHelper.postInit();
+		ThaumcraftHelper.postInit();
 		TinkersConstructHelper.postInit();
 		MFRHelper.postInit();
 		//BotaniaHelper.postInit();

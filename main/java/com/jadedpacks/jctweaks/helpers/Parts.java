@@ -11,6 +11,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class Parts {
 
+	// items I use more than once that I don't want to have to re-reference
 	public static void preInit(){}
 	public static void init()
 	{
