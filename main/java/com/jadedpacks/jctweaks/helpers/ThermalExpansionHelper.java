@@ -53,14 +53,6 @@ public class ThermalExpansionHelper {
 		if (Loader.isModLoaded("SolarFlux"))
 		{
 			RecipeRemover.removeAnyRecipe(Parts.mirror);
-			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.mirror,
-					"III",
-					"XSX",
-					'I', "blockGlass",
-					'S', "ingotSilver"
-					));
-			Main.log.info("Jaded is rearranging solar panels for maximum sunlight or pain, one or the other, possibly both");
-
 		}
 		if (Loader.isModLoaded("Forestry"))
 		{
@@ -88,8 +80,25 @@ public class ThermalExpansionHelper {
 		FMLInterModComms.sendMessage("ThermalExpansion", "TransposerFillRecipe", toSend);
 		toSend = new NBTTagCompound();
 
+		if (Parts.mirror !=null)
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.mirror,
+					"III",
+					"XSX",
+					'I', "blockGlass",
+					'S', "ingotSilver"
+					));
+			Main.log.info("Jaded is rearranging solar panels for maximum sunlight or pain, one or the other, possibly both");
+
+		}
+		else
+		{
+			Main.log.info("Mirror is missing");
+		}
+
 		if (Loader.isModLoaded("exnihilo"))
 		{
+
 			toSend.setTag("primaryInput", new NBTTagCompound());
 			toSend.setTag("secondaryInput", new NBTTagCompound());
 			toSend.setTag("primaryOutput", new NBTTagCompound());

@@ -32,7 +32,7 @@ public class TinkersConstructHelper {
 
 	private static void addRecipes() {
 
-		RecipeRemover.removeAnyRecipe(Parts.heart2);
+		//RecipeRemover.removeAnyRecipe(Parts.heart2);
 		GameRegistry.addRecipe(new ShapedOreRecipe(Parts.heart6,
 				"EH",
 				"CX",
@@ -59,6 +59,7 @@ public class TinkersConstructHelper {
 				'H', Parts.heart3,
 				'C', Parts.heart2
 				));
+		//add recipe for heart 5(green) and heart3 (yellow)  heart1(red) heart 2 (base)
 
 
 		if (Loader.isModLoaded("harvestcraft"))

@@ -26,8 +26,6 @@ public class MFRHelper {
 	public static void postInit() {}
 
 	private static void addRecipes() {
-		RecipeRemover.removeAnyRecipe(Parts.upgradeThaum);
-		RecipeRemover.removeAnyRecipe(Parts.upgradeMSteel);
 
 
 		if (Loader.isModLoaded("RedstoneArsenal"))

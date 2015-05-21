@@ -32,11 +32,13 @@ public class HarvestCraftHelper {
 	private static void addRecipes()
 
 	{
-
-		GameRegistry.addRecipe(Parts.freshwater,
-				"F",
-				'F', Parts.claywater
-				);
+		if (Parts.claywater !=null)
+		{
+			GameRegistry.addRecipe(Parts.freshwater,
+					"F",
+					'F', Parts.claywater
+					);
+		}
 
 		if (Loader.isModLoaded("Botania"))
 		{

@@ -72,6 +72,34 @@ public class Parts {
 		flint = GameRegistry.findItemStack("minecraft", "flint", 1);
 		furnace = GameRegistry.findItemStack("minecraft", "furnace", 1);
 		wheat = GameRegistry.findItemStack("minecraft", "wheat", 1);
+		epearl = GameRegistry.findItemStack("minecraft", "ender_pearl", 1);
+		stone = GameRegistry.findItemStack("minecraft", "stone", 0);
+		emerald = GameRegistry.findItemStack("minecraft", "emerald", 0);
+		blockDiamond = GameRegistry.findItemStack("minecraft", "diamond_block", 0);
+		goldingot = GameRegistry.findItemStack("minecraft", "gold_ingot", 0);
+
+
+
+
+		if (Loader.isModLoaded("recallstones"))
+		{
+			recallStone = GameRegistry.findItemStack("recallstones", "recallStone", 1);
+			dimensionStone = GameRegistry.findItemStack("recallstones", "dimensionStone", 1);
+
+		}
+		if (Loader.isModLoaded("ForbiddenMagic"))
+		{
+			Item fmShard = GameRegistry.findItem("ForbiddenMagic", "NetherShard");
+
+			wrathShard   = new ItemStack(fmShard, 1, 0);
+			envyShard   = new ItemStack(fmShard, 1, 1);
+			taintShard   = new ItemStack(fmShard, 1, 2);
+			prideShard   = new ItemStack(fmShard, 1, 3);
+			lustShard   = new ItemStack(fmShard, 1, 4);
+			slothShard   = new ItemStack(fmShard, 1, 5);
+			greedShard   = new ItemStack(fmShard, 1, 6);
+			gluttonShard = GameRegistry.findItemStack("ForbiddenMagic", "GluttonyShard", 1);
+		}
 
 		if (Loader.isModLoaded("MineFactoryReloaded"))
 		{
@@ -103,6 +131,7 @@ public class Parts {
 
 		}
 		if (Loader.isModLoaded("harvestcraft"))
+			//for (ItemStack seeds : OreDictionary.getOres("listAllseeds"))
 		{
 			raisins = GameRegistry.findItemStack("harvestcraft", "raisinsItem", 1);
 			flour = GameRegistry.findItemStack("harvestcraft", "flourItem", 1);
@@ -139,6 +168,7 @@ public class Parts {
 			heart6  = new ItemStack(ticheartcanister, 1, 6);
 			gearCast = GameRegistry.findItemStack("TConstruct", "gearCast", 1);
 			searedbrick = new ItemStack(GameRegistry.findItem("TConstruct", "Smeltery"), 1, 2);
+			necrotic = new ItemStack(GameRegistry.findItem("TConstruct", "materials"), 1, 8);
 		}
 		if (Loader.isModLoaded("IguanaTweaksTConstruct"))
 		{
@@ -166,16 +196,29 @@ public class Parts {
 			gearLumium   = new ItemStack(teMaterial, 1, 139);
 			gearEnderium = new ItemStack(teMaterial, 1, 140);
 			platinumIngot = new ItemStack(teMaterial,2, 69);
-			richslag = new ItemStack(teMaterial, 1, 515);
 
-			mithrilOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "ore"), 1, 6);
-			tfOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "ore"), 1, 5);
+			richslag = new ItemStack(GameRegistry.findItem("ThermalExpansion", "material"), 1, 515);
+			mithrilOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "Ore"), 1, 6);
+			tfOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "Ore"), 1, 5);
+			tinOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "Ore"), 1, 1);
 			silverOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "Ore"), 1, 2);
 			manabucket = new ItemStack(GameRegistry.findItem("ThermalFoundation", "bucket"), 1, 5);
 		}
 		if (Loader.isModLoaded("SolarFlux"))
 		{
 			mirror = GameRegistry.findItemStack("SolarFlux", "mirror", 2);
+		}
+
+		if (Loader.isModLoaded("Thaumcraft"))
+		{
+			Item tcOre = GameRegistry.findItem("Thaumcraft", "blockCustomOre");
+
+			airOre   = new ItemStack(tcOre, 1, 1);
+			fireOre   = new ItemStack(tcOre, 1, 2);
+			waterOre   = new ItemStack(tcOre, 1, 3);
+			earthOre   = new ItemStack(tcOre, 1, 4);
+			orderOre   = new ItemStack(tcOre, 1, 5);
+			chaosOre   = new ItemStack(tcOre, 1, 6);
 		}
 
 		if (Loader.isModLoaded("Forestry"))
@@ -199,6 +242,10 @@ public class Parts {
 			amethyst = GameRegistry.findItemStack("customnpcs", "npcAmethyst", 1);
 			npcmana = GameRegistry.findItemStack("customnpcs", "npcMana", 1);
 			earthelement = GameRegistry.findItemStack("customnpcs", "npcEarthElement", 1);
+			ruby = GameRegistry.findItemStack("customnpcs", "npcRuby", 1);
+			goldcoin = GameRegistry.findItemStack("customnpcs", "npcCoinGold", 1);
+			artifact = GameRegistry.findItemStack("customnpcs", "npcArtifact", 1);
+			ocarina = GameRegistry.findItemStack("customnpcs", "ocarina", 1);
 
 		}
 		if (Loader.isModLoaded("AWWayofTime"))
@@ -209,6 +256,25 @@ public class Parts {
 
 		}
 	}
+	//---------Recall Stones--------
+	public static ItemStack recallStone;
+	public static ItemStack dimensionStone;
+	//----------ForbiddenMagic--------
+	public static ItemStack wrathShard;
+	public static ItemStack envyShard;
+	public static ItemStack taintShard;
+	public static ItemStack prideShard;
+	public static ItemStack lustShard;
+	public static ItemStack slothShard;
+	public static ItemStack greedShard;
+	public static ItemStack gluttonShard;
+	//------Thaumcraft-------------
+	public static ItemStack airOre;
+	public static ItemStack fireOre;
+	public static ItemStack waterOre;
+	public static ItemStack earthOre;
+	public static ItemStack orderOre;
+	public static ItemStack chaosOre;
 	//------------MFR-----------
 	public static ItemStack upgradeEFlux;
 	public static ItemStack upgradeEnder;
@@ -234,6 +300,11 @@ public class Parts {
 	public static ItemStack bucket;
 	public static ItemStack hearts;
 	public static ItemStack wheat;
+	public static ItemStack epearl;
+	public static ItemStack stone;
+	public static ItemStack goldingot;
+	public static ItemStack emerald;
+	public static ItemStack blockDiamond;
 	//----------BloodMagic---------
 	public static ItemStack knife;
 	public static ItemStack flint;
@@ -257,6 +328,10 @@ public class Parts {
 	public static ItemStack firerune;
 	public static ItemStack earthrune;
 	public static ItemStack woodmortar;
+	public static ItemStack ruby;
+	public static ItemStack goldcoin;
+	public static ItemStack artifact;
+	public static ItemStack ocarina;
 	//---------ThermalExpansion----------
 	public static ItemStack mithrilOre;
 	public static ItemStack platDust;
@@ -280,6 +355,7 @@ public class Parts {
 	public static ItemStack gearEnderium;
 	public static ItemStack mirror;
 	public static ItemStack manabucket;
+	public static ItemStack tinOre;
 	//------------Forestry---------
 	public static ItemStack copperBlock;
 	public static ItemStack tinBlock;
@@ -304,6 +380,7 @@ public class Parts {
 	public static ItemStack tincanister;
 	public static ItemStack dapple;
 	public static ItemStack gearCast;
+	public static ItemStack necrotic;
 	//----------ExU Items------
 	public static ItemStack superwand;
 	public static ItemStack builderswand;
@@ -314,6 +391,7 @@ public class Parts {
 	public static ItemStack spikegold1;
 	public static ItemStack spikeiron;
 	public static ItemStack spikeiron1;
+	public static ItemStack magnumtorch;
 	//----------Fluids -------------
 	public static FluidStack moltenaluminum;
 	public static FluidStack moltenaluminumbrass;
