@@ -32,37 +32,33 @@ public class HarvestCraftHelper {
 	private static void addRecipes()
 
 	{
-		ItemStack flour = GameRegistry.findItemStack("harvestcraft", "flourItem", 1);
-		ItemStack freshwater = GameRegistry.findItemStack("harvestcraft", "freshwaterItem", 4);
-		ItemStack claywater = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketWater", 1);
-		GameRegistry.addRecipe(freshwater,
-				"F",
-				'F', claywater
-				);
+		if (Parts.claywater !=null)
+		{
+			GameRegistry.addRecipe(Parts.freshwater,
+					"F",
+					'F', Parts.claywater
+					);
+		}
 
 		if (Loader.isModLoaded("Botania"))
 		{
 			if (OreDictionary.getOres("listAllgrain").size() > 0)
-			{	Item woodmortar = GameRegistry.findItem("Botania", "pestleAndMortar");
-
-			GameRegistry.addRecipe(new ShapelessOreRecipe(flour, woodmortar,"listAllgrain"));
+			{
+				GameRegistry.addRecipe(new ShapelessOreRecipe(Parts.flour, Parts.woodmortar,"listAllgrain"));
 			}
 			else
 			{
-				Item woodmortar = GameRegistry.findItem("Botania", "pestleAndMortar");
-				ItemStack wheat = GameRegistry.findItemStack("minecraft", "wheat", 1);
-
-				GameRegistry.addRecipe(flour,
+				GameRegistry.addRecipe(Parts.flour,
 						"MG",
-						'M', woodmortar,
-						'G', wheat
+						'M', Parts.woodmortar,
+						'G', Parts.wheat
 						);
 			}
 		}
 
 		if (OreDictionary.getOres("toolMortarandpestle").size() > 0)
 		{
-			GameRegistry.addRecipe(new ShapelessOreRecipe(flour,"toolMortarandpestle","cropPotato"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(Parts.flour,"toolMortarandpestle","cropPotato"));
 		}
 		Main.log.info("Harvestcraft Tweaks Loaded");
 	}

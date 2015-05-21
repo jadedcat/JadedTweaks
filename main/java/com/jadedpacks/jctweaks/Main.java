@@ -19,6 +19,8 @@ import com.jadedpacks.jctweaks.helpers.RecipeRemover;
 import com.jadedpacks.jctweaks.helpers.ThaumcraftHelper;
 import com.jadedpacks.jctweaks.helpers.ThermalExpansionHelper;
 import com.jadedpacks.jctweaks.helpers.TinkersConstructHelper;
+import com.jadedpacks.jctweaks.helpers.Parts;
+import com.jadedpacks.jctweaks.helpers.CustomNpcsHelper;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -34,38 +36,47 @@ import cpw.mods.fml.common.registry.GameRegistry;
 		"after:SolarFLux;" +
 		"after:Forestry;" +
 		"after:harvestcraft;" +
+		"after:AWWayofTime;" +
+		"after:customnpcs;" +
+		"after:Botania;" +
 		"after:ThermalExpansion;")
 
 public class Main {
 	public static final String MODID = "JCTweaks";
 	public static final String NAME = "JCTweaks";
-	public static final String VERSION = "1.20";
+	public static final String VERSION = "1.21";
 	public static final Logger log = LogManager.getLogger(MODID);
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		Parts.preInit();
 		ThermalExpansionHelper.preInit();
-		ThaumcraftHelper.preInit();
+		//ThaumcraftHelper.preInit();
 		TinkersConstructHelper.preInit();
 		MFRHelper.preInit();
 		BotaniaHelper.preInit();
 		BloodMagicHelper.preInit();
 		HarvestCraftHelper.preInit();
 		FurnaceHelper.preInit();
+		CustomNpcsHelper.preInit();
 	}
 	@Mod.EventHandler
 	public void init (FMLInitializationEvent event)
 
 	{
+		Parts.init();
+		Main.log.info("parts");
 		ThermalExpansionHelper.init();
-		ThaumcraftHelper.init();
+		Main.log.info("TE");
+		//ThaumcraftHelper.init();
 		TinkersConstructHelper.init();
 		MFRHelper.init();
-		BotaniaHelper.init();
+		//BotaniaHelper.init();
 		BloodMagicHelper.init();
 		HarvestCraftHelper.init();
 		FurnaceHelper.init();
+		CustomNpcsHelper.init();
 
 		if (OreDictionary.getOres("oreTin").size() > 0)
 		{
@@ -171,14 +182,16 @@ public class Main {
 	public void postInit (FMLPostInitializationEvent event)
 
 	{
+		Parts.postInit();
 		ThermalExpansionHelper.postInit();
-		ThaumcraftHelper.postInit();
+		//ThaumcraftHelper.postInit();
 		TinkersConstructHelper.postInit();
 		MFRHelper.postInit();
-		BotaniaHelper.postInit();
+		//BotaniaHelper.postInit();
 		BloodMagicHelper.postInit();
 		HarvestCraftHelper.postInit();
 		FurnaceHelper.postInit();
+		CustomNpcsHelper.postInit();
 	}
 }
 

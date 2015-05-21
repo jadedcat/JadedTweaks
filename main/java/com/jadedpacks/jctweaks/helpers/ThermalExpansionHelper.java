@@ -14,172 +14,104 @@ import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class ThermalExpansionHelper {
-	public static void preInit(){
+	public static void preInit(){}
 
-		if (Loader.isModLoaded("ThermalExpansion"))
-		{
-			Main.log.info("Jaded is now fiddling with ThermalExpansion, do not blame TeamCoFH for unexpected explosions");
-		}
-
-		if (Loader.isModLoaded("SolarFLux"))		{
-
-			Main.log.info("Jaded is rearranging solar panels for maximum sunlight or pain, one or the other, possibly both");
-		}
-
-	}
 	public static void init()
 	{
 		if (Loader.isModLoaded("ThermalExpansion"))
 		{
+			Main.log.info("Jaded is now fiddling with ThermalExpansion, do not blame TeamCoFH for unexpected explosions");
 			removeRecipes();
 			addRecipes();
 		}
 	}
-	public static void postInit()
 
-	{
+	public static void postInit(){}
 
-	}
 	private static void removeRecipes() {
-		Item teMaterial = GameRegistry.findItem("ThermalFoundation", "material");
-		if (teMaterial == null)
-			throw new RuntimeException("HOLY SHIT SOMETHING IS WRONG WHERE IS TF!?!?!?!");
-
-		ItemStack gearCopper   = new ItemStack(teMaterial, 1, 128);
-		ItemStack gearIron     = new ItemStack(teMaterial, 1, 12);
-		ItemStack gearTin      = new ItemStack(teMaterial, 1, 129);
-		ItemStack gearGold     = new ItemStack(teMaterial, 1, 13);
-		ItemStack gearSilver   = new ItemStack(teMaterial, 1, 130);
-		ItemStack gearBronze   = new ItemStack(teMaterial, 1, 137);
-		ItemStack gearNickel   = new ItemStack(teMaterial, 1, 132);
-		ItemStack gearPlatinum = new ItemStack(teMaterial, 1, 133);
-		ItemStack gearMithril  = new ItemStack(teMaterial, 1, 134);
-		ItemStack gearElectrum = new ItemStack(teMaterial, 1, 135);
-		ItemStack gearInvar    = new ItemStack(teMaterial, 1, 136);
-		ItemStack gearSignalum = new ItemStack(teMaterial, 1, 138);
-		ItemStack gearLumium   = new ItemStack(teMaterial, 1, 139);
-		ItemStack gearEnderium = new ItemStack(teMaterial, 1, 140);
 
 		if (Loader.isModLoaded("TConstruct"))
 			//not working yet
+			//check TE helper classes see if there's an IMC for removing crafting recipes
 		{
-			RecipeRemover.removeShapedRecipe(gearCopper);
-			RecipeRemover.removeShapedRecipe(gearIron);
-			RecipeRemover.removeShapedRecipe(gearTin);
-			RecipeRemover.removeShapedRecipe(gearGold);
-			RecipeRemover.removeShapedRecipe(gearSilver);
-			RecipeRemover.removeShapedRecipe(gearBronze);
-			RecipeRemover.removeShapedRecipe(gearNickel);
-			RecipeRemover.removeShapedRecipe(gearPlatinum);
-			RecipeRemover.removeShapedRecipe(gearMithril);
-			RecipeRemover.removeShapedRecipe(gearElectrum);
-			RecipeRemover.removeShapedRecipe(gearInvar);
-			RecipeRemover.removeShapedRecipe(gearSignalum);
-			RecipeRemover.removeShapedRecipe(gearLumium);
-			RecipeRemover.removeShapedRecipe(gearEnderium);
+			RecipeRemover.removeShapedRecipe(Parts.gearCopper);
+			RecipeRemover.removeShapedRecipe(Parts.gearIron);
+			RecipeRemover.removeShapedRecipe(Parts.gearTin);
+			RecipeRemover.removeShapedRecipe(Parts.gearGold);
+			RecipeRemover.removeShapedRecipe(Parts.gearSilver);
+			RecipeRemover.removeShapedRecipe(Parts.gearBronze);
+			RecipeRemover.removeShapedRecipe(Parts.gearNickel);
+			RecipeRemover.removeShapedRecipe(Parts.gearPlatinum);
+			RecipeRemover.removeShapedRecipe(Parts.gearMithril);
+			RecipeRemover.removeShapedRecipe(Parts.gearElectrum);
+			RecipeRemover.removeShapedRecipe(Parts.gearInvar);
+			RecipeRemover.removeShapedRecipe(Parts.gearSignalum);
+			RecipeRemover.removeShapedRecipe(Parts.gearLumium);
+			RecipeRemover.removeShapedRecipe(Parts.gearEnderium);
 			Main.log.info("Jaded says use the smeltery for gear making");
-
 		}
-
 		if (Loader.isModLoaded("SolarFlux"))
 		{
-			ItemStack mirror = GameRegistry.findItemStack("SolarFlux", "mirror", 2);
-			RecipeRemover.removeAnyRecipe(mirror);
-			GameRegistry.addRecipe(new ShapedOreRecipe(mirror,
-					"III",
-					"XSX",
-					'I', "blockGlass",
-					'S', "ingotSilver"
-					));
-
-			Main.log.info("Jaded has changed the SolarCell recipes");
-
+			RecipeRemover.removeAnyRecipe(Parts.mirror);
 		}
 		if (Loader.isModLoaded("Forestry"))
-			Main.log.info("Jaded is removing Forestry storage blocks because people wanted the other textures");
 		{
-			ItemStack copperBlock = new ItemStack (GameRegistry.findItem("Forestry", "resourceStorage"), 1, 1);
-			ItemStack tinBlock = new ItemStack (GameRegistry.findItem("Forestry", "resourceStorage"), 1, 2);
-			RecipeRemover.removeAnyRecipe(copperBlock);
-			RecipeRemover.removeAnyRecipe(tinBlock);
+			RecipeRemover.removeAnyRecipe(Parts.copperBlock);
+			RecipeRemover.removeAnyRecipe(Parts.tinBlock);
+			Main.log.info("Jaded is removing Forestry storage blocks because people wanted the other textures");
 		}
 
 	}
 	private static void addRecipes() {
 
-		ItemStack mithrilOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "ore"), 1, 6);
-		ItemStack tfOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "ore"), 1, 5);
-		ItemStack platinumIngot = new ItemStack(GameRegistry.findItem("ThermalFoundation", "material"), 2, 69);
-		ItemStack silverOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "Ore"), 1, 2);
-		ItemStack platDust = new ItemStack(GameRegistry.findItem("exnihilo", "platinum_dust"), 1, 2);
-		FluidStack mana = FluidRegistry.getFluidStack("mana", 100);
 
-		ItemStack fireelement = GameRegistry.findItemStack("customnpcs", "npcFireElement", 1);
-		ItemStack waterelement = GameRegistry.findItemStack("customnpcs", "npcWaterElement", 1);
-		ItemStack firerune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 1);
-		ItemStack waterrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 0);
-		ItemStack bloodblock = GameRegistry.findItemStack("customnpcs", "npcBloodBlock", 1);
-		ItemStack demoningot = GameRegistry.findItemStack("customnpcs", "npcDemonicIngot", 1);
-		ItemStack richslag = new ItemStack(GameRegistry.findItem("ThermalExpansion", "material"), 1, 515);
 
-		//platinum mithril
+		//IMC Recipes
 		NBTTagCompound toSend = new NBTTagCompound();
-
-
-		toSend.setTag("primaryInput", new NBTTagCompound());
-		toSend.setTag("secondaryInput", new NBTTagCompound());
-		toSend.setTag("primaryOutput", new NBTTagCompound());
-		toSend.setTag("secondaryOutput", new NBTTagCompound());
-		toSend.setInteger("secondaryChance", 10);
-		toSend.setInteger("energy", 2000);
-		silverOre.writeToNBT(toSend.getCompoundTag("primaryInput"));
-		platDust.writeToNBT(toSend.getCompoundTag("secondaryInput"));
-		platinumIngot.writeToNBT(toSend.getCompoundTag("primaryOutput"));
-		mithrilOre.writeToNBT(toSend.getCompoundTag("secondaryOutput"));
-		FMLInterModComms.sendMessage("ThermalExpansion", "SmelterRecipe", toSend);
-		toSend = new NBTTagCompound();
-
-		//demonic ingot
-		toSend.setTag("primaryInput", new NBTTagCompound());
-		toSend.setTag("secondaryInput", new NBTTagCompound());
-		toSend.setTag("primaryOutput", new NBTTagCompound());
-		toSend.setInteger("energy", 2000);
-		bloodblock.writeToNBT(toSend.getCompoundTag("primaryInput"));
-		richslag.writeToNBT(toSend.getCompoundTag("secondaryInput"));
-		demoningot.writeToNBT(toSend.getCompoundTag("primaryOutput"));
-		FMLInterModComms.sendMessage("ThermalExpansion", "SmelterRecipe", toSend);
-		toSend = new NBTTagCompound();
-
-		//fire element
-		toSend.setTag("input", new NBTTagCompound());
-		toSend.setTag("primaryOutput", new NBTTagCompound());
-		toSend.setInteger("energy", 3000);
-		firerune.writeToNBT(toSend.getCompoundTag("input"));
-		fireelement.writeToNBT(toSend.getCompoundTag("primaryOutput"));
-		FMLInterModComms.sendMessage("ThermalExpansion", "PulverizerRecipe", toSend);
-		toSend = new NBTTagCompound();
 
 		//mithril ore
 		toSend.setInteger("energy", 2000);
 		toSend.setTag("input", new NBTTagCompound());
 		toSend.setTag("output", new NBTTagCompound());
 		toSend.setTag("fluid", new NBTTagCompound());
-		tfOre.writeToNBT(toSend.getCompoundTag("input"));
-		mithrilOre.writeToNBT(toSend.getCompoundTag("output"));
-		mana.writeToNBT(toSend.getCompoundTag("fluid"));
+		Parts.tfOre.writeToNBT(toSend.getCompoundTag("input"));
+		Parts.mithrilOre.writeToNBT(toSend.getCompoundTag("output"));
+		Parts.temana.writeToNBT(toSend.getCompoundTag("fluid"));
 		FMLInterModComms.sendMessage("ThermalExpansion", "TransposerFillRecipe", toSend);
 		toSend = new NBTTagCompound();
 
-		//water element
-		toSend.setInteger("energy", 2000);
-		toSend.setTag("input", new NBTTagCompound());
-		toSend.setTag("output", new NBTTagCompound());
-		toSend.setTag("fluid", new NBTTagCompound());
-		waterrune.writeToNBT(toSend.getCompoundTag("input"));
-		waterelement.writeToNBT(toSend.getCompoundTag("output"));
-		mana.writeToNBT(toSend.getCompoundTag("fluid"));
-		FMLInterModComms.sendMessage("ThermalExpansion", "TransposerFillRecipe", toSend);
-		toSend = new NBTTagCompound();
+		if (Parts.mirror !=null)
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.mirror,
+					"III",
+					"XSX",
+					'I', "blockGlass",
+					'S', "ingotSilver"
+					));
+			Main.log.info("Jaded is rearranging solar panels for maximum sunlight or pain, one or the other, possibly both");
+
+		}
+		else
+		{
+			Main.log.info("Mirror is missing");
+		}
+
+		if (Loader.isModLoaded("exnihilo"))
+		{
+
+			toSend.setTag("primaryInput", new NBTTagCompound());
+			toSend.setTag("secondaryInput", new NBTTagCompound());
+			toSend.setTag("primaryOutput", new NBTTagCompound());
+			toSend.setTag("secondaryOutput", new NBTTagCompound());
+			toSend.setInteger("secondaryChance", 10);
+			toSend.setInteger("energy", 2000);
+			Parts.silverOre.writeToNBT(toSend.getCompoundTag("primaryInput"));
+			Parts.platDust.writeToNBT(toSend.getCompoundTag("secondaryInput"));
+			Parts.platinumIngot.writeToNBT(toSend.getCompoundTag("primaryOutput"));
+			Parts.mithrilOre.writeToNBT(toSend.getCompoundTag("secondaryOutput"));
+			FMLInterModComms.sendMessage("ThermalExpansion", "SmelterRecipe", toSend);
+			toSend = new NBTTagCompound();
+		}
 
 		Main.log.info("Jaded is adding mystical metals");
 		Main.log.info("JadedTweaks Thermal Expansion tweaks loaded");

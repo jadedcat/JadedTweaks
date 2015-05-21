@@ -12,15 +12,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 public class MFRHelper {
 
 
-	public static void preInit(){
-
-		if (Loader.isModLoaded("MineFactoryReloaded"))
-		{
-
-
-		}
-
-	}
+	public static void preInit(){}
 
 	public static void init()
 	{
@@ -31,70 +23,77 @@ public class MFRHelper {
 		}
 	}
 
-	public static void postInit() {
+	public static void postInit() {}
 
-	}
 	private static void addRecipes() {
 
-		Item mfrUpgrade = GameRegistry.findItem("MineFactoryReloaded", "upgrade.radius");
 
-		ItemStack upgradeEFlux   = new ItemStack(mfrUpgrade, 1, 6);
-		ItemStack upgradeEnder = new ItemStack(mfrUpgrade, 1, 7);
-		ItemStack upgradeMany   = new ItemStack(mfrUpgrade, 1, 8);
-		ItemStack upgradeThaum   = new ItemStack(mfrUpgrade, 1, 9);
-		ItemStack upgradeMSteel   = new ItemStack(mfrUpgrade, 1, 10);
+		if (Loader.isModLoaded("RedstoneArsenal"))
+		{
+			RecipeRemover.removeAnyRecipe(Parts.upgradeEFlux);
+			GameRegistry.addRecipe(new ShapedOreRecipe((Parts.upgradeEFlux),
+					"FFF",
+					"PPP",
+					"RGR",
+					'F', "ingotElectrumFlux",
+					'P', "dustPlastic",
+					'R', "dustRedstone",
+					'G', "nuggetGold"
+					));
+		}
+		if (Loader.isModLoaded("ThermalExpansion"))
+		{
+			RecipeRemover.removeAnyRecipe(Parts.upgradeEnder);
+			GameRegistry.addRecipe(new ShapedOreRecipe((Parts.upgradeEnder),
+					"FFF",
+					"PPP",
+					"RGR",
+					'F', "ingotEnderium",
+					'P', "dustPlastic",
+					'R', "dustRedstone",
+					'G', "nuggetGold"
+					));
+		}
+		if (Loader.isModLoaded("TConstruct"))
+		{
+			RecipeRemover.removeAnyRecipe(Parts.upgradeMany);
+			GameRegistry.addRecipe(new ShapedOreRecipe((Parts.upgradeMany),
+					"FFF",
+					"PPP",
+					"RGR",
+					'F', "ingotManyullyn",
+					'P', "dustPlastic",
+					'R', "dustRedstone",
+					'G', "nuggetGold"
+					));
+		}
+		if (Loader.isModLoaded("Thaumcraft"))
+		{
+			RecipeRemover.removeAnyRecipe(Parts.upgradeThaum);
+			GameRegistry.addRecipe(new ShapedOreRecipe((Parts.upgradeThaum),
+					"FFF",
+					"PPP",
+					"RGR",
+					'F', "ingotThaumium",
+					'P', "dustPlastic",
+					'R', "dustRedstone",
+					'G', "nuggetGold"
+					));
+		}
+		if (Loader.isModLoaded("Botania"))
+		{
 
-		RecipeRemover.removeAnyRecipe(upgradeEFlux);
-		RecipeRemover.removeAnyRecipe(upgradeEnder);
-		RecipeRemover.removeAnyRecipe(upgradeMany);
-		RecipeRemover.removeAnyRecipe(upgradeThaum);
-		RecipeRemover.removeAnyRecipe(upgradeMSteel);
-
-		GameRegistry.addRecipe(new ShapedOreRecipe((upgradeEFlux),
-				"FFF",
-				"PPP",
-				"RGR",
-				'F', "ingotElectrumFlux",
-				'P', "dustPlastic",
-				'R', "dustRedstone",
-				'G', "nuggetGold"
-				));
-		GameRegistry.addRecipe(new ShapedOreRecipe((upgradeEnder),
-				"FFF",
-				"PPP",
-				"RGR",
-				'F', "ingotEnderium",
-				'P', "dustPlastic",
-				'R', "dustRedstone",
-				'G', "nuggetGold"
-				));
-		GameRegistry.addRecipe(new ShapedOreRecipe((upgradeMany),
-				"FFF",
-				"PPP",
-				"RGR",
-				'F', "ingotManyullyn",
-				'P', "dustPlastic",
-				'R', "dustRedstone",
-				'G', "nuggetGold"
-				));
-		GameRegistry.addRecipe(new ShapedOreRecipe((upgradeThaum),
-				"FFF",
-				"PPP",
-				"RGR",
-				'F', "ingotThaumium",
-				'P', "dustPlastic",
-				'R', "dustRedstone",
-				'G', "nuggetGold"
-				));
-		GameRegistry.addRecipe(new ShapedOreRecipe((upgradeMSteel),
-				"FFF",
-				"PPP",
-				"RGR",
-				'F', "ingotManasteel",
-				'P', "dustPlastic",
-				'R', "dustRedstone",
-				'G', "nuggetGold"
-				));
+			RecipeRemover.removeAnyRecipe(Parts.upgradeMSteel);
+			GameRegistry.addRecipe(new ShapedOreRecipe((Parts.upgradeMSteel),
+					"FFF",
+					"PPP",
+					"RGR",
+					'F', "ingotManasteel",
+					'P', "dustPlastic",
+					'R', "dustRedstone",
+					'G', "nuggetGold"
+					));
+		}
 		Main.log.info("Jaded has changed the MFR upgrade recipes.. for... reasons");
 		Main.log.info("MFR Tweaks Loaded");
 
