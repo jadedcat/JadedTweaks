@@ -40,9 +40,9 @@ Theoretically this mod "should" only require Forge. However it won't do much if 
 
 
 ---------Vanilla Changes ----------
-Different logs give different amounts of charcoal
-If Forestry or Natura are installed it makes the changes to their log smelting recipes too. 
-If Thermal Expansion is installed it adds the changes to the RedstoneFurnace
+- Different logs give different amounts of charcoal
+- If Forestry or Natura are installed it makes the changes to their log smelting recipes too. 
+- If Thermal Expansion is installed it adds the changes to the RedstoneFurnace
 
 
 
