@@ -116,6 +116,72 @@ public class Parts {
 		if (Loader.isModLoaded("HardcoreQuesting"))
 		{
 			hearts = new ItemStack(GameRegistry.findItem("HardcoreQuesting", "hearts"), 1, 3);
+			dynamo = new ItemStack(GameRegistry.findItem("ThermalExpansion", "Dynamo"), 1, 0);
+			OreDictionary.registerOre("dynamo", Parts.dynamo);
+
+			watergen = new ItemStack(GameRegistry.findItem("ThermalExpansion", "Machine"), 1, 8);
+			OreDictionary.registerOre("watergenTE", Parts.watergen);
+
+
+			Item sieve = GameRegistry.findItem("exnihilo", "sifting_table");
+			sieve0  = new ItemStack(sieve, 1, 0);
+			sieve1  = new ItemStack(sieve, 1, 1);
+			sieve2  = new ItemStack(sieve, 1, 2);
+			sieve3  = new ItemStack(sieve, 1, 3);
+			sieve4  = new ItemStack(sieve, 1, 4);
+			sieve5  = new ItemStack(sieve, 1, 5);
+
+
+
+			Item barrel = GameRegistry.findItem("exnihilo", "barrel");
+			barrel0  = new ItemStack(barrel, 1, 0);
+			barrel1  = new ItemStack(barrel, 1, 1);
+			barrel2  = new ItemStack(barrel, 1, 2);
+			barrel3  = new ItemStack(barrel, 1, 3);
+			barrel4  = new ItemStack(barrel, 1, 4);
+			barrel5  = new ItemStack(barrel, 1, 5);
+
+
+			Item ToolTable = GameRegistry.findItem("TConstruct", "ToolStationBlock");
+			stencil1  = new ItemStack(ToolTable, 1, 10);
+			stencil2  = new ItemStack(ToolTable, 1, 11);
+			stencil3  = new ItemStack(ToolTable, 1, 12);
+			stencil4  = new ItemStack(ToolTable, 1, 13);
+			toolstation  = new ItemStack(ToolTable, 1, 0);
+			partbuilder  = new ItemStack(ToolTable, 1, 1);
+			partbuilder2  = new ItemStack(ToolTable, 1, 2);
+			partbuilder3  = new ItemStack(ToolTable, 1, 3);
+			partbuilder4  = new ItemStack(ToolTable, 1, 4);
+
+
+			OreDictionary.registerOre("stenciltable", Parts.stencil1);
+			OreDictionary.registerOre("stenciltable", Parts.stencil2);
+			OreDictionary.registerOre("stenciltable", Parts.stencil3);
+			OreDictionary.registerOre("stenciltable", Parts.stencil4);
+
+			OreDictionary.registerOre("toolstation", Parts.toolstation);
+
+			OreDictionary.registerOre("partbuilder", Parts.partbuilder);
+			OreDictionary.registerOre("partbuilder", Parts.partbuilder2);
+			OreDictionary.registerOre("partbuilder", Parts.partbuilder3);
+			OreDictionary.registerOre("partbuilder", Parts.partbuilder4);
+
+
+			OreDictionary.registerOre("sieve", Parts.sieve0);
+			OreDictionary.registerOre("sieve", Parts.sieve1);
+			OreDictionary.registerOre("sieve", Parts.sieve2);
+			OreDictionary.registerOre("sieve", Parts.sieve3);
+			OreDictionary.registerOre("sieve", Parts.sieve4);
+			OreDictionary.registerOre("sieve", Parts.sieve5);
+
+			OreDictionary.registerOre("ebarrel", Parts.barrel0);
+			OreDictionary.registerOre("ebarrel", Parts.barrel1);
+			OreDictionary.registerOre("ebarrel", Parts.barrel2);
+			OreDictionary.registerOre("ebarrel", Parts.barrel3);
+			OreDictionary.registerOre("ebarrel", Parts.barrel4);
+			OreDictionary.registerOre("ebarrel", Parts.barrel5);
+
+
 		}
 
 		if (Loader.isModLoaded("ExtraUtilities"))
@@ -209,10 +275,12 @@ public class Parts {
 
 			richslag = new ItemStack(GameRegistry.findItem("ThermalExpansion", "material"), 1, 515);
 			manabucket = new ItemStack(GameRegistry.findItem("ThermalFoundation", "bucket"), 1, 5);
-			dynamo = new ItemStack(GameRegistry.findItem("ThermalExpansion", "Dynamo"), 1, 0);
-			OreDictionary.registerOre("dynamo", Parts.dynamo);
+
+
 
 		}
+
+
 		if (Loader.isModLoaded("SolarFlux"))
 		{
 			mirror = GameRegistry.findItemStack("SolarFlux", "mirror", 2);
@@ -267,6 +335,28 @@ public class Parts {
 	}
 	//-------Test------------
 	public static ItemStack dynamo;
+	public static ItemStack sieve0;
+	public static ItemStack  sieve1;
+	public static ItemStack  sieve2;
+	public static ItemStack  sieve3;
+	public static ItemStack  sieve4;
+	public static ItemStack  sieve5;
+	public static ItemStack barrel0;
+	public static ItemStack barrel1;
+	public static ItemStack barrel2;
+	public static ItemStack barrel3;
+	public static ItemStack barrel4;
+	public static ItemStack barrel5;
+	public static ItemStack stencil1;
+	public static ItemStack stencil2;
+	public static ItemStack stencil3;
+	public static ItemStack stencil4;
+	public static ItemStack toolstation;
+	public static ItemStack partbuilder;
+	public static ItemStack partbuilder2;
+	public static ItemStack partbuilder3;
+	public static ItemStack partbuilder4;
+	public static ItemStack watergen;
 	//---------Recall Stones--------
 	public static ItemStack recallStone;
 	public static ItemStack dimensionStone;
