@@ -111,22 +111,21 @@ public class ThermalExpansionHelper {
 	public static void loadComplete() {
 
 		if (Loader.isModLoaded("TConstruct"))
-			//not working yet ... removes smeltery recipes but not TE vanilla crafting... wtf
 		{
 			RecipeRemover.removeAnyRecipe(Parts.gearCopper);
-			RecipeRemover.removeShapedRecipe(Parts.gearIron);
-			RecipeRemover.removeShapedRecipe(Parts.gearTin);
+			RecipeRemover.removeAnyRecipe(Parts.gearIron);
+			RecipeRemover.removeAnyRecipe(Parts.gearTin);
 			RecipeRemover.removeAnyRecipe(Parts.gearGold);
-			RecipeRemover.removeShapedRecipe(Parts.gearSilver);
-			RecipeRemover.removeShapedRecipe(Parts.gearBronze);
-			RecipeRemover.removeShapedRecipe(Parts.gearNickel);
-			RecipeRemover.removeShapedRecipe(Parts.gearPlatinum);
-			RecipeRemover.removeShapedRecipe(Parts.gearMithril);
-			RecipeRemover.removeShapedRecipe(Parts.gearElectrum);
-			RecipeRemover.removeShapedRecipe(Parts.gearInvar);
-			RecipeRemover.removeShapedRecipe(Parts.gearSignalum);
-			RecipeRemover.removeShapedRecipe(Parts.gearLumium);
-			RecipeRemover.removeShapedRecipe(Parts.gearEnderium);
+			RecipeRemover.removeAnyRecipe(Parts.gearSilver);
+			RecipeRemover.removeAnyRecipe(Parts.gearBronze);
+			RecipeRemover.removeAnyRecipe(Parts.gearNickel);
+			RecipeRemover.removeAnyRecipe(Parts.gearPlatinum);
+			RecipeRemover.removeAnyRecipe(Parts.gearMithril);
+			RecipeRemover.removeAnyRecipe(Parts.gearElectrum);
+			RecipeRemover.removeAnyRecipe(Parts.gearInvar);
+			RecipeRemover.removeAnyRecipe(Parts.gearSignalum);
+			RecipeRemover.removeAnyRecipe(Parts.gearLumium);
+			RecipeRemover.removeAnyRecipe(Parts.gearEnderium);
 			Main.log.info("Jaded says use the smeltery for gear making");
 		}
 

@@ -75,16 +75,16 @@ public class ThaumcraftHelper {
 
 		ResearchCategories.registerCategory("AGRIMANCY", new ResourceLocation("jctweaks", "textures/aspects/purpura.png"), new ResourceLocation("thaumcraft", "textures/gui/gui_researchback.png"));
 
-		(new ResearchItem("RECALLSTONE", "AGRIMANCY", (new AspectList()).add(Aspect.MAGIC, 3).add(Aspect.MOTION, 2), 2, 0, 2,
+		(new JCResearchItem("RECALLSTONE", "AGRIMANCY", (new AspectList()).add(Aspect.MAGIC, 3).add(Aspect.MOTION, 2), 2, 0, 2,
 				(Parts.recallStone))).setPages(new ResearchPage[]
 						{ new ResearchPage("jctweaks.research_page.RECALLSTONE"), new ResearchPage((IArcaneRecipe)
-								ThaumcraftApi.addArcaneCraftingRecipe("Recall Stone", Parts.recallStone, (new AspectList()).add(Aspect.EARTH, 5).add(Aspect.ORDER, 3), "SES", "EDE", "SES", Character.valueOf('S'), Parts.stone, Character.valueOf('E'), Parts.epearl, Character.valueOf('D'), Parts.diamond)) }).setParents(new String[] { "RESEARCH" }).registerResearchItem();
+								ThaumcraftApi.addArcaneCraftingRecipe("RECALLSTONE", Parts.recallStone, (new AspectList()).add(Aspect.EARTH, 5).add(Aspect.ORDER, 3), "SES", "EDE", "SES", Character.valueOf('S'), Parts.stone, Character.valueOf('E'), Parts.epearl, Character.valueOf('D'), Parts.diamond)) }).setParents(new String[] { "RESEARCH" }).registerResearchItem();
 
 
-		(new ResearchItem("DIMENSIONSTONE", "AGRIMANCY", (new AspectList()).add(Aspect.ELDRITCH, 3).add(Aspect.MOTION, 2), 2, -1, 2,
+		(new JCResearchItem("DIMENSIONSTONE", "AGRIMANCY", (new AspectList()).add(Aspect.ELDRITCH, 3).add(Aspect.MOTION, 2), 2, -1, 2,
 				(Parts.dimensionStone))).setPages(new ResearchPage[]
 						{ new ResearchPage("jctweaks.research_page.DIMENSIONSTONE"), new ResearchPage((IArcaneRecipe)
-								ThaumcraftApi.addArcaneCraftingRecipe("Dimension Stone", Parts.dimensionStone, (new AspectList()).add(Aspect.ELDRITCH, 5).add(Aspect.ORDER, 3), "BEB", "ERE", "BEB", Character.valueOf('B'), Parts.blazerod, Character.valueOf('E'), Parts.epearl, Character.valueOf('R'), Parts.recallStone)) }).setParents(new String[] { "RECALLSTONE" }).registerResearchItem();
+								ThaumcraftApi.addArcaneCraftingRecipe("DIMENSIONSTONE", Parts.dimensionStone, (new AspectList()).add(Aspect.ELDRITCH, 5).add(Aspect.ORDER, 3), "BEB", "ERE", "BEB", Character.valueOf('B'), Parts.blazerod, Character.valueOf('E'), Parts.epearl, Character.valueOf('R'), Parts.recallStone)) }).setParents(new String[] { "RECALLSTONE" }).registerResearchItem();
 
 
 
