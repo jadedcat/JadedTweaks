@@ -33,10 +33,15 @@ public class BloodMagicHelper {
 	}
 
 	public static void addAltarRecipe	()
+
+
 	{
-		AltarRecipeRegistry.registerAltarRecipe(Parts.spawnSheep, Parts.wool, 2, 5000, 2, 2, false);
-		AltarRecipeRegistry.registerAltarRecipe(Parts.spawnMCow, Parts.mycelium, 3, 7000, 2, 2, false);
-		AltarRecipeRegistry.registerAltarRecipe(Parts.spawnPig, Parts.wool2, 2, 7000, 2, 2, false);
+		if (Loader.isModLoaded("exnihilo"))
+		{
+			AltarRecipeRegistry.registerAltarRecipe(Parts.spawnSheep, Parts.wool, 2, 5000, 2, 2, false);
+			AltarRecipeRegistry.registerAltarRecipe(Parts.spawnMCow, Parts.mycelium, 3, 7000, 2, 2, false);
+			AltarRecipeRegistry.registerAltarRecipe(Parts.spawnPig, Parts.wool2, 2, 7000, 2, 2, false);
+		}
 		if (Parts.manabucket !=null) {
 			AltarRecipeRegistry.registerAltarRecipe(Parts.manabucket, Parts.bucket, 2, 3000, 2, 2, false);
 		}
@@ -45,9 +50,13 @@ public class BloodMagicHelper {
 
 	public static void AlchemyRecipe()
 	{
-		AlchemyRecipeRegistry.registerRecipe(Parts.spawnChicken, 2, new ItemStack[]{(Parts.flesh),(Parts.flesh), (Parts.diamond), (Parts.feather), (Parts.leather)}, 2);
-		AlchemyRecipeRegistry.registerRecipe(Parts.spawnCow, 2, new ItemStack[]{(Parts.leather),(Parts.leather), (Parts.diamond), (Parts.leather)}, 2);
+		if (Loader.isModLoaded("exnihilo"))
+		{
+			AlchemyRecipeRegistry.registerRecipe(Parts.spawnChicken, 2, new ItemStack[]{(Parts.flesh),(Parts.flesh), (Parts.diamond), (Parts.feather), (Parts.leather)}, 2);
+			AlchemyRecipeRegistry.registerRecipe(Parts.spawnCow, 2, new ItemStack[]{(Parts.leather),(Parts.leather), (Parts.diamond), (Parts.leather)}, 2);
+		}
 		AlchemyRecipeRegistry.registerRecipe(Parts.blazerod, 2, new ItemStack[]{(Parts.blazepowder),(Parts.blazepowder), (Parts.blazepowder), (Parts.blazepowder)}, 2);
+
 		if (Parts.hearts !=null)
 		{
 			AlchemyRecipeRegistry.registerRecipe(Parts.hearts, 2, new ItemStack[]{(Parts.flesh),(Parts.flesh), (Parts.bone), (Parts.diamond)}, 2);
@@ -57,27 +66,31 @@ public class BloodMagicHelper {
 	}
 
 	private static void addRecipes() {
-		RecipeRemover.removeAnyRecipe(Parts.knife);
-		RecipeRemover.removeAnyRecipe(Parts.altar);
 
-		GameRegistry.addRecipe(new ShapedOreRecipe((Parts.knife),
-				"GGG",
-				"XFG",
-				"FXG",
-				'F', Parts.flint,
-				'G', "blockGlass"
-				));
+		if (Loader.isModLoaded("exnihilo"))
+		{
+			RecipeRemover.removeAnyRecipe(Parts.knife);
+			RecipeRemover.removeAnyRecipe(Parts.altar);
 
-		if (Parts.searedbrick !=null){
-			GameRegistry.addRecipe(new ShapedOreRecipe((Parts.altar),
-					"SXS",
-					"SFS",
-					"TLT",
-					'S', "stone",
-					'F', Parts.furnace,
-					'T', Parts.searedbrick,
-					'L', Parts.flint
+			GameRegistry.addRecipe(new ShapedOreRecipe((Parts.knife),
+					"GGG",
+					"XFG",
+					"FXG",
+					'F', Parts.flint,
+					'G', "blockGlass"
 					));
+
+			if (Parts.searedbrick !=null){
+				GameRegistry.addRecipe(new ShapedOreRecipe((Parts.altar),
+						"SXS",
+						"SFS",
+						"TLT",
+						'S', "stone",
+						'F', Parts.furnace,
+						'T', Parts.searedbrick,
+						'L', Parts.flint
+						));
+			}
 		}
 		Main.log.info("BloodMagic Tweaks Loaded");
 	}

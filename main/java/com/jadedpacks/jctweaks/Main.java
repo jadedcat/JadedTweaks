@@ -42,6 +42,7 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 		"after:Botania;" +
 		"after:exnihilo;" +
 		"after:ThermalFoundation;" +
+		"after:Thaumcraft;" +
 		"after:ThermalExpansion;")
 
 public class Main {
@@ -120,13 +121,13 @@ public class Main {
 			Main.log.info("Alternative Bucket Recipe copper loaded");
 		}
 
-		if (Loader.isModLoaded("Botania"))
+		if (Loader.isModLoaded("Botania") && (Loader.isModLoaded("exnihilo")))
 		{
 			//remove terraformRod
 			ItemStack terraformRod = GameRegistry.findItemStack("Botania", "terraformRod", 1);
 			RecipeRemover.removeAnyRecipe(terraformRod);
 		}
-		if (Loader.isModLoaded("ExtraUtilities"))
+		if (Loader.isModLoaded("ExtraUtilities")&& (Loader.isModLoaded("exnihilo")))
 		{
 			ItemStack builderswand = GameRegistry.findItemStack("ExtraUtilities", "builderswand", 1);
 
@@ -139,14 +140,28 @@ public class Main {
 					));
 			Main.log.info("Jaded added a recipe for the builders wand");
 		}
-		if (Loader.isModLoaded("Natura"))
+
+		if (Loader.isModLoaded("customnpcs")&& (Loader.isModLoaded("Thaumcraft")))
+		{
+
+			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.artifact,
+					"DXG",
+					"ASR",
+					'D', Parts.demoningot,
+					'G', Parts.goldcoin,
+					'A', Parts.amethyst,
+					'S', Parts.saphire,
+					'R', Parts.ruby
+					));
+		}
+		if (Loader.isModLoaded("Natura") && (Loader.isModLoaded("exnihilo")))
 		{
 			ItemStack wartbag = GameRegistry.findItemStack("Natura", "wartbag", 1);
 			RecipeRemover.removeAnyRecipe(wartbag);
 			Main.log.info("Jaded removed wart bags, they were creepy");
 		}
 
-		if (Loader.isModLoaded("AgriCraft"))
+		if (Loader.isModLoaded("AgriCraft") && (Loader.isModLoaded("exnihilo")))
 		{
 			//Cheaper Journal Recipe
 			ItemStack journal = GameRegistry.findItemStack("AgriCraft", "journal", 1);
@@ -162,7 +177,7 @@ public class Main {
 					));
 			Main.log.info("Alternative journal recipe loaded");
 		}
-		if (Loader.isModLoaded("progressiveautomation"))
+		if (Loader.isModLoaded("progressiveautomation") && (Loader.isModLoaded("exnihilo")))
 		{
 			//Cheaper CobbleGen
 			ItemStack cobblegen = GameRegistry.findItemStack("progressiveautomation", "CobbleUpgrade", 1);

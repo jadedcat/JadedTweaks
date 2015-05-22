@@ -199,11 +199,14 @@ public class Parts {
 			gearEnderium = new ItemStack(teMaterial, 1, 140);
 			platinumIngot = new ItemStack(teMaterial,2, 69);
 
+			Item teOre = GameRegistry.findItem("ThermalFoundation", "Ore");
+
+			mithrilOre  = new ItemStack(teOre, 1, 6);
+			tfOre  = new ItemStack(teOre, 1, 5); //platinum
+			tinOre  = new ItemStack(teOre, 1, 1);
+			silverOre  = new ItemStack(teOre, 1, 2);
+
 			richslag = new ItemStack(GameRegistry.findItem("ThermalExpansion", "material"), 1, 515);
-			mithrilOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "Ore"), 1, 6);
-			tfOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "Ore"), 1, 5);
-			tinOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "Ore"), 1, 1);
-			silverOre = new ItemStack(GameRegistry.findItem("ThermalFoundation", "Ore"), 1, 2);
 			manabucket = new ItemStack(GameRegistry.findItem("ThermalFoundation", "bucket"), 1, 5);
 		}
 		if (Loader.isModLoaded("SolarFlux"))
