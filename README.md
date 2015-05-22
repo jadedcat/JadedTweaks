@@ -4,7 +4,7 @@ That said, do whatever you want. Call it yours, give it a name, pet it, feed it 
 Don't care. 
 
 =====================================
-Theoretically this mod "should" only require Forge. However it won't do much if just Forge is installed. When specific mods or ores or combinations are detected it will load the changes.
+Theoretically this mod "should" only require Forge. However it won't do much if just Forge is installed. When specific mods or ores or combinations are detected it will load the changes. I make no promises it will work outside my packs. 
 
 
 
