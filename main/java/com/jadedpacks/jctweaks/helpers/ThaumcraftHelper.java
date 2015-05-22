@@ -34,7 +34,7 @@ public class ThaumcraftHelper {
 
 	public static void init()
 	{
-		if (Loader.isModLoaded("ThaumCraft"))
+		if (Loader.isModLoaded("Thaumcraft"))
 		{
 			removeRecipes();
 			setupResearch();
