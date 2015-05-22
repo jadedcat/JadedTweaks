@@ -15,28 +15,28 @@ Theoretically this mod "should" only require Forge. However it won't do much if 
 
 
 ----------Mod based changes:----------
--Botania + ExNihilo - removes Terraform wand (giant piles of dirt not good in skyblock)
--ExtraUtilities + ExNihilo - adds a cheaper recipe for the basic builder's wand
+- Botania + ExNihilo - removes Terraform wand (giant piles of dirt not good in skyblock)
+- ExtraUtilities + ExNihilo - adds a cheaper recipe for the basic builder's wand
 - Natura + AgriCraft - removes seed bags
 - Agricraft + ExNihilo - adds a cheaper journal recipe
--Progressive Automation + Iguana Tweaks- adds a cobblegen upgrade recipe using clay buckets 
+- Progressive Automation + Iguana Tweaks- adds a cobblegen upgrade recipe using clay buckets 
 - BloodMagic + ExNihilo - adds spawn egg recipes
 - BloodMagic + HQM - adds a heart recipe
 - BloodMagic + ExNihilo - adds a cheaper sacrificial knife and altar recipe using flint
--Harvestcraft+IguanaTinkerTweaks - adds claybucket recipe for fresh water
+- Harvestcraft+IguanaTinkerTweaks - adds claybucket recipe for fresh water
 - Harvestcraft + Botania - adds flour recipes to the botania mortar
 - Harvestcraft - adds a recipe for potato flour
 - MFR+ Thaumcraft or RedstoneArsenal or ThermalExpansion or TiConstruct or Botania in any combination - changes the machine upgrade recipes
 - ThermalExpansion - adds a recipe for Mithril ore
--SolarFlux+ThermalExpansion - changes the mirror recipe to use silver
--TinkersConstruct+ Thaumcraft - adds recipes for heart canisters
--TConstruct+ExtraUtilities - makes spikes require a smeltery for metal
--Harvestcraft + IguanaTinkerTweaks - makes the pot and saucepan use a smeltery for crafting.
--TConstruct + AE2 - uses the wooden gear for making the gear cast.
+- SolarFlux+ThermalExpansion - changes the mirror recipe to use silver
+- TinkersConstruct+ Thaumcraft - adds recipes for heart canisters
+- TConstruct+ExtraUtilities - makes spikes require a smeltery for metal
+- Harvestcraft + IguanaTinkerTweaks - makes the pot and saucepan use a smeltery for crafting.
+- TConstruct + AE2 - uses the wooden gear for making the gear cast.
 - Thaumcraft - adds a new aspect 
--Thaumcraft + RecallStones - changes the recall stone recipes to use arcane crafting
--Thaumcraft + ExNihilo + ForbiddenMagic - adds crucible recipes for FM shards
--Thaumcraft + CustomNpcs - adds recipes for some items, used for quests in AS2.
+- Thaumcraft + RecallStones - changes the recall stone recipes to use arcane crafting
+- Thaumcraft + ExNihilo + ForbiddenMagic - adds crucible recipes for FM shards
+- Thaumcraft + CustomNpcs - adds recipes for some items, used for quests in AS2.
 
 
 ---------Vanilla Changes ----------
