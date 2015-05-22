@@ -80,7 +80,7 @@ public class Parts {
 		goldingot = GameRegistry.findItemStack("minecraft", "gold_ingot", 0);
 		bed = GameRegistry.findItemStack("minecraft", "bed", 0);
 		tnt = GameRegistry.findItemStack("minecraft", "tnt", 0);
-		slimeball = GameRegistry.findItemStack("minecraft", "slimeball", 0);
+		slimeball = GameRegistry.findItemStack("minecraft", "slime_ball", 0);
 
 		if (Loader.isModLoaded("recallstones"))
 		{
@@ -141,7 +141,7 @@ public class Parts {
 			claywater = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketWater", 1);
 			pot = GameRegistry.findItemStack("harvestcraft", "potItem", 1);
 			saucepan = GameRegistry.findItemStack("harvestcraft", "saucepanItem", 1);
-			beefwellington = GameRegistry.findItemStack("harvescraft", "beefwellingtonItem", 0);
+			beefwellington = GameRegistry.findItemStack("harvestcraft", "beefwellingtonItem", 0);
 
 		}
 
@@ -251,7 +251,7 @@ public class Parts {
 			ruby = GameRegistry.findItemStack("customnpcs", "npcRuby", 1);
 			goldcoin = GameRegistry.findItemStack("customnpcs", "npcCoinGold", 1);
 			artifact = GameRegistry.findItemStack("customnpcs", "npcArtifact", 1);
-			ocarina = GameRegistry.findItemStack("customnpcs", "ocarina", 1);
+			ocarina = GameRegistry.findItemStack("customnpcs", "npcOcarina", 1);
 
 		}
 		if (Loader.isModLoaded("AWWayofTime"))
