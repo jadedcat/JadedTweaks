@@ -139,7 +139,7 @@ public class ThaumcraftHelper {
 					(Parts.gluttonShard))).setPages(new ResearchPage[]
 							{ new ResearchPage("jctweaks.research_page.SINFULL"), new ResearchPage((CrucibleRecipe)
 									ThaumcraftApi.addCrucibleRecipe("SINFULL", Parts.wrathShard, Parts.tnt, (new AspectList()).add(Aspect.ENTROPY, 5).add(Aspect.SOUL, 3).add(Aspect.EXCHANGE, 3))),
-									new ResearchPage((CrucibleRecipe) ThaumcraftApi.addCrucibleRecipe("SINFULL", Parts.envyShard, Parts.tnt, (new AspectList()).add(Aspect.GREED, 5).add(Aspect.SOUL, 3).add(Aspect.EXCHANGE, 3))),
+									new ResearchPage((CrucibleRecipe) ThaumcraftApi.addCrucibleRecipe("SINFULL", Parts.envyShard, Parts.stone, (new AspectList()).add(Aspect.GREED, 5).add(Aspect.SOUL, 3).add(Aspect.EXCHANGE, 3))),
 									new ResearchPage((CrucibleRecipe) ThaumcraftApi.addCrucibleRecipe("SINFULL", Parts.taintShard, Parts.slimeball, (new AspectList()).add(Aspect.TAINT, 5).add(Aspect.SOUL, 3).add(Aspect.EXCHANGE, 3))),
 									new ResearchPage((CrucibleRecipe) ThaumcraftApi.addCrucibleRecipe("SINFULL", Parts.prideShard, Parts.diamond, (new AspectList()).add(Aspect.GREED, 5).add(Aspect.SOUL, 3).add(Aspect.EXCHANGE, 3))),
 									new ResearchPage((CrucibleRecipe) ThaumcraftApi.addCrucibleRecipe("SINFULL", Parts.lustShard, Parts.leather, (new AspectList()).add(Aspect.AURA, 5).add(Aspect.SOUL, 3).add(Aspect.EXCHANGE, 3))),
@@ -154,9 +154,9 @@ public class ThaumcraftHelper {
 			(new JCResearchItem("ULTIMATE", "AGRIMANCY", (new AspectList()).add(Aspect.BEAST, 20).add(Aspect.SOUL, 20).add(Aspect.ENERGY, 20), 1, -1, 2,
 					(Parts.diamond))).setPages(new ResearchPage[]
 							{ new ResearchPage("jctweaks.research_page.ULTIMATE"), new ResearchPage((CrucibleRecipe)
-									ThaumcraftApi.addCrucibleRecipe("ULTIMATE", Parts.goldcoin, Parts.goldingot, (new AspectList()).add(Aspect.MAGIC, 5).add(Aspect.GREED, 3).add(Aspect.EXCHANGE, 3)))}).setParents(new String[] { "RESEARCH" }).registerResearchItem();
-			new ResearchPage((IArcaneRecipe) ThaumcraftApi.addArcaneCraftingRecipe("ULTIMATE", Parts.ruby, (new AspectList()).add(Aspect.FIRE, 100).add(Aspect.ORDER, 50), "SES", "EFE", "SES", Character.valueOf('S'), Parts.stone, Character.valueOf('E'), Parts.epearl, Character.valueOf('F'), Parts.fireelement));
-			new ResearchPage((InfusionRecipe) ThaumcraftApi.addInfusionCraftingRecipe("ULTIMATE", Parts.ocarina, 2, (new AspectList()).add(Aspect.AURA, 100).add(Aspect.ORDER, 100), Parts.artifact, new ItemStack [] {Parts.npcmana, Parts.npcmana}));
+									ThaumcraftApi.addCrucibleRecipe("ULTIMATE", Parts.goldcoin, Parts.goldingot, (new AspectList()).add(Aspect.MAGIC, 5).add(Aspect.GREED, 3).add(Aspect.EXCHANGE, 3))),
+									new ResearchPage((IArcaneRecipe) ThaumcraftApi.addArcaneCraftingRecipe("ULTIMATE", Parts.ruby, (new AspectList()).add(Aspect.FIRE, 100).add(Aspect.ORDER, 50), "SES", "EFE", "SES", Character.valueOf('S'), Parts.stone, Character.valueOf('E'), Parts.epearl, Character.valueOf('F'), Parts.fireelement)),
+									new ResearchPage((InfusionRecipe) ThaumcraftApi.addInfusionCraftingRecipe("ULTIMATE", Parts.ocarina, 2, (new AspectList()).add(Aspect.AURA, 100).add(Aspect.ORDER, 100), Parts.artifact, new ItemStack [] {Parts.npcmana, Parts.npcmana}))}).setParents(new String[] { "RESEARCH" }).registerResearchItem();
 		}
 
 	}

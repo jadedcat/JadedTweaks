@@ -48,7 +48,7 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 public class Main {
 	public static final String MODID = "JCTweaks";
 	public static final String NAME = "JCTweaks";
-	public static final String VERSION = "1.32";
+	public static final String VERSION = "1.35";
 	public static final Logger log = LogManager.getLogger(MODID);
 
 	@Mod.EventHandler
