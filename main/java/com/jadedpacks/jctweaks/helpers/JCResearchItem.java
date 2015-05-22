@@ -29,6 +29,6 @@ public class JCResearchItem extends ResearchItem {
 
     @SideOnly(Side.CLIENT)
     public String getText() {
-        return StatCollector.translateToLocal("jctwweaks.research_text." + key);
+        return StatCollector.translateToLocal("jctweaks.research_text." + key);
     }
 }
