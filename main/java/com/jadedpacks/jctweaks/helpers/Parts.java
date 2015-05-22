@@ -129,6 +129,7 @@ public class Parts {
 			spikegold1 = GameRegistry.findItemStack("ExtraUtilities", "spike_base_gold", 1);
 			spikeiron = GameRegistry.findItemStack("ExtraUtilities", "spike_base", 4);
 			spikeiron1 = GameRegistry.findItemStack("ExtraUtilities", "spike_base", 1);
+			magnumtorch = GameRegistry.findItemStack("ExtraUtilities", "magnumTorch", 1);
 
 		}
 		if (Loader.isModLoaded("harvestcraft"))
