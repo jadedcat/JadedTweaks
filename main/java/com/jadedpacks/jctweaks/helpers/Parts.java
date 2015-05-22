@@ -209,6 +209,9 @@ public class Parts {
 
 			richslag = new ItemStack(GameRegistry.findItem("ThermalExpansion", "material"), 1, 515);
 			manabucket = new ItemStack(GameRegistry.findItem("ThermalFoundation", "bucket"), 1, 5);
+			dynamo = new ItemStack(GameRegistry.findItem("ThermalExpansion", "Dynamo"), 1, 0);
+			OreDictionary.registerOre("dynamo", Parts.dynamo);
+
 		}
 		if (Loader.isModLoaded("SolarFlux"))
 		{
@@ -262,6 +265,8 @@ public class Parts {
 
 		}
 	}
+	//-------Test------------
+	public static ItemStack dynamo;
 	//---------Recall Stones--------
 	public static ItemStack recallStone;
 	public static ItemStack dimensionStone;
