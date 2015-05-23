@@ -19,8 +19,4 @@ api
 out
 *.iml
 *.iws
-<<<<<<< HEAD
 *.ipr
-=======
-*.ipr
->>>>>>> origin/master
