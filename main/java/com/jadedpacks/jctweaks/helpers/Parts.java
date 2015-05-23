@@ -329,6 +329,7 @@ public class Parts {
 		{
 			knife = GameRegistry.findItemStack("AWWayofTime", "sacrificialKnife", 1);
 			altar = GameRegistry.findItemStack("AWWayofTime", "Altar", 1);
+			lifebucket = GameRegistry.findItemStack("AWWayofTime", "bucketLife", 1);
 
 
 		}
@@ -415,6 +416,7 @@ public class Parts {
 	public static ItemStack furnace;
 	public static ItemStack altar;
 	public static ItemStack searedbrick;
+	public static ItemStack lifebucket;
 	//-----------CustomNPCs---------
 	public static ItemStack fireelement;
 	public static ItemStack waterelement;

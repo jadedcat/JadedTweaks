@@ -43,7 +43,7 @@ public class BloodMagicHelper {
 			AltarRecipeRegistry.registerAltarRecipe(Parts.spawnPig, Parts.wool2, 2, 7000, 2, 2, false);
 		}
 		if (Parts.manabucket !=null) {
-			AltarRecipeRegistry.registerAltarRecipe(Parts.manabucket, Parts.bucket, 2, 3000, 2, 2, false);
+			AltarRecipeRegistry.registerAltarRecipe(Parts.manabucket, Parts.lifebucket, 2, 2000, 2, 2, false);
 		}
 		Main.log.info("Jaded added spawn recipes");
 	}
