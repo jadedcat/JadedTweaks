@@ -7,8 +7,9 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import tconstruct.library.TConstructRegistry;
+import tconstruct.library.crafting.DryingRackRecipes;
 import tconstruct.library.crafting.LiquidCasting;
-//import tconstruct.library.crafting.DryingRackRecipes.DryingRecipe;
+import tconstruct.library.crafting.DryingRackRecipes.DryingRecipe;
 
 import com.jadedpacks.jctweaks.Main;
 import com.jadedpacks.jctweaks.helpers.Parts;
@@ -59,12 +60,12 @@ public class TinkersConstructHelper {
 				'H', Parts.heart3,
 				'C', Parts.heart2
 				));
-		//add recipe for heart 5(green) and heart3 (yellow)  heart1(red) heart 2 (base)
 
 
 		if (Loader.isModLoaded("harvestcraft"))
 		{
 			//add listAllfruit to drying rack
+			//DryingRackRecipes.addDryingRecipe(Parts.fruit1, 10, Parts.raisins);
 		}
 
 		if (Loader.isModLoaded("ExtraUtilities"))
@@ -81,6 +82,14 @@ public class TinkersConstructHelper {
 			tableCasting.addCastingRecipe(Parts.spikediamond1, Parts.tcardite, Parts.spikegold1, true, 80);
 			Main.log.info("Jaded made spikes need a smeltery");
 
+		}
+		if (Loader.isModLoaded("appliedenergistics2"))
+		{
+			LiquidCasting tableCasting = TConstructRegistry.instance.getTableCasting();
+			tableCasting.addCastingRecipe(Parts.press1, Parts.tclead, null, true, 80);
+			tableCasting.addCastingRecipe(Parts.press2, Parts.tctin, null, true, 80);
+			tableCasting.addCastingRecipe(Parts.press3, Parts.tccopper, null, true, 80);
+			tableCasting.addCastingRecipe(Parts.press4, Parts.tcnickel, null, true, 80);
 		}
 
 		if (Loader.isModLoaded("harvestcraft") && (Loader.isModLoaded("IguanaTweaksTConstruct")))
