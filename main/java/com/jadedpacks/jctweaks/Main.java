@@ -12,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.jadedpacks.jctweaks.helpers.BloodMagicHelper;
 import com.jadedpacks.jctweaks.helpers.BotaniaHelper;
+import com.jadedpacks.jctweaks.helpers.ExNihiloHelper;
 import com.jadedpacks.jctweaks.helpers.FurnaceHelper;
 import com.jadedpacks.jctweaks.helpers.HarvestCraftHelper;
 import com.jadedpacks.jctweaks.helpers.MFRHelper;
@@ -39,6 +40,7 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 		"after:harvestcraft;" +
 		"after:AWWayofTime;" +
 		"after:customnpcs;" +
+		"after:AgriCraft;" +
 		"after:Botania;" +
 		"after:exnihilo;" +
 		"after:ThermalFoundation;" +
@@ -48,7 +50,7 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 public class Main {
 	public static final String MODID = "JCTweaks";
 	public static final String NAME = "JCTweaks";
-	public static final String VERSION = "1.37";
+	public static final String VERSION = "1.40";
 	public static final Logger log = LogManager.getLogger(MODID);
 
 	@Mod.EventHandler
@@ -64,6 +66,7 @@ public class Main {
 		HarvestCraftHelper.preInit();
 		FurnaceHelper.preInit();
 		CustomNpcsHelper.preInit();
+		ExNihiloHelper.preInit();
 	}
 	@Mod.EventHandler
 	public void init (FMLInitializationEvent event)
@@ -81,6 +84,7 @@ public class Main {
 		HarvestCraftHelper.init();
 		FurnaceHelper.init();
 		CustomNpcsHelper.init();
+		ExNihiloHelper.init();
 
 		if (OreDictionary.getOres("oreTin").size() > 0)
 		{
@@ -210,6 +214,7 @@ public class Main {
 		HarvestCraftHelper.postInit();
 		FurnaceHelper.postInit();
 		CustomNpcsHelper.postInit();
+		ExNihiloHelper.postInit();
 	}
 
 	@Mod.EventHandler

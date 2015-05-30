@@ -99,7 +99,7 @@ public class ThaumcraftHelper {
 			(new JCResearchItem("DIMENSIONSTONE", "AGRIMANCY", (new AspectList()).add(Aspect.ELDRITCH, 3).add(Aspect.MOTION, 2), 2, -1, 2,
 					(Parts.dimensionStone))).setPages(new ResearchPage[]
 							{ new ResearchPage("jctweaks.research_page.DIMENSIONSTONE"), new ResearchPage((IArcaneRecipe)
-									ThaumcraftApi.addArcaneCraftingRecipe("DIMENSIONSTONE", Parts.dimensionStone, (new AspectList()).add(Aspect.ELDRITCH, 5).add(Aspect.ORDER, 3), "BEB", "ERE", "BEB", Character.valueOf('B'), Parts.blazerod, Character.valueOf('E'), Parts.epearl, Character.valueOf('R'), Parts.recallStone)) }).setParents(new String[] { "RECALLSTONE" }).registerResearchItem();
+									ThaumcraftApi.addArcaneCraftingRecipe("DIMENSIONSTONE", Parts.dimensionStone, (new AspectList()).add(Aspect.ENTROPY, 5).add(Aspect.ORDER, 3), "BEB", "ERE", "BEB", Character.valueOf('B'), Parts.blazerod, Character.valueOf('E'), Parts.epearl, Character.valueOf('R'), Parts.recallStone)) }).setParents(new String[] { "RECALLSTONE" }).registerResearchItem();
 
 		}
 

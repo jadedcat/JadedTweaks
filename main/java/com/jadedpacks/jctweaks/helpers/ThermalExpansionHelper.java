@@ -32,17 +32,6 @@ public class ThermalExpansionHelper {
 
 	private static void removeRecipes() {
 
-
-		//if (Loader.isModLoaded("SolarFlux"))
-		//{
-		//RecipeRemover.removeAnyRecipe(Parts.mirror);
-		//}
-
-
-
-
-
-
 		if (Loader.isModLoaded("Forestry"))
 		{
 			RecipeRemover.removeAnyRecipe(Parts.copperBlock);
