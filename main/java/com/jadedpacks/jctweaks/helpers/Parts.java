@@ -121,7 +121,7 @@ public class Parts {
 		lapis = GameRegistry.findItem("minecraft", "dye");
 		gemDiamond = GameRegistry.findItem("minecraft", "diamond");
 		gemEmerald = GameRegistry.findItem("minecraft", "emerald");
-		//bucketwater = GameRegistry.findItemStack("minecraft", "water_bucket", 1);
+		bucketwater = GameRegistry.findItemStack("minecraft", "water_bucket", 1);
 
 		dirt = GameRegistry.findBlock("minecraft", "dirt");
 		podzol = GameRegistry.findBlock("minecraft", "dirt");
@@ -237,6 +237,7 @@ public class Parts {
 			raisins = GameRegistry.findItemStack("harvestcraft", "raisinsItem", 1);
 			flour = GameRegistry.findItemStack("harvestcraft", "flourItem", 1);
 			freshwater = GameRegistry.findItemStack("harvestcraft", "freshwaterItem", 4);
+			fwater = GameRegistry.findItemStack("harvestcraft", "freshwaterItem", 1);
 			claywater = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketWater", 1);
 			pot = GameRegistry.findItemStack("harvestcraft", "potItem", 1);
 			saucepan = GameRegistry.findItemStack("harvestcraft", "saucepanItem", 1);
@@ -460,6 +461,8 @@ public class Parts {
 
 
 	//-------AgSkies------------
+	public static ItemStack bucketwater;
+	public static ItemStack fwater;
 	public static ItemStack podzolitem;
 	public static ItemStack piston;
 	public static Item yellorium;
