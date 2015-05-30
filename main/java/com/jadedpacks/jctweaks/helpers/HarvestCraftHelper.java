@@ -1,5 +1,6 @@
 package com.jadedpacks.jctweaks.helpers;
 
+import mantle.utils.RecipeRemover;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
@@ -36,12 +37,14 @@ public class HarvestCraftHelper {
 	private static void addRecipes()
 
 	{
-		if (Parts.claywater !=null)
+		if (Parts.freshwater !=null)
 		{
+			RecipeRemover.removeAnyRecipe(Parts.freshwater);
 			GameRegistry.addRecipe(Parts.freshwater,
 					"F",
-					'F', Parts.claywater
+					'F', "listAllwater"
 					);
+			//GameRegistry.addRecipe(new ShapelessOreRecipe(Parts.freshwater, "listAllWater"));
 		}
 
 		if (Loader.isModLoaded("Botania"))

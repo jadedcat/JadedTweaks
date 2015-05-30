@@ -23,8 +23,33 @@ public class Parts {
 		getFluids();
 	}
 
-	public static void postInit(){}
+	public static void postInit(){
 
+		getBotaniaseeds();
+	}
+
+	private static void getBotaniaseeds() {
+
+		if (Loader.isModLoaded("AgriCraft")&& (Loader.isModLoaded("Botania")))
+		{
+			bwhite = GameRegistry.findItem("AgriCraft", "seedBotaniaWhite");
+			bmagenta = GameRegistry.findItem("AgriCraft", "seedBotaniaMagenta");
+			blightblue = GameRegistry.findItem("AgriCraft", "seedBotaniaLightBlue");
+			byellow = GameRegistry.findItem("AgriCraft", "seedBotaniaYellow");
+			blime = GameRegistry.findItem("AgriCraft", "seedBotaniaLime");
+			bpink = GameRegistry.findItem("AgriCraft", "seedBotaniaPink");
+			bgray = GameRegistry.findItem("AgriCraft", "seedBotaniaGray");
+			blightgray = GameRegistry.findItem("AgriCraft", "seedBotaniaLightGray");
+			bcyan = GameRegistry.findItem("AgriCraft", "seedBotaniaCyan");
+			bpurple = GameRegistry.findItem("AgriCraft", "seedBotaniaPurple");
+			bblue = GameRegistry.findItem("AgriCraft", "seedBotaniaBlue");
+			bbrown = GameRegistry.findItem("AgriCraft", "seedBotaniaBrown");
+			bgreen = GameRegistry.findItem("AgriCraft", "seedBotaniaGreen");
+			bred = GameRegistry.findItem("AgriCraft", "seedBotaniaRed");
+			bblack = GameRegistry.findItem("AgriCraft", "seedBotaniaBlack");
+		}
+
+	}
 	public static void getFluids() {
 
 		if (Loader.isModLoaded("TConstruct"))
@@ -60,6 +85,8 @@ public class Parts {
 	}
 	public static void getItems() {
 
+
+
 		Item spawn = GameRegistry.findItem("minecraft", "spawn_egg");
 		spawnCow   = new ItemStack(spawn, 1, 92);
 		spawnChicken   = new ItemStack(spawn, 1, 93);
@@ -91,10 +118,18 @@ public class Parts {
 		slimeball = GameRegistry.findItemStack("minecraft", "slime_ball", 0);
 		redstone = GameRegistry.findItem("minecraft", "redstone");
 		glowstone = GameRegistry.findItem("minecraft", "glowstone_dust");
+		lapis = GameRegistry.findItem("minecraft", "dye");
+		gemDiamond = GameRegistry.findItem("minecraft", "diamond");
+		gemEmerald = GameRegistry.findItem("minecraft", "emerald");
+		//bucketwater = GameRegistry.findItemStack("minecraft", "water_bucket", 1);
 
 		dirt = GameRegistry.findBlock("minecraft", "dirt");
 		podzol = GameRegistry.findBlock("minecraft", "dirt");
 		snow = GameRegistry.findBlock("minecraft", "snow");
+		gravel = GameRegistry.findBlock("minecraft", "gravel");
+		sand = GameRegistry.findBlock("minecraft", "sand");
+		podzolitem =new ItemStack(GameRegistry.findItem("minecraft", "dirt"), 1, 2);
+		piston =GameRegistry.findItemStack("minecraft", "piston", 1);
 
 		soulsand = GameRegistry.findBlock("minecraft", "soul_sand");
 		ghast = GameRegistry.findItem("minecraft", "ghast_tear");
@@ -197,7 +232,7 @@ public class Parts {
 
 		}
 		if (Loader.isModLoaded("harvestcraft"))
-			//for (ItemStack seeds : OreDictionary.getOres("listAllseeds"))
+
 		{
 			raisins = GameRegistry.findItemStack("harvestcraft", "raisinsItem", 1);
 			flour = GameRegistry.findItemStack("harvestcraft", "flourItem", 1);
@@ -370,25 +405,11 @@ public class Parts {
 
 			platDust = new ItemStack(GameRegistry.findItem("exnihilo", "platinum_dust"), 1, 2);
 			crnether = GameRegistry.findBlock("exnihilo", "exnihilo.gravel_nether");
-			heatsand = GameRegistry.findBlock("Natura", "heatsand");
 
-			if (Loader.isModLoaded("AgriCraft")&& (Loader.isModLoaded("Botania")))
+
+			if (Loader.isModLoaded("AgriCraft"))
 			{
-				bwhite = GameRegistry.findItem("AgriCraft", "seedBotaniaWhite");
-				bmagenta = GameRegistry.findItem("AgriCraft", "seedBotaniaMagenta");
-				blightblue = GameRegistry.findItem("AgriCraft", "seedBotaniaLightBlue");
-				byellow = GameRegistry.findItem("AgriCraft", "seedBotaniaYellow");
-				blime = GameRegistry.findItem("AgriCraft", "seedBotaniaLime");
-				bpink = GameRegistry.findItem("AgriCraft", "seedBotaniaPink");
-				bgray = GameRegistry.findItem("AgriCraft", "seedBotaniaGray");
-				blightgray = GameRegistry.findItem("AgriCraft", "seedBotaniaLightGray");
-				bcyan = GameRegistry.findItem("AgriCraft", "seedBotaniaCyan");
-				bpurple = GameRegistry.findItem("AgriCraft", "seedBotaniaPurple");
-				bblue = GameRegistry.findItem("AgriCraft", "seedBotaniaBlue");
-				bbrown = GameRegistry.findItem("AgriCraft", "seedBotaniaBrown");
-				bgreen = GameRegistry.findItem("AgriCraft", "seedBotaniaGreen");
-				bred = GameRegistry.findItem("AgriCraft", "seedBotaniaRed");
-				bblack = GameRegistry.findItem("AgriCraft", "seedBotaniaBlack");
+
 
 				cactus1 = GameRegistry.findItem("AgriCraft", "seedCactus");
 				sugarcane1 = GameRegistry.findItem("AgriCraft", "seedSugarcane");
@@ -401,6 +422,14 @@ public class Parts {
 				potato = GameRegistry.findItem("exnihilo", "seed_potato");
 			}
 		}
+
+		if (Loader.isModLoaded("Natura"))
+		{
+			heatsand = GameRegistry.findBlock("Natura", "heatsand");
+			topiary = GameRegistry.findItemStack("Natura", "GrassBlock", 1);
+		}
+
+		heatsand = GameRegistry.findBlock("Natura", "heatsand");
 		if (Loader.isModLoaded("customnpcs"))
 		{
 			fireelement = GameRegistry.findItemStack("customnpcs", "npcFireElement", 1);
@@ -427,7 +456,12 @@ public class Parts {
 
 		}
 	}
+
+
+
 	//-------AgSkies------------
+	public static ItemStack podzolitem;
+	public static ItemStack piston;
 	public static Item yellorium;
 	public static ItemStack dynamo;
 	public static ItemStack sieve0;
@@ -442,20 +476,16 @@ public class Parts {
 	public static ItemStack barrel3;
 	public static ItemStack barrel4;
 	public static ItemStack barrel5;
-	public static ItemStack stencil1;
-	public static ItemStack stencil2;
-	public static ItemStack stencil3;
-	public static ItemStack stencil4;
-	public static ItemStack toolstation;
-	public static ItemStack partbuilder;
-	public static ItemStack partbuilder2;
-	public static ItemStack partbuilder3;
-	public static ItemStack partbuilder4;
 	public static ItemStack watergen;
 	public static Block dirt;
 	public static Block podzol;
 	public static Block soulsand;
+	public static Block sand;
+	public static Block gravel;
+	public static Item lapis;
 	public static Item ghast;
+	public static Item gemDiamond;
+	public static Item gemEmerald;
 	public static Item bwhite;
 	public static Item bmagenta;
 	public static Item blightblue;
@@ -625,6 +655,16 @@ public class Parts {
 	public static ItemStack dapple;
 	public static ItemStack gearCast;
 	public static ItemStack necrotic;
+	public static ItemStack topiary;
+	public static ItemStack stencil1;
+	public static ItemStack stencil2;
+	public static ItemStack stencil3;
+	public static ItemStack stencil4;
+	public static ItemStack toolstation;
+	public static ItemStack partbuilder;
+	public static ItemStack partbuilder2;
+	public static ItemStack partbuilder3;
+	public static ItemStack partbuilder4;
 	//----------ExU Items------
 	public static ItemStack superwand;
 	public static ItemStack builderswand;
@@ -653,5 +693,8 @@ public class Parts {
 
 
 }
+
+
+
 
 
