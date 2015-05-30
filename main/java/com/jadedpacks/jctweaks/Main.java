@@ -22,6 +22,7 @@ import com.jadedpacks.jctweaks.helpers.ThermalExpansionHelper;
 import com.jadedpacks.jctweaks.helpers.TinkersConstructHelper;
 import com.jadedpacks.jctweaks.helpers.Parts;
 import com.jadedpacks.jctweaks.helpers.CustomNpcsHelper;
+import com.jadedpacks.jctweaks.helpers.Basic;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -50,7 +51,7 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 public class Main {
 	public static final String MODID = "JCTweaks";
 	public static final String NAME = "JCTweaks";
-	public static final String VERSION = "1.40";
+	public static final String VERSION = "1.42";
 	public static final Logger log = LogManager.getLogger(MODID);
 
 	@Mod.EventHandler
@@ -67,6 +68,7 @@ public class Main {
 		FurnaceHelper.preInit();
 		CustomNpcsHelper.preInit();
 		ExNihiloHelper.preInit();
+		Basic.preInit();
 	}
 	@Mod.EventHandler
 	public void init (FMLInitializationEvent event)
@@ -85,120 +87,9 @@ public class Main {
 		FurnaceHelper.init();
 		CustomNpcsHelper.init();
 		ExNihiloHelper.init();
+		Basic.init();
 
-		if (OreDictionary.getOres("oreTin").size() > 0)
-		{
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.bucket),
-					"IXI",
-					"XIX",
-					'I', "ingotTin"
-					));
-			Main.log.info("Alternative Bucket Recipe tin loaded");
-		}
-
-		if (OreDictionary.getOres("oreAluminum").size() > 0)
-		{
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.bucket),
-					"IXI",
-					"XIX",
-					'I', "ingotAluminum"
-					));
-			Main.log.info("Alternative Bucket Recipe aluminum loaded");
-		}
-
-		else if (OreDictionary.getOres("oreAluminium").size() > 0)
-		{
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.bucket),
-					"IXI",
-					"XIX",
-					'I', "ingotAluminium"
-					));
-			Main.log.info("Alternative Bucket aluminium Recipe loaded");
-		}
-		if (OreDictionary.getOres("oreCopper").size() > 0)
-		{
-			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.bucket),
-					"IXI",
-					"XIX",
-					'I', "ingotCopper"
-					));
-			Main.log.info("Alternative Bucket Recipe copper loaded");
-		}
-
-		if (Loader.isModLoaded("Botania") && (Loader.isModLoaded("exnihilo")))
-		{
-			//remove terraformRod
-			ItemStack terraformRod = GameRegistry.findItemStack("Botania", "terraformRod", 1);
-			RecipeRemover.removeAnyRecipe(terraformRod);
-		}
-		if (Loader.isModLoaded("ExtraUtilities")&& (Loader.isModLoaded("exnihilo")))
-		{
-			ItemStack builderswand = GameRegistry.findItemStack("ExtraUtilities", "builderswand", 1);
-
-			GameRegistry.addRecipe(new ShapedOreRecipe(builderswand,
-					"XXD",
-					"XDX",
-					"OXX",
-					'D', "gemDiamond",
-					'O', "obsidian"
-					));
-			Main.log.info("Jaded added a recipe for the builders wand");
-		}
-
-		if (Loader.isModLoaded("customnpcs")&& (Loader.isModLoaded("Thaumcraft")))
-		{
-
-			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.artifact,
-					"DXG",
-					"ASR",
-					'D', Parts.demoningot,
-					'G', Parts.goldcoin,
-					'A', Parts.amethyst,
-					'S', Parts.saphire,
-					'R', Parts.ruby
-					));
-		}
-		if (Loader.isModLoaded("Natura") && (Loader.isModLoaded("exnihilo")))
-		{
-			ItemStack wartbag = GameRegistry.findItemStack("Natura", "wartbag", 1);
-			RecipeRemover.removeAnyRecipe(wartbag);
-			Main.log.info("Jaded removed wart bags, they were creepy");
-		}
-
-		if (Loader.isModLoaded("AgriCraft") && (Loader.isModLoaded("exnihilo")))
-		{
-			//Cheaper Journal Recipe
-			ItemStack journal = GameRegistry.findItemStack("AgriCraft", "journal", 1);
-			ItemStack cropsticks = GameRegistry.findItemStack("AgriCraft", "cropsItem", 1);
-			RecipeRemover.removeAnyRecipe(journal);
-			GameRegistry.addRecipe(new ShapedOreRecipe(journal,
-					"CSC",
-					"SWS",
-					"CSC",
-					'C', cropsticks,
-					'S', "listAllseed",
-					'W', "plankWood"
-					));
-			Main.log.info("Alternative journal recipe loaded");
-		}
-		if (Loader.isModLoaded("progressiveautomation") && (Loader.isModLoaded("exnihilo")))
-		{
-			//Cheaper CobbleGen
-			ItemStack cobblegen = GameRegistry.findItemStack("progressiveautomation", "CobbleUpgrade", 1);
-			ItemStack miner = GameRegistry.findItemStack("progressiveautomation", "MinerStone", 1);
-			ItemStack lava = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketLava", 1);
-			GameRegistry.addRecipe(new ShapedOreRecipe((cobblegen),
-
-					"SSS",
-					"LMW",
-					"SSS",
-					'S', "stone",
-					'L', lava,
-					'M', miner,
-					'W', "listAllwater"
-					));
-			Main.log.info("cheaper cobble gen for the miner");
-		}}
+	}
 
 	@Mod.EventHandler
 	public void postInit (FMLPostInitializationEvent event)
@@ -215,6 +106,7 @@ public class Main {
 		FurnaceHelper.postInit();
 		CustomNpcsHelper.postInit();
 		ExNihiloHelper.postInit();
+		Basic.postInit();
 	}
 
 	@Mod.EventHandler
