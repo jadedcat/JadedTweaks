@@ -39,12 +39,19 @@ public class HarvestCraftHelper {
 	{
 		if (Parts.freshwater !=null)
 		{
+			RecipeRemover.removeAnyRecipe(Parts.fwater);
 			RecipeRemover.removeAnyRecipe(Parts.freshwater);
 			GameRegistry.addRecipe(Parts.freshwater,
 					"F",
-					'F', "listAllwater"
+					'F', Parts.claywater
 					);
-			//GameRegistry.addRecipe(new ShapelessOreRecipe(Parts.freshwater, "listAllWater"));
+
+			GameRegistry.addRecipe(Parts.freshwater,
+					"B",
+					'B', Parts.bucketwater
+					);
+			//GameRegistry.addRecipe(new ShapelessOreRecipe(Parts.freshwater.copy(), "listAllWater"));
+
 		}
 
 		if (Loader.isModLoaded("Botania"))
