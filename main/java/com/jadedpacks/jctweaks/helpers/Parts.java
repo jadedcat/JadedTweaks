@@ -1,7 +1,11 @@
 package com.jadedpacks.jctweaks.helpers;
 
+import java.util.ArrayList;
+
 import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.registry.GameData;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -29,6 +33,10 @@ public class Parts {
 			tcgold = FluidRegistry.getFluidStack("gold.molten", 720);
 			tcbronze = FluidRegistry.getFluidStack("bronze.molten", 144);
 			tcardite = FluidRegistry.getFluidStack("ardite.molten", 144);
+			tclead = FluidRegistry.getFluidStack("lead.molten", 144);
+			tctin = FluidRegistry.getFluidStack("tin.molten", 144);
+			tccopper = FluidRegistry.getFluidStack("copper.molten", 144);
+			tcnickel = FluidRegistry.getFluidStack("nickel.molten", 144);
 			tcemerald = FluidRegistry.getFluidStack("emerald.liquid", 288);
 
 			if (OreDictionary.getOres("oreAluminum").size() > 0)
@@ -81,6 +89,16 @@ public class Parts {
 		bed = GameRegistry.findItemStack("minecraft", "bed", 0);
 		tnt = GameRegistry.findItemStack("minecraft", "tnt", 0);
 		slimeball = GameRegistry.findItemStack("minecraft", "slime_ball", 0);
+		redstone = GameRegistry.findItem("minecraft", "redstone");
+		glowstone = GameRegistry.findItem("minecraft", "glowstone_dust");
+
+		dirt = GameRegistry.findBlock("minecraft", "dirt");
+		podzol = GameRegistry.findBlock("minecraft", "dirt");
+		snow = GameRegistry.findBlock("minecraft", "snow");
+
+		soulsand = GameRegistry.findBlock("minecraft", "soul_sand");
+		ghast = GameRegistry.findItem("minecraft", "ghast_tear");
+
 
 		if (Loader.isModLoaded("recallstones"))
 		{
@@ -113,73 +131,53 @@ public class Parts {
 			upgradeMSteel   = new ItemStack(mfrUpgrade, 1, 10);
 		}
 
+		if (Loader.isModLoaded("appliedenergistics2"))
+		{
+			k = GameRegistry.findItemStack("appliedenergistics2", "item.ItemBasicStorageCell.1k", 1);
+			kessentia = new ItemStack(GameRegistry.findItem("thaumicenergistics", "storage.essentia"), 1, 0);
+
+			OreDictionary.registerOre("basestoragecell", Parts.k);
+			OreDictionary.registerOre("essentiastorage", Parts.kessentia);
+
+			Item press = GameRegistry.findItem("appliedenergistics2", "item.ItemMultiMaterial");
+			press1 = new ItemStack (press, 1, 13);
+			press2 = new ItemStack (press, 1, 14);
+			press3 = new ItemStack (press, 1, 15);
+			press4 = new ItemStack (press, 1, 19);
+		}
+
 		if (Loader.isModLoaded("HardcoreQuesting"))
 		{
 			hearts = new ItemStack(GameRegistry.findItem("HardcoreQuesting", "hearts"), 1, 3);
-			dynamo = new ItemStack(GameRegistry.findItem("ThermalExpansion", "Dynamo"), 1, 0);
-			OreDictionary.registerOre("dynamo", Parts.dynamo);
-
-			watergen = new ItemStack(GameRegistry.findItem("ThermalExpansion", "Machine"), 1, 8);
-			OreDictionary.registerOre("watergenTE", Parts.watergen);
 
 
-			Item sieve = GameRegistry.findItem("exnihilo", "sifting_table");
-			sieve0  = new ItemStack(sieve, 1, 0);
-			sieve1  = new ItemStack(sieve, 1, 1);
-			sieve2  = new ItemStack(sieve, 1, 2);
-			sieve3  = new ItemStack(sieve, 1, 3);
-			sieve4  = new ItemStack(sieve, 1, 4);
-			sieve5  = new ItemStack(sieve, 1, 5);
+			if (Loader.isModLoaded("TConstruct"))
+			{
+				Item ToolTable = GameRegistry.findItem("TConstruct", "ToolStationBlock");
+				stencil1  = new ItemStack(ToolTable, 1, 10);
+				stencil2  = new ItemStack(ToolTable, 1, 11);
+				stencil3  = new ItemStack(ToolTable, 1, 12);
+				stencil4  = new ItemStack(ToolTable, 1, 13);
+				toolstation  = new ItemStack(ToolTable, 1, 0);
+				partbuilder  = new ItemStack(ToolTable, 1, 1);
+				partbuilder2  = new ItemStack(ToolTable, 1, 2);
+				partbuilder3  = new ItemStack(ToolTable, 1, 3);
+				partbuilder4  = new ItemStack(ToolTable, 1, 4);
 
 
+				OreDictionary.registerOre("stenciltable", Parts.stencil1);
+				OreDictionary.registerOre("stenciltable", Parts.stencil2);
+				OreDictionary.registerOre("stenciltable", Parts.stencil3);
+				OreDictionary.registerOre("stenciltable", Parts.stencil4);
 
-			Item barrel = GameRegistry.findItem("exnihilo", "barrel");
-			barrel0  = new ItemStack(barrel, 1, 0);
-			barrel1  = new ItemStack(barrel, 1, 1);
-			barrel2  = new ItemStack(barrel, 1, 2);
-			barrel3  = new ItemStack(barrel, 1, 3);
-			barrel4  = new ItemStack(barrel, 1, 4);
-			barrel5  = new ItemStack(barrel, 1, 5);
+				OreDictionary.registerOre("toolstation", Parts.toolstation);
 
+				OreDictionary.registerOre("partbuilder", Parts.partbuilder);
+				OreDictionary.registerOre("partbuilder", Parts.partbuilder2);
+				OreDictionary.registerOre("partbuilder", Parts.partbuilder3);
+				OreDictionary.registerOre("partbuilder", Parts.partbuilder4);
+			}
 
-			Item ToolTable = GameRegistry.findItem("TConstruct", "ToolStationBlock");
-			stencil1  = new ItemStack(ToolTable, 1, 10);
-			stencil2  = new ItemStack(ToolTable, 1, 11);
-			stencil3  = new ItemStack(ToolTable, 1, 12);
-			stencil4  = new ItemStack(ToolTable, 1, 13);
-			toolstation  = new ItemStack(ToolTable, 1, 0);
-			partbuilder  = new ItemStack(ToolTable, 1, 1);
-			partbuilder2  = new ItemStack(ToolTable, 1, 2);
-			partbuilder3  = new ItemStack(ToolTable, 1, 3);
-			partbuilder4  = new ItemStack(ToolTable, 1, 4);
-
-
-			OreDictionary.registerOre("stenciltable", Parts.stencil1);
-			OreDictionary.registerOre("stenciltable", Parts.stencil2);
-			OreDictionary.registerOre("stenciltable", Parts.stencil3);
-			OreDictionary.registerOre("stenciltable", Parts.stencil4);
-
-			OreDictionary.registerOre("toolstation", Parts.toolstation);
-
-			OreDictionary.registerOre("partbuilder", Parts.partbuilder);
-			OreDictionary.registerOre("partbuilder", Parts.partbuilder2);
-			OreDictionary.registerOre("partbuilder", Parts.partbuilder3);
-			OreDictionary.registerOre("partbuilder", Parts.partbuilder4);
-
-
-			OreDictionary.registerOre("sieve", Parts.sieve0);
-			OreDictionary.registerOre("sieve", Parts.sieve1);
-			OreDictionary.registerOre("sieve", Parts.sieve2);
-			OreDictionary.registerOre("sieve", Parts.sieve3);
-			OreDictionary.registerOre("sieve", Parts.sieve4);
-			OreDictionary.registerOre("sieve", Parts.sieve5);
-
-			OreDictionary.registerOre("ebarrel", Parts.barrel0);
-			OreDictionary.registerOre("ebarrel", Parts.barrel1);
-			OreDictionary.registerOre("ebarrel", Parts.barrel2);
-			OreDictionary.registerOre("ebarrel", Parts.barrel3);
-			OreDictionary.registerOre("ebarrel", Parts.barrel4);
-			OreDictionary.registerOre("ebarrel", Parts.barrel5);
 
 
 		}
@@ -208,8 +206,23 @@ public class Parts {
 			pot = GameRegistry.findItemStack("harvestcraft", "potItem", 1);
 			saucepan = GameRegistry.findItemStack("harvestcraft", "saucepanItem", 1);
 			beefwellington = GameRegistry.findItemStack("harvestcraft", "beefwellingtonItem", 0);
+			grapes = GameRegistry.findItemStack("harvestcraft", "grapeItem", 1);
+			apple = GameRegistry.findItemStack("minecraft", "apple", 1);
 
+
+			ArrayList<ItemStack> allfruit = OreDictionary.getOres("listAllFruit");
+			for (ItemStack fruit : allfruit)
+			{
+				if (GameData.getItemRegistry().getRaw(Item.getIdFromItem(fruit.getItem())) instanceof Item)
+				{
+					Item fruit2 = GameData.getItemRegistry().getRaw(Item.getIdFromItem(fruit.getItem()));
+					fruit1 = new ItemStack(fruit2, 1);
+
+				}
+			}
 		}
+
+
 
 		if (Loader.isModLoaded("Botania"))
 		{
@@ -222,6 +235,7 @@ public class Parts {
 			airrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 3);
 
 		}
+
 		if (Loader.isModLoaded("TConstruct"))
 		{
 			Item ticMaterials = GameRegistry.findItem("TConstruct", "material");
@@ -239,11 +253,13 @@ public class Parts {
 			searedbrick = new ItemStack(GameRegistry.findItem("TConstruct", "Smeltery"), 1, 2);
 			necrotic = new ItemStack(GameRegistry.findItem("TConstruct", "materials"), 1, 8);
 		}
+
 		if (Loader.isModLoaded("IguanaTweaksTConstruct"))
 		{
 			clayBucket = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketFired", 1);
 			rawclayBucket = GameRegistry.findItemStack("IguanaTweaksTConstruct", "clayBucketUnfired", 1);
 		}
+
 		if (Loader.isModLoaded("ThermalExpansion"))
 		{
 			Item teMaterial = GameRegistry.findItem("ThermalFoundation", "material");
@@ -265,6 +281,9 @@ public class Parts {
 			gearLumium   = new ItemStack(teMaterial, 1, 139);
 			gearEnderium = new ItemStack(teMaterial, 1, 140);
 			platinumIngot = new ItemStack(teMaterial,2, 69);
+			sulfur = GameRegistry.findItem("ThermalFoundation", "material");
+			blizz = GameRegistry.findItem("ThermalFoundation", "material");
+
 
 			Item teOre = GameRegistry.findItem("ThermalFoundation", "Ore");
 
@@ -275,6 +294,12 @@ public class Parts {
 
 			richslag = new ItemStack(GameRegistry.findItem("ThermalExpansion", "material"), 1, 515);
 			manabucket = new ItemStack(GameRegistry.findItem("ThermalFoundation", "bucket"), 1, 5);
+
+			dynamo = new ItemStack(GameRegistry.findItem("ThermalExpansion", "Dynamo"), 1, 0);
+			OreDictionary.registerOre("dynamo", Parts.dynamo);
+
+			watergen = new ItemStack(GameRegistry.findItem("ThermalExpansion", "Machine"), 1, 8);
+			OreDictionary.registerOre("watergenTE", Parts.watergen);
 
 
 
@@ -298,6 +323,11 @@ public class Parts {
 			chaosOre   = new ItemStack(tcOre, 1, 6);
 		}
 
+		if (Loader.isModLoaded("BigReactors"))
+		{
+			yellorium = GameRegistry.findItem("BigReactors", "BRIngot");
+		}
+
 		if (Loader.isModLoaded("Forestry"))
 		{
 			copperBlock = new ItemStack (GameRegistry.findItem("Forestry", "resourceStorage"), 1, 1);
@@ -305,8 +335,71 @@ public class Parts {
 		}
 
 		if (Loader.isModLoaded("exnihilo"))
+
 		{
+			Item barrel = GameRegistry.findItem("exnihilo", "barrel");
+			barrel0  = new ItemStack(barrel, 1, 0);
+			barrel1  = new ItemStack(barrel, 1, 1);
+			barrel2  = new ItemStack(barrel, 1, 2);
+			barrel3  = new ItemStack(barrel, 1, 3);
+			barrel4  = new ItemStack(barrel, 1, 4);
+			barrel5  = new ItemStack(barrel, 1, 5);
+
+			OreDictionary.registerOre("ebarrel", Parts.barrel0);
+			OreDictionary.registerOre("ebarrel", Parts.barrel1);
+			OreDictionary.registerOre("ebarrel", Parts.barrel2);
+			OreDictionary.registerOre("ebarrel", Parts.barrel3);
+			OreDictionary.registerOre("ebarrel", Parts.barrel4);
+			OreDictionary.registerOre("ebarrel", Parts.barrel5);
+
+			Item sieve = GameRegistry.findItem("exnihilo", "sifting_table");
+			sieve0  = new ItemStack(sieve, 1, 0);
+			sieve1  = new ItemStack(sieve, 1, 1);
+			sieve2  = new ItemStack(sieve, 1, 2);
+			sieve3  = new ItemStack(sieve, 1, 3);
+			sieve4  = new ItemStack(sieve, 1, 4);
+			sieve5  = new ItemStack(sieve, 1, 5);
+
+			OreDictionary.registerOre("sieve", Parts.sieve0);
+			OreDictionary.registerOre("sieve", Parts.sieve1);
+			OreDictionary.registerOre("sieve", Parts.sieve2);
+			OreDictionary.registerOre("sieve", Parts.sieve3);
+			OreDictionary.registerOre("sieve", Parts.sieve4);
+			OreDictionary.registerOre("sieve", Parts.sieve5);
+
+
 			platDust = new ItemStack(GameRegistry.findItem("exnihilo", "platinum_dust"), 1, 2);
+			crnether = GameRegistry.findBlock("exnihilo", "exnihilo.gravel_nether");
+			heatsand = GameRegistry.findBlock("Natura", "heatsand");
+
+			if (Loader.isModLoaded("AgriCraft")&& (Loader.isModLoaded("Botania")))
+			{
+				bwhite = GameRegistry.findItem("AgriCraft", "seedBotaniaWhite");
+				bmagenta = GameRegistry.findItem("AgriCraft", "seedBotaniaMagenta");
+				blightblue = GameRegistry.findItem("AgriCraft", "seedBotaniaLightBlue");
+				byellow = GameRegistry.findItem("AgriCraft", "seedBotaniaYellow");
+				blime = GameRegistry.findItem("AgriCraft", "seedBotaniaLime");
+				bpink = GameRegistry.findItem("AgriCraft", "seedBotaniaPink");
+				bgray = GameRegistry.findItem("AgriCraft", "seedBotaniaGray");
+				blightgray = GameRegistry.findItem("AgriCraft", "seedBotaniaLightGray");
+				bcyan = GameRegistry.findItem("AgriCraft", "seedBotaniaCyan");
+				bpurple = GameRegistry.findItem("AgriCraft", "seedBotaniaPurple");
+				bblue = GameRegistry.findItem("AgriCraft", "seedBotaniaBlue");
+				bbrown = GameRegistry.findItem("AgriCraft", "seedBotaniaBrown");
+				bgreen = GameRegistry.findItem("AgriCraft", "seedBotaniaGreen");
+				bred = GameRegistry.findItem("AgriCraft", "seedBotaniaRed");
+				bblack = GameRegistry.findItem("AgriCraft", "seedBotaniaBlack");
+
+				cactus1 = GameRegistry.findItem("AgriCraft", "seedCactus");
+				sugarcane1 = GameRegistry.findItem("AgriCraft", "seedSugarcane");
+				carrot1 = GameRegistry.findItem("AgriCraft", "seedCarrot");
+				potato1 = GameRegistry.findItem("AgriCraft", "seedPotato");
+
+				cactus = GameRegistry.findItem("exnihilo", "seed_cactus");
+				sugarcane = GameRegistry.findItem("exnihilo", "seed_sugar_cane");
+				carrot = GameRegistry.findItem("exnihilo", "seed_carrot");
+				potato = GameRegistry.findItem("exnihilo", "seed_potato");
+			}
 		}
 		if (Loader.isModLoaded("customnpcs"))
 		{
@@ -334,7 +427,8 @@ public class Parts {
 
 		}
 	}
-	//-------Test------------
+	//-------AgSkies------------
+	public static Item yellorium;
 	public static ItemStack dynamo;
 	public static ItemStack sieve0;
 	public static ItemStack  sieve1;
@@ -358,6 +452,48 @@ public class Parts {
 	public static ItemStack partbuilder3;
 	public static ItemStack partbuilder4;
 	public static ItemStack watergen;
+	public static Block dirt;
+	public static Block podzol;
+	public static Block soulsand;
+	public static Item ghast;
+	public static Item bwhite;
+	public static Item bmagenta;
+	public static Item blightblue;
+	public static Item byellow;
+	public static Item blime;
+	public static Item bpink;
+	public static Item bgray;
+	public static Item blightgray;
+	public static Item bcyan;
+	public static Item bpurple;
+	public static Item bblue;
+	public static Item bbrown;
+	public static Item bgreen;
+	public static Item bred;
+	public static Item bblack;
+	public static ItemStack k;
+	public static ItemStack kessentia;
+	public static Item cactus1;
+	public static Item sugarcane1;
+	public static Item carrot1;
+	public static Item potato1;
+	public static Item sulfur;
+	public static Item blizz;
+	public static Item redstone;
+	public static Item glowstone;
+	public static Block snow;
+	public static Block heatsand;
+	public static Block crnether;
+	public static ItemStack grapes;
+	public static ItemStack apple;
+	public static Item cactus;
+	public static Item sugarcane;
+	public static Item carrot;
+	public static Item potato;
+	public static ItemStack press1;
+	public static ItemStack press2;
+	public static ItemStack press3;
+	public static ItemStack press4;
 	//---------Recall Stones--------
 	public static ItemStack recallStone;
 	public static ItemStack dimensionStone;
@@ -476,6 +612,7 @@ public class Parts {
 	public static ItemStack freshwater;
 	public static ItemStack claywater;
 	public static ItemStack beefwellington;
+	public static ItemStack fruit1;
 	//-------TiCOn---------------
 	public static ItemStack heart;
 	public static ItemStack heart1;
@@ -508,6 +645,12 @@ public class Parts {
 	public static FluidStack tcbronze;
 	public static FluidStack tcemerald;
 	public static FluidStack temana;
+	public static FluidStack tclead;
+	public static FluidStack tctin;
+	public static FluidStack tccopper;
+	public static FluidStack tcnickel;
+	public static Object fruit2;
+
 
 }
 
