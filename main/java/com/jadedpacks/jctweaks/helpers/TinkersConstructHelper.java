@@ -1,5 +1,7 @@
 package com.jadedpacks.jctweaks.helpers;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -64,8 +66,8 @@ public class TinkersConstructHelper {
 
 		if (Loader.isModLoaded("harvestcraft"))
 		{
-			//add listAllfruit to drying rack
-			//DryingRackRecipes.addDryingRecipe(Parts.fruit1, 10, Parts.raisins);
+			//needs an item or block not an itemstack
+			DryingRackRecipes.addDryingRecipe(Parts.apple, 100, Parts.raisins);
 		}
 
 		if (Loader.isModLoaded("ExtraUtilities"))
