@@ -29,14 +29,6 @@ public class Basic {
 				'S', "listAllseed"
 				));
 
-		GameRegistry.addRecipe(new ShapedOreRecipe(Parts.podzolitem,
-				"LLL",
-				"LDL",
-				"LLL",
-				'D', Parts.dirt,
-				'S', "treeLeaves"
-				));
-
 		if (OreDictionary.getOres("oreTin").size() > 0)
 		{
 			GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.bucket),
@@ -185,6 +177,16 @@ public class Basic {
 					'W', "plankWood"
 					));
 			Main.log.info("Alternative journal recipe loaded");
+		}
+		if (OreDictionary.getOres("treeLeaves").size() > 0)
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.podzolitem,
+					"LLL",
+					"LDL",
+					"LLL",
+					'D', Parts.dirt,
+					'L', "treeLeaves"
+					));
 		}
 
 	}

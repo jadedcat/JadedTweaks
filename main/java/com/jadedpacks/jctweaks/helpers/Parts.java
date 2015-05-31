@@ -243,7 +243,7 @@ public class Parts {
 			saucepan = GameRegistry.findItemStack("harvestcraft", "saucepanItem", 1);
 			beefwellington = GameRegistry.findItemStack("harvestcraft", "beefwellingtonItem", 0);
 			grapes = GameRegistry.findItemStack("harvestcraft", "grapeItem", 1);
-			apple = GameRegistry.findItemStack("minecraft", "apple", 1);
+			apple = GameRegistry.findItem("minecraft", "apple");
 
 
 			ArrayList<ItemStack> allfruit = OreDictionary.getOres("listAllFruit");
@@ -267,7 +267,7 @@ public class Parts {
 			firerune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 1);
 			waterrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 0);
 			wrathrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 13);
-			bluepetal = GameRegistry.findItemStack("Botania", "petalblue", 1);
+			bluepetal = new ItemStack(GameRegistry.findItem("Botania", "petal"), 1, 11);
 			airrune = new ItemStack(GameRegistry.findItem("Botania", "rune"), 1, 3);
 
 		}
@@ -518,7 +518,7 @@ public class Parts {
 	public static Block heatsand;
 	public static Block crnether;
 	public static ItemStack grapes;
-	public static ItemStack apple;
+	public static Item apple;
 	public static Item cactus;
 	public static Item sugarcane;
 	public static Item carrot;
