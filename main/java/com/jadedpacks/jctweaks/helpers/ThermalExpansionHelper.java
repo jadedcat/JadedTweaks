@@ -27,6 +27,29 @@ public class ThermalExpansionHelper {
 	}
 
 	public static void postInit(){
+		addSolarFlux();
+
+	}
+
+	private static void addSolarFlux() {
+
+		if (Parts.mirror !=null&& (Parts.mirror2 !=null))
+		{
+			RecipeRemover.removeAnyRecipe(Parts.mirror);
+			RecipeRemover.removeAnyRecipe(Parts.mirror2);
+			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.mirror,
+					"III",
+					"XSX",
+					'I', "blockGlass",
+					'S', "ingotSilver"
+					));
+			Main.log.info("Jaded is rearranging solar panels for maximum sunlight or pain, one or the other, possibly both");
+
+		}
+		else
+		{
+			Main.log.info("Mirror is missing");
+		}
 
 	}
 
@@ -34,9 +57,12 @@ public class ThermalExpansionHelper {
 
 		if (Loader.isModLoaded("Forestry"))
 		{
-			RecipeRemover.removeAnyRecipe(Parts.copperBlock);
-			RecipeRemover.removeAnyRecipe(Parts.tinBlock);
-			Main.log.info("Jaded is removing Forestry storage blocks because people wanted the other textures");
+			if (Parts.copperBlock !=null && (Parts.tinBlock !=null));
+			{
+				RecipeRemover.removeAnyRecipe(Parts.copperBlock);
+				RecipeRemover.removeAnyRecipe(Parts.tinBlock);
+				Main.log.info("Jaded is removing Forestry storage blocks because people wanted the other textures");
+			}
 		}
 
 	}
@@ -58,22 +84,7 @@ public class ThermalExpansionHelper {
 		FMLInterModComms.sendMessage("ThermalExpansion", "TransposerFillRecipe", toSend);
 		toSend = new NBTTagCompound();
 
-		if (Parts.mirror !=null)
-		{
-			RecipeRemover.removeAnyRecipe(Parts.mirror);
-			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.mirror,
-					"III",
-					"XSX",
-					'I', "blockGlass",
-					'S', "ingotSilver"
-					));
-			Main.log.info("Jaded is rearranging solar panels for maximum sunlight or pain, one or the other, possibly both");
 
-		}
-		else
-		{
-			Main.log.info("Mirror is missing");
-		}
 
 		if (Loader.isModLoaded("exnihilo"))
 		{
@@ -101,12 +112,21 @@ public class ThermalExpansionHelper {
 
 		if (Loader.isModLoaded("TConstruct"))
 		{
-			RecipeRemover.removeAnyRecipe(Parts.gearCopper);
+			if (Parts.gearCopper !=null)
+			{
+				RecipeRemover.removeAnyRecipe(Parts.gearCopper);
+			}
 			RecipeRemover.removeAnyRecipe(Parts.gearIron);
-			RecipeRemover.removeAnyRecipe(Parts.gearTin);
+			if (Parts.gearTin !=null)
+			{
+				RecipeRemover.removeAnyRecipe(Parts.gearTin);
+			}
 			RecipeRemover.removeAnyRecipe(Parts.gearGold);
 			RecipeRemover.removeAnyRecipe(Parts.gearSilver);
-			RecipeRemover.removeAnyRecipe(Parts.gearBronze);
+			if (Parts.gearCopper !=null)
+			{
+				RecipeRemover.removeAnyRecipe(Parts.gearBronze);
+			}
 			RecipeRemover.removeAnyRecipe(Parts.gearNickel);
 			RecipeRemover.removeAnyRecipe(Parts.gearPlatinum);
 			RecipeRemover.removeAnyRecipe(Parts.gearMithril);

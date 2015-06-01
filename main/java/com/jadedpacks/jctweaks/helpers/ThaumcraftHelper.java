@@ -44,29 +44,9 @@ public class ThaumcraftHelper {
 		}
 	}
 
-	public static Aspect PURPLE;
-	public static void initAspects()
-
-	{
-		PURPLE = new Aspect("purpura", 0xB68CFF, new Aspect[]{Aspect.PLANT, Aspect.TREE}, new ResourceLocation("jctweaks", "textures/aspects/purpura.png"),1);
-
-	}
-
-
-	private static AspectList getAspectList(ItemStack stack){
-		AspectList list = ThaumcraftApiHelper.getObjectAspects(stack);
-		return list !=null ? list : new AspectList();
-	}
 
 
 	public static void addAspects(){
-		//add aspects to items here
-
-		//AspectList list;
-
-		//list = getAspectList(Parts.amethyst);
-		//list.add(PURPLE, 4);
-
 
 		ThaumcraftApi.registerObjectTag("listAllseed", (new AspectList()).add(Aspect.CROP, 4).add(Aspect.HARVEST, 3));
 		ThaumcraftApi.registerObjectTag("listAlljuice", (new AspectList()).add(Aspect.WATER, 4).add(Aspect.VOID, 4).add(Aspect.COLD, 3));
@@ -83,8 +63,6 @@ public class ThaumcraftHelper {
 	}
 
 	private static void setupResearch() {
-
-		//Categories
 
 		if (Loader.isModLoaded("recallstones"))		//Only adds the recipes if recall stones are present
 		{
@@ -168,9 +146,11 @@ public class ThaumcraftHelper {
 
 		if (Loader.isModLoaded("recallstones"))
 		{
-
-			RecipeRemover.removeAnyRecipe(Parts.recallStone);
-			RecipeRemover.removeAnyRecipe(Parts.dimensionStone);
+			if (Parts.recallStone !=null && (Parts.dimensionStone !=null))
+			{
+				RecipeRemover.removeAnyRecipe(Parts.recallStone);
+				RecipeRemover.removeAnyRecipe(Parts.dimensionStone);
+			}
 		}
 
 	}

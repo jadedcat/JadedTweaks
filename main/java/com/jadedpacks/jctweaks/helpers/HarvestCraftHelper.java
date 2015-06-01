@@ -37,7 +37,7 @@ public class HarvestCraftHelper {
 	private static void addRecipes()
 
 	{
-		if (Parts.freshwater !=null)
+		if (Parts.claywater !=null && (Parts.freshwater !=null))
 		{
 			RecipeRemover.removeAnyRecipe(Parts.fwater);
 			RecipeRemover.removeAnyRecipe(Parts.freshwater);

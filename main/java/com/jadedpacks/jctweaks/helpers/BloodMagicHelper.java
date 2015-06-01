@@ -69,8 +69,14 @@ public class BloodMagicHelper {
 
 		if (Loader.isModLoaded("exnihilo"))
 		{
-			RecipeRemover.removeAnyRecipe(Parts.knife);
-			RecipeRemover.removeAnyRecipe(Parts.altar);
+			if (Parts.knife !=null)
+			{
+				RecipeRemover.removeAnyRecipe(Parts.knife);
+			}
+			if (Parts.altar !=null)
+			{
+				RecipeRemover.removeAnyRecipe(Parts.altar);
+			}
 
 			GameRegistry.addRecipe(new ShapedOreRecipe((Parts.knife),
 					"GGG",
