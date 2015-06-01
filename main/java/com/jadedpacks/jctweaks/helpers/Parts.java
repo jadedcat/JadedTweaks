@@ -345,6 +345,7 @@ public class Parts {
 		if (Loader.isModLoaded("SolarFlux"))
 		{
 			mirror = GameRegistry.findItemStack("SolarFlux", "mirror", 2);
+			mirror2 = GameRegistry.findItemStack("SolarFlux", "mirror", 1);
 		}
 
 		if (Loader.isModLoaded("Thaumcraft"))
@@ -461,6 +462,7 @@ public class Parts {
 
 
 	//-------AgSkies------------
+	public static ItemStack mirror2;
 	public static ItemStack bucketwater;
 	public static ItemStack fwater;
 	public static ItemStack podzolitem;

@@ -38,7 +38,10 @@ public class FurnaceHelper {
 		ItemStack charcoal5   = new ItemStack(coal, 5, 1);
 
 
-		RecipeRemover.removeFurnaceRecipe(charcoal);
+		if (charcoal !=null)
+		{
+			RecipeRemover.removeFurnaceRecipe(charcoal);
+		}
 
 		GameRegistry.addSmelting(oak , (charcoal), 0.1F);
 		GameRegistry.addSmelting(birch , (charcoal2), 0.1F);

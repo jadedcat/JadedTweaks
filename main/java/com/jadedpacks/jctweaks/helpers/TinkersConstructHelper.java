@@ -35,7 +35,7 @@ public class TinkersConstructHelper {
 
 	private static void addRecipes() {
 
-		//RecipeRemover.removeAnyRecipe(Parts.heart2);
+
 		GameRegistry.addRecipe(new ShapedOreRecipe(Parts.heart6,
 				"EH",
 				"CX",

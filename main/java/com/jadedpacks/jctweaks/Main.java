@@ -33,41 +33,55 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 
 @Mod(modid = Main.MODID, version = Main.VERSION, name = Main.NAME,  dependencies = "required-after:Forge@[10.13.3.1384,11.14);" +
-		"after:TConstruct;" +
-		"after:MineFactoryReloaded;" +
-		"after:ExtraUtilities;" +
-		"after:SolarFLux;" +
-		"after:Forestry;" +
-		"after:harvestcraft;" +
-		"after:AWWayofTime;" +
-		"after:customnpcs;" +
-		"after:AgriCraft;" +
-		"after:Botania;" +
-		"after:exnihilo;" +
-		"after:ThermalFoundation;" +
-		"after:Thaumcraft;" +
-		"after:ThermalExpansion;")
+		"after:*;")
 
 public class Main {
 	public static final String MODID = "JCTweaks";
 	public static final String NAME = "JCTweaks";
-	public static final String VERSION = "1.6";
+	public static final String VERSION = "1.9";
 	public static final Logger log = LogManager.getLogger(MODID);
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		Parts.preInit();
-		ThermalExpansionHelper.preInit();
-		ThaumcraftHelper.preInit();
-		TinkersConstructHelper.preInit();
-		MFRHelper.preInit();
-		BotaniaHelper.preInit();
-		BloodMagicHelper.preInit();
-		HarvestCraftHelper.preInit();
+		if (Loader.isModLoaded("ThermalExpansion"))
+		{
+			ThermalExpansionHelper.preInit();
+		}
+		if (Loader.isModLoaded("Thaumcraft"))
+		{
+			ThaumcraftHelper.preInit();
+		}
+		if (Loader.isModLoaded("TConstruct"))
+		{
+			TinkersConstructHelper.preInit();
+		}
+		if (Loader.isModLoaded("MineFactoryReloaded"))
+		{
+			MFRHelper.preInit();
+		}
+		if (Loader.isModLoaded("Botania"))
+		{
+			BotaniaHelper.preInit();
+		}
+		if (Loader.isModLoaded("AWWayofTime"))
+		{
+			BloodMagicHelper.preInit();
+		}
+		if (Loader.isModLoaded("harvestcraft"))
+		{
+			HarvestCraftHelper.preInit();
+		}
 		FurnaceHelper.preInit();
-		CustomNpcsHelper.preInit();
-		ExNihiloHelper.preInit();
+		if (Loader.isModLoaded("customnpcs"))
+		{
+			CustomNpcsHelper.preInit();
+		}
+		if(Loader.isModLoaded("exnihilo"))
+		{
+			ExNihiloHelper.preInit();
+		}
 		Basic.preInit();
 	}
 	@Mod.EventHandler
@@ -76,17 +90,43 @@ public class Main {
 	{
 		Parts.init();
 		Main.log.info("parts");
-		ThermalExpansionHelper.init();
-		Main.log.info("TE");
-		ThaumcraftHelper.init();
-		TinkersConstructHelper.init();
-		MFRHelper.init();
-		//BotaniaHelper.init();
-		BloodMagicHelper.init();
-		HarvestCraftHelper.init();
+		if (Loader.isModLoaded("ThermalExpansion"))
+		{
+			ThermalExpansionHelper.init();
+		}
+		if (Loader.isModLoaded("Thaumcraft"))
+		{
+			ThaumcraftHelper.init();
+		}
+		if (Loader.isModLoaded("TConstruct"))
+		{
+			TinkersConstructHelper.init();
+		}
+		if (Loader.isModLoaded("MineFactoryReloaded"))
+		{
+			MFRHelper.init();
+		}
+		if (Loader.isModLoaded("Botania"))
+		{
+			BotaniaHelper.init();
+		}
+		if (Loader.isModLoaded("AWWayofTime"))
+		{
+			BloodMagicHelper.init();
+		}
+		if (Loader.isModLoaded("harvestcraft"))
+		{
+			HarvestCraftHelper.init();
+		}
 		FurnaceHelper.init();
-		CustomNpcsHelper.init();
-		ExNihiloHelper.init();
+		if (Loader.isModLoaded("customnpcs"))
+		{
+			CustomNpcsHelper.init();
+		}
+		if(Loader.isModLoaded("exnihilo"))
+		{
+			ExNihiloHelper.init();
+		}
 		Basic.init();
 
 	}
@@ -96,23 +136,54 @@ public class Main {
 
 	{
 		Parts.postInit();
-		ThermalExpansionHelper.postInit();
-		ThaumcraftHelper.postInit();
-		TinkersConstructHelper.postInit();
-		MFRHelper.postInit();
-		//BotaniaHelper.postInit();
-		BloodMagicHelper.postInit();
-		HarvestCraftHelper.postInit();
+		if (Loader.isModLoaded("ThermalExpansion"))
+		{
+			ThermalExpansionHelper.postInit();
+		}
+		if (Loader.isModLoaded("Thaumcraft"))
+		{
+			ThaumcraftHelper.postInit();
+		}
+		if (Loader.isModLoaded("TConstruct"))
+		{
+			TinkersConstructHelper.postInit();
+		}
+		if (Loader.isModLoaded("MineFactoryReloaded"))
+		{
+			MFRHelper.postInit();
+		}
+		if (Loader.isModLoaded("Botania"))
+		{
+			BotaniaHelper.postInit();
+		}
+		if (Loader.isModLoaded("AWWayofTime"))
+		{
+			BloodMagicHelper.postInit();
+		}
+		if (Loader.isModLoaded("harvestcraft"))
+		{
+			HarvestCraftHelper.postInit();
+		}
 		FurnaceHelper.postInit();
-		CustomNpcsHelper.postInit();
-		ExNihiloHelper.postInit();
-		Basic.postInit();
+		if (Loader.isModLoaded("customnpcs"))
+		{
+			CustomNpcsHelper.postInit();
+		}
+		if(Loader.isModLoaded("exnihilo"))
+		{
+			ExNihiloHelper.postInit();
+		}
+		Basic.preInit();
 	}
 
 	@Mod.EventHandler
 	public void loadComplete(FMLLoadCompleteEvent event)
+
 	{
-		ThermalExpansionHelper.loadComplete();
+		if (Loader.isModLoaded("ThermalExpansion"))
+		{
+			ThermalExpansionHelper.loadComplete();
+		}
 
 	}
 }
