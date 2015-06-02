@@ -21,13 +21,28 @@ public class Basic {
 
 	public static void init()
 	{
-		GameRegistry.addRecipe(new ShapedOreRecipe(Parts.topiary,
-				"XSX",
-				"SDS",
-				"XSX",
-				'D', Parts.dirt,
-				'S', "listAllseed"
-				));
+
+		if (Loader.isModLoaded("Natura") && (Loader.isModLoaded("harvestcraft")))
+		{
+			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.topiary,
+					"XSX",
+					"SDS",
+					"XSX",
+					'D', Parts.dirt,
+					'S', "listAllseed"
+					));
+
+		}
+		if (Loader.isModLoaded("MoCreatures") && (Loader.isModLoaded("ThermalExpansion")))
+		{
+
+
+			GameRegistry.addRecipe(Parts.silversword1,
+					"XSX",
+					'S', Parts.silversword2
+					);
+
+		}
 
 		if (OreDictionary.getOres("oreTin").size() > 0)
 		{
@@ -156,6 +171,18 @@ public class Basic {
 					'W', "listAllwater"
 					));
 			Main.log.info("cheaper cobble gen for the miner");
+
+			ItemStack stonegen = GameRegistry.findItemStack("progressiveautomation", "GeneratorStone", 1);
+			ItemStack rfengine = GameRegistry.findItemStack("progressiveautomation", "RFEngine", 1);
+			GameRegistry.addRecipe(new ShapedOreRecipe((stonegen),
+
+					"SES",
+					"SRS",
+					"SSS",
+					'S', "stone",
+					'E', rfengine,
+					'R', "dustRedstone"
+					));
 		}
 	}
 
@@ -190,5 +217,4 @@ public class Basic {
 		}
 
 	}
-
 }

@@ -244,6 +244,9 @@ public class Parts {
 			beefwellington = GameRegistry.findItemStack("harvestcraft", "beefwellingtonItem", 0);
 			grapes = GameRegistry.findItemStack("harvestcraft", "grapeItem", 1);
 			apple = GameRegistry.findItem("minecraft", "apple");
+			lemon = GameRegistry.findItem("harvestcraft", "lemonItem");
+			grape = GameRegistry.findItem("harvestcraft", "grapeItem");
+			strawberry = GameRegistry.findItem("harvestcraft", "strawberryItem");
 
 
 			ArrayList<ItemStack> allfruit = OreDictionary.getOres("listAllFruit");
@@ -319,6 +322,7 @@ public class Parts {
 			platinumIngot = new ItemStack(teMaterial,2, 69);
 			sulfur = GameRegistry.findItem("ThermalFoundation", "material");
 			blizz = GameRegistry.findItem("ThermalFoundation", "material");
+			silversword2 = GameRegistry.findItemStack("ThermalFoundation", "swordSilver", 1);
 
 
 			Item teOre = GameRegistry.findItem("ThermalFoundation", "Ore");
@@ -358,6 +362,10 @@ public class Parts {
 			earthOre   = new ItemStack(tcOre, 1, 4);
 			orderOre   = new ItemStack(tcOre, 1, 5);
 			chaosOre   = new ItemStack(tcOre, 1, 6);
+		}
+		if (Loader.isModLoaded("MoCreatures"))
+		{
+			silversword1 = GameRegistry.findItemStack("MoCreatures", "silversword", 1);
 		}
 
 		if (Loader.isModLoaded("BigReactors"))
@@ -462,6 +470,11 @@ public class Parts {
 
 
 	//-------AgSkies------------
+	public static Item lemon;
+	public static Item grape;
+	public static Item strawberry;
+	public static ItemStack silversword2;
+	public static ItemStack silversword1;
 	public static ItemStack mirror2;
 	public static ItemStack bucketwater;
 	public static ItemStack fwater;

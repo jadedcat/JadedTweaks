@@ -68,6 +68,9 @@ public class TinkersConstructHelper {
 		{
 			//needs an item or block not an itemstack
 			DryingRackRecipes.addDryingRecipe(Parts.apple, 100, Parts.raisins);
+			DryingRackRecipes.addDryingRecipe(Parts.lemon, 100, Parts.raisins);
+			DryingRackRecipes.addDryingRecipe(Parts.grape, 100, Parts.raisins);
+			DryingRackRecipes.addDryingRecipe(Parts.strawberry, 100, Parts.raisins);
 		}
 
 		if (Loader.isModLoaded("ExtraUtilities"))
