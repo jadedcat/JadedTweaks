@@ -50,7 +50,6 @@ public class HarvestCraftHelper {
 					"B",
 					'B', Parts.bucketwater
 					);
-			//GameRegistry.addRecipe(new ShapelessOreRecipe(Parts.freshwater.copy(), "listAllWater"));
 
 		}
 

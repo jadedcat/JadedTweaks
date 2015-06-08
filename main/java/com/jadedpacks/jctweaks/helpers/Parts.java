@@ -322,7 +322,7 @@ public class Parts {
 			platinumIngot = new ItemStack(teMaterial,2, 69);
 			sulfur = GameRegistry.findItem("ThermalFoundation", "material");
 			blizz = GameRegistry.findItem("ThermalFoundation", "material");
-			silversword2 = GameRegistry.findItemStack("ThermalFoundation", "swordSilver", 1);
+			silversword2 = GameRegistry.findItemStack("ThermalFoundation", "tool.swordSilver", 1);
 
 
 			Item teOre = GameRegistry.findItem("ThermalFoundation", "Ore");
