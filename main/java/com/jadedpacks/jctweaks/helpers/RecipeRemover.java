@@ -2,6 +2,8 @@ package com.jadedpacks.jctweaks.helpers;
 import java.util.List;
 import java.util.Map;
 
+import com.google.common.base.Preconditions;
+
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.CraftingManager;
@@ -21,6 +23,7 @@ public class RecipeRemover
 
     public static void removeAnyRecipe (ItemStack resultItem)
     {
+        Preconditions.checkNotNull(resultItem);
         List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
         for (int i = 0; i < recipes.size(); i++)
         {
@@ -35,6 +38,7 @@ public class RecipeRemover
 
     public static void removeShapedRecipe (ItemStack resultItem)
     {
+        Preconditions.checkNotNull(resultItem);
         List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
         for (int i = 0; i < recipes.size(); i++)
         {
@@ -54,6 +58,7 @@ public class RecipeRemover
 
     public static void removeShapelessRecipe (ItemStack resultItem)
     {
+        Preconditions.checkNotNull(resultItem);
         List<IRecipe> recipes = CraftingManager.getInstance().getRecipeList();
         for (int i = 0; i < recipes.size(); i++)
         {
