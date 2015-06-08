@@ -33,16 +33,6 @@ public class Basic {
 					));
 
 		}
-		if (Loader.isModLoaded("MoCreatures") && (Loader.isModLoaded("ThermalExpansion")))
-		{
-
-
-			GameRegistry.addRecipe(Parts.silversword1,
-					"XSX",
-					'S', Parts.silversword2
-					);
-
-		}
 
 		if (OreDictionary.getOres("oreTin").size() > 0)
 		{
@@ -148,7 +138,7 @@ public class Basic {
 		}
 		if (Loader.isModLoaded("Natura") && (Loader.isModLoaded("exnihilo")))
 		{
-			ItemStack wartbag = GameRegistry.findItemStack("Natura", "wartbag", 1);
+			ItemStack wartbag = GameRegistry.findItemStack("Natura", "wartBag", 1);
 			RecipeRemover.removeAnyRecipe(wartbag);
 			Main.log.info("Jaded removed wart bags, they were creepy");
 		}
@@ -194,7 +184,6 @@ public class Basic {
 			//Cheaper Journal Recipe
 			ItemStack journal = GameRegistry.findItemStack("AgriCraft", "journal", 1);
 			ItemStack cropsticks = GameRegistry.findItemStack("AgriCraft", "cropsItem", 1);
-			RecipeRemover.removeAnyRecipe(journal);
 			GameRegistry.addRecipe(new ShapedOreRecipe(journal,
 					"CSC",
 					"SWS",
@@ -205,6 +194,19 @@ public class Basic {
 					));
 			Main.log.info("Alternative journal recipe loaded");
 		}
+
+		if (Loader.isModLoaded("MoCreatures") && (Loader.isModLoaded("ThermalExpansion")))
+		{
+
+			if (Parts.silversword1 !=null && (Parts.silversword2 !=null))
+
+				GameRegistry.addRecipe(Parts.silversword1,
+						"XSX",
+						'S', Parts.silversword2
+						);
+
+		}
+
 		if (OreDictionary.getOres("treeLeaves").size() > 0)
 		{
 			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.podzolitem,
