@@ -23,15 +23,15 @@ public class CustomNpcsHelper {
 	public static void init()
 	{
 
-		if (Loader.isModLoaded("customnpcs") && (Loader.isModLoaded("ThermalExpansion")))
+		if (Loader.isModLoaded("ThermalExpansion"))
 		{
 			sendIMCrecipes();
 		}
 	}
 
 	public static void postInit() {
-		if (Loader.isModLoaded("customnpcs"))
-			addRecipes();
+
+		addRecipes();
 	}
 
 	private static void addRecipes() {

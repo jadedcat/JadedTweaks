@@ -12,21 +12,22 @@ import com.jadedpacks.jctweaks.Main;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.ItemStackHolderInjector;
 
 public class ThermalExpansionHelper {
 	public static void preInit(){}
 
 	public static void init()
+
 	{
-		if (Loader.isModLoaded("ThermalExpansion"))
-		{
-			Main.log.info("Jaded is now fiddling with ThermalExpansion, do not blame TeamCoFH for unexpected explosions");
-			removeRecipes();
-			addRecipes();
-		}
+		ItemStackHolderInjector.INSTANCE.inject();
+		Main.log.info("Jaded is now fiddling with ThermalExpansion, do not blame TeamCoFH for unexpected explosions");
+		removeRecipes();
+		addRecipes();
 	}
 
 	public static void postInit(){
+		ItemStackHolderInjector.INSTANCE.inject();
 		addSolarFlux();
 
 	}
@@ -78,7 +79,7 @@ public class ThermalExpansionHelper {
 		toSend.setTag("input", new NBTTagCompound());
 		toSend.setTag("output", new NBTTagCompound());
 		toSend.setTag("fluid", new NBTTagCompound());
-		Parts.tfOre.writeToNBT(toSend.getCompoundTag("input"));
+		Parts.platinumOre.writeToNBT(toSend.getCompoundTag("input"));
 		Parts.mithrilOre.writeToNBT(toSend.getCompoundTag("output"));
 		Parts.temana.writeToNBT(toSend.getCompoundTag("fluid"));
 		FMLInterModComms.sendMessage("ThermalExpansion", "TransposerFillRecipe", toSend);
@@ -86,7 +87,7 @@ public class ThermalExpansionHelper {
 
 
 
-		if (Loader.isModLoaded("exnihilo"))
+		if (Parts.platDust !=null)
 		{
 
 			toSend.setTag("primaryInput", new NBTTagCompound());

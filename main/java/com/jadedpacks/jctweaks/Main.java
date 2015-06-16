@@ -16,6 +16,7 @@ import com.jadedpacks.jctweaks.helpers.ExNihiloHelper;
 import com.jadedpacks.jctweaks.helpers.FurnaceHelper;
 import com.jadedpacks.jctweaks.helpers.HarvestCraftHelper;
 import com.jadedpacks.jctweaks.helpers.MFRHelper;
+import com.jadedpacks.jctweaks.helpers.OreDictionaryTweaks;
 import com.jadedpacks.jctweaks.helpers.RecipeRemover;
 import com.jadedpacks.jctweaks.helpers.ThaumcraftHelper;
 import com.jadedpacks.jctweaks.helpers.ThermalExpansionHelper;
@@ -30,6 +31,7 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.ItemStackHolderInjector;
 import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 
 @Mod(modid = Main.MODID, version = Main.VERSION, name = Main.NAME,  dependencies = "required-after:Forge@[10.13.3.1384,11.14);" +
@@ -38,12 +40,13 @@ import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 public class Main {
 	public static final String MODID = "JCTweaks";
 	public static final String NAME = "JCTweaks";
-	public static final String VERSION = "1.13";
+	public static final String VERSION = "1.20";
 	public static final Logger log = LogManager.getLogger(MODID);
 
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		ItemStackHolderInjector.INSTANCE.inject();
 		Parts.preInit();
 		if (Loader.isModLoaded("ThermalExpansion"))
 		{
@@ -82,12 +85,14 @@ public class Main {
 		{
 			ExNihiloHelper.preInit();
 		}
+		OreDictionaryTweaks.preInit();
 		Basic.preInit();
 	}
 	@Mod.EventHandler
 	public void init (FMLInitializationEvent event)
 
 	{
+		ItemStackHolderInjector.INSTANCE.inject();
 		Parts.init();
 		Main.log.info("parts");
 		if (Loader.isModLoaded("ThermalExpansion"))
@@ -127,6 +132,7 @@ public class Main {
 		{
 			ExNihiloHelper.init();
 		}
+		OreDictionaryTweaks.init();
 		Basic.init();
 
 	}
@@ -135,6 +141,7 @@ public class Main {
 	public void postInit (FMLPostInitializationEvent event)
 
 	{
+		ItemStackHolderInjector.INSTANCE.inject();
 		Parts.postInit();
 		if (Loader.isModLoaded("ThermalExpansion"))
 		{

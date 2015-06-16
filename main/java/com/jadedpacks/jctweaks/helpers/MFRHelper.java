@@ -20,12 +20,9 @@ public class MFRHelper {
 	}
 
 	public static void postInit() {
-		if (Loader.isModLoaded("MineFactoryReloaded"))
-		{
-
-			addRecipes();
-		}
+		addRecipes();
 	}
+
 
 	private static void addRecipes() {
 

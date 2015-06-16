@@ -20,13 +20,7 @@ public class ExNihiloHelper {
 
 
 	public static void postInit() {
-
-		if (Loader.isModLoaded("exnihilo"))
-
-		{
-
-			addRecipes();
-		}
+		addRecipes();
 	}
 
 	private static void addRecipes() {

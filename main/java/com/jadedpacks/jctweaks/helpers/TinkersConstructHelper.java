@@ -27,11 +27,9 @@ public class TinkersConstructHelper {
 	public static void init(){
 	}
 	public static void postInit() {
-		if (Loader.isModLoaded("TConstruct"))
-		{
-			addRecipes();
-		}
+		addRecipes();
 	}
+
 
 	private static void addRecipes() {
 

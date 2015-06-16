@@ -16,6 +16,7 @@ import thaumcraft.api.research.ResearchItem;
 import thaumcraft.api.research.ResearchPage;
 import thaumcraft.api.research.ResearchPage.PageType;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.ItemStackHolderInjector;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -34,15 +35,14 @@ public class ThaumcraftHelper {
 
 	public static void init()
 	{
-		if (Loader.isModLoaded("Thaumcraft"))
-		{
-			removeRecipes();
-			setupResearch();
-			//initAspects();
-			addAspects();
-			addRecipes();
-		}
+		ItemStackHolderInjector.INSTANCE.inject();
+		removeRecipes();
+		setupResearch();
+		//initAspects();
+		addAspects();
+		addRecipes();
 	}
+
 
 
 
@@ -99,7 +99,7 @@ public class ThaumcraftHelper {
 		}
 
 
-		if (Loader.isModLoaded("TConstruct")&& (Loader.isModLoaded("ExtraUtilities")))
+		if (Parts.heart1 !=null && (Parts.heart3 !=null && (Parts.heart5 !=null && (Parts.necrotic !=null && (Parts.magnumtorch !=null)))))
 		{
 			(new JCResearchItem("PROTECTION", "AGRIMANCY", (new AspectList()).add(Aspect.LIFE, 8).add(Aspect.SOUL, 5).add(Aspect.ARMOR, 4), 3, 0, 2,
 					(Parts.heart1))).setPages(new ResearchPage[]

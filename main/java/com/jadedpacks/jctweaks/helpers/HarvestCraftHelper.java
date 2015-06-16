@@ -19,19 +19,10 @@ public class HarvestCraftHelper {
 	public static void preInit(){}
 
 	public static void init()
-	{
-		if (Loader.isModLoaded("harvestcraft"))
-		{
-
-		}
-	}
+	{	}
 
 	public static void postInit() {
-
-		if (Loader.isModLoaded("harvestcraft"))
-		{
-			addRecipes();
-		}
+		addRecipes();
 	}
 
 	private static void addRecipes()

@@ -23,12 +23,10 @@ public class BloodMagicHelper {
 	public static void init()	{}
 
 	public static void postInit()
-	{	if (Loader.isModLoaded("AWWayofTime"))
 	{
 		addRecipes();
 		addAltarRecipe();
 		AlchemyRecipe();
-	}
 
 	}
 
