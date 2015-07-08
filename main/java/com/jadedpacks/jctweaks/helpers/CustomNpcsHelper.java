@@ -35,7 +35,7 @@ public class CustomNpcsHelper {
 	}
 
 	private static void addRecipes() {
-
+		// check that blood magic and Cnpc items exist
 		if ((Parts.tcemerald !=null)&&(Parts.earthrune !=null))
 		{
 			LiquidCasting tableCasting = TConstructRegistry.instance.getTableCasting();

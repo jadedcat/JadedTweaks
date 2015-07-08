@@ -59,12 +59,14 @@ public class ExNihiloHelper {
 		//add ghast tears from soulsand sieving
 		SieveRegistry.register(Parts.soulsand, Parts.ghast, 0, 20);
 		SieveRegistry.register(Parts.soulsand, Parts.sulfur, 16, 15);
+		SieveRegistry.register(Parts.soulsand, Parts.weakblood, 0, 32);
 		SieveRegistry.register(Parts.snow, Parts.blizz, 1025, 64);
 		SieveRegistry.register(Parts.crnether, Parts.sulfur, 16, 8);
 		SieveRegistry.register(Parts.crnether, Parts.ghast, 0, 15);
 		SieveRegistry.register(Parts.crnether, Parts.glowstone, 0, 32);
 		SieveRegistry.register(Parts.heatsand, Parts.sulfur, 16, 15);
 		SieveRegistry.register(Parts.heatsand, Parts.yellorium, 4, 32);
+		SieveRegistry.register(Parts.heatsand, Parts.weakblood, 0, 32);
 		SieveRegistry.register(Parts.gravel, Parts.lapis, 4, 15);
 		SieveRegistry.register(Parts.gravel, Parts.gemDiamond, 0, 90);
 		SieveRegistry.register(Parts.gravel, Parts.gemEmerald, 0, 90);

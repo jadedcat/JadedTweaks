@@ -180,6 +180,11 @@ public class Parts {
 	@ItemStackHolder(value="appliedenergistics2:item.ItemMultiMaterial", meta= 19)
 	public static final ItemStack press4 = null;
 
+	//Thaumic Energistics Items
+
+	@ItemStackHolder(value="thaumicenergistics:thaumicenergistics.block.arcane.assembler")
+	public static final ItemStack arcaneassemble = null;
+
 	//hqm items
 
 	@ItemStackHolder(value="HardcoreQuesting:hearts", meta= 3)
@@ -542,6 +547,15 @@ public class Parts {
 	@ItemStackHolder(value="AWWayofTime:bucketLife", meta= 0)
 	public static final ItemStack lifebucket = null;
 
+	@ItemStackHolder(value="AWWayofTime:bloodMagicBaseItems", meta= 28)
+	public static final ItemStack lifeshard = null;
+
+	@ItemStackHolder(value="AWWayofTime:bloodMagicBaseItems", meta= 29)
+	public static final ItemStack soulshard = null;
+
+	@ItemStackHolder(value="AWWayofTime:weakBloodShard", meta= 0)
+	public static final ItemStack bloodshard = null;
+
 
 	public static void preInit(){}
 	public static void init()
@@ -580,6 +594,11 @@ public class Parts {
 			spikegold = GameRegistry.findItemStack("ExtraUtilities", "spike_base_gold", 4);
 			spikeiron = GameRegistry.findItemStack("ExtraUtilities", "spike_base", 4);
 
+		}
+
+		if (Loader.isModLoaded("AWWayofTime"))
+		{
+			weakblood = GameRegistry.findItem("AWWayofTime", "weakBloodShard");
 		}
 
 		if (Loader.isModLoaded("harvestcraft"))
@@ -692,6 +711,7 @@ public class Parts {
 			bgreen = GameRegistry.findItem("AgriCraft", "seedBotaniaGreen");
 			bred = GameRegistry.findItem("AgriCraft", "seedBotaniaRed");
 			bblack = GameRegistry.findItem("AgriCraft", "seedBotaniaBlack");
+			borange = GameRegistry.findItem("AgriCraft", "seedBotaniaOrange");
 		}
 
 	}
@@ -721,6 +741,7 @@ public class Parts {
 	public static Item bpink;
 	public static Item bgray;
 	public static Item blightgray;
+	public static Item borange;
 	public static Item bcyan;
 	public static Item bpurple;
 	public static Item bblue;
@@ -736,6 +757,7 @@ public class Parts {
 	public static Item blizz;
 	public static Item redstone;
 	public static Item glowstone;
+	public static Item weakblood;
 	public static Block snow;
 	public static Block heatsand;
 	public static Block crnether;

@@ -10,6 +10,7 @@ import com.jadedpacks.jctweaks.Main;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.ItemStackHolderInjector;
 
 public class Basic {
 
@@ -21,7 +22,7 @@ public class Basic {
 
 	public static void init()
 	{
-
+		ItemStackHolderInjector.INSTANCE.inject();
 		if (Loader.isModLoaded("Natura") && (Loader.isModLoaded("harvestcraft")))
 		{
 			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.topiary,

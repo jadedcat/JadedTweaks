@@ -39,6 +39,7 @@ public class BloodMagicHelper {
 			AltarRecipeRegistry.registerAltarRecipe(Parts.spawnSheep, Parts.wool, 2, 5000, 2, 2, false);
 			AltarRecipeRegistry.registerAltarRecipe(Parts.spawnMCow, Parts.mycelium, 3, 7000, 2, 2, false);
 			AltarRecipeRegistry.registerAltarRecipe(Parts.spawnPig, Parts.wool2, 2, 7000, 2, 2, false);
+			AltarRecipeRegistry.registerAltarRecipe(Parts.lifeshard, Parts.bloodshard, 3, 35000, 2, 2, false);
 		}
 		if (Parts.manabucket !=null) {
 			AltarRecipeRegistry.registerAltarRecipe(Parts.manabucket, Parts.lifebucket, 2, 2000, 2, 2, false);
@@ -52,6 +53,7 @@ public class BloodMagicHelper {
 		{
 			AlchemyRecipeRegistry.registerRecipe(Parts.spawnChicken, 2, new ItemStack[]{(Parts.flesh),(Parts.flesh), (Parts.diamond), (Parts.feather), (Parts.leather)}, 2);
 			AlchemyRecipeRegistry.registerRecipe(Parts.spawnCow, 2, new ItemStack[]{(Parts.leather),(Parts.leather), (Parts.diamond), (Parts.leather)}, 2);
+			AlchemyRecipeRegistry.registerRecipe(Parts.soulshard, 2, new ItemStack[]{(Parts.bloodshard),(Parts.bloodshard), (Parts.lifeshard), (Parts.bloodshard)}, 2);
 		}
 		AlchemyRecipeRegistry.registerRecipe(Parts.blazerod, 2, new ItemStack[]{(Parts.blazepowder),(Parts.blazepowder), (Parts.blazepowder), (Parts.blazepowder)}, 2);
 

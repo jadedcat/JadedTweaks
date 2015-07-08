@@ -16,6 +16,7 @@ public class OreDictionaryTweaks {
 			OreDictionary.registerOre("essentiastorage", Parts.kessentia);
 		}
 
+
 		if (Loader.isModLoaded("TConstruct"))
 		{
 			OreDictionary.registerOre("stenciltable", Parts.stencil1);
@@ -62,10 +63,16 @@ public class OreDictionaryTweaks {
 			OreDictionary.registerOre("basicchip", Parts.basicchip);
 		}
 
+		if (Parts.arcaneassemble !=null)
+		{
+			OreDictionary.registerOre("jarcane", Parts.arcaneassemble);
+		}
 	}
 
 
 
-	public static void postInit() {}
+	public static void postInit() {
+
+	}
 
 }
