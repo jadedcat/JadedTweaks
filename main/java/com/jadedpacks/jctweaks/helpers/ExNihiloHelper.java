@@ -51,6 +51,7 @@ public class ExNihiloHelper {
 			SieveRegistry.register(Parts.podzol, 2, Parts.bgreen, 0, 15);
 			SieveRegistry.register(Parts.podzol, 2, Parts.bred, 0, 15);
 			SieveRegistry.register(Parts.podzol, 2, Parts.bblack, 0, 15);
+			SieveRegistry.register(Parts.podzol, 2, Parts.borange, 0, 15);
 		}
 		else
 		{
