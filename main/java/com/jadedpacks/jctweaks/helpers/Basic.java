@@ -1,5 +1,6 @@
 package com.jadedpacks.jctweaks.helpers;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -23,6 +24,13 @@ public class Basic {
 	public static void init()
 	{
 		ItemStackHolderInjector.INSTANCE.inject();
+
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.cobblestone),
+				"C",
+				"C",
+				'C', Parts.cobbleslab
+				));
+
 		if (Loader.isModLoaded("Natura") && (Loader.isModLoaded("harvestcraft")))
 		{
 			GameRegistry.addRecipe(new ShapedOreRecipe(Parts.topiary,

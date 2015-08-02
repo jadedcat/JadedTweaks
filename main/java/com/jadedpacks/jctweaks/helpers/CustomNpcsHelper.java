@@ -48,6 +48,7 @@ public class CustomNpcsHelper {
 			AlchemyRecipeRegistry.registerRecipe(Parts.amethyst, 2, new ItemStack[]{(Parts.earthelement),(Parts.feather)}, 2);
 			AlchemyRecipeRegistry.registerRecipe(Parts.npcmana, 2, new ItemStack[]{(Parts.airelement),(Parts.feather)}, 2);
 			AlchemyRecipeRegistry.registerRecipe(Parts.saphire, 2, new ItemStack[]{(Parts.airelement),(Parts.bluepetal)}, 2);
+			AlchemyRecipeRegistry.registerRecipe(Parts.bloodblock, 2, new ItemStack[]{(Parts.earthelement),(Parts.flesh)}, 2);
 		}
 	}
 

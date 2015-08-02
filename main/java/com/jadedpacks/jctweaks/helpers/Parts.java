@@ -104,6 +104,10 @@ public class Parts {
 	@ItemStackHolder(value="minecraft:water_bucket")
 	public static final ItemStack bucketwater = null;
 
+	@ItemStackHolder(value="minecraft:stone_slab", meta=3)
+	public static final ItemStack cobbleslab = null;
+
+
 	@ItemStackHolder(value="minecraft:dirt", meta=2)
 	public static final ItemStack podzolitem = null;
 
