@@ -16,6 +16,40 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class Parts {
 
+	//logs
+
+	@ItemStackHolder(value="minecraft:log")
+	public static final ItemStack basiclog = null;
+
+	@ItemStackHolder(value="minecraft:log", meta=0)
+	public static final ItemStack oak = null;
+
+	@ItemStackHolder(value="minecraft:log", meta=1)
+	public static final ItemStack spruce = null;
+
+	@ItemStackHolder(value="minecraft:log", meta=2)
+	public static final ItemStack birch = null;
+
+	@ItemStackHolder(value="minecraft:log", meta=3)
+	public static final ItemStack jungle = null;
+
+	@ItemStackHolder(value="minecraft:log2")
+	public static final ItemStack tier2log = null;
+
+	@ItemStackHolder(value="minecraft:log2", meta=0)
+	public static final ItemStack special = null;
+
+	@ItemStackHolder(value="minecraft:log2", meta=1)
+	public static final ItemStack darkoak = null;
+
+	@ItemStackHolder(value="minecraft:coal")
+	public static final ItemStack basiccoal = null;
+
+	@ItemStackHolder(value="minecraft:coal", meta=1)
+	public static final ItemStack charcoal = null;
+
+
+
 	//spawn eggs
 	@ItemStackHolder(value="minecraft:spawn_egg", meta=92)
 	public static final ItemStack spawnCow = null;
@@ -437,6 +471,21 @@ public class Parts {
 	@ItemStackHolder(value="Thaumcraft:blockCustomOre", meta= 6)
 	public static final ItemStack chaosOre = null;
 
+	@ItemStackHolder(value="Thaumcraft:ItemEldritchObject", meta= 1)
+	public static final ItemStack crimsonbook = null;
+
+	@ItemStackHolder(value="Thaumcraft:ItemResource", meta= 17)
+	public static final ItemStack voidSeed = null;
+
+	@ItemStackHolder(value="Thaumcraft:ItemSpawnerEgg", meta= 6)
+	public static final ItemStack spawnGuardian = null;
+
+	@ItemStackHolder(value="Thaumcraft:ItemEldritchObject", meta= 0)
+	public static final ItemStack EldEye = null;
+
+	@ItemStackHolder(value="minecraft:writable_book", meta= 0)
+	public static final ItemStack quillbook = null;
+
 	//MoCreatures Items
 
 	@ItemStackHolder(value="MoCreatures:silversword", meta= 0)
@@ -559,6 +608,46 @@ public class Parts {
 
 	@ItemStackHolder(value="AWWayofTime:weakBloodShard", meta= 0)
 	public static final ItemStack bloodshard = null;
+
+	@ItemStackHolder(value="AWWayofTime:sigilOfTheFastMiner", meta= 0)
+	public static final ItemStack fastmine = null;
+
+	@ItemStackHolder(value="AWWayofTime:divinationSigil", meta= 0)
+	public static final ItemStack divination = null;
+
+	@ItemStackHolder(value="AWWayofTime:itemBloodLightSigil", meta= 0)
+	public static final ItemStack bloodLamp = null;
+
+	@ItemStackHolder(value="AWWayofTime:growthSigil", meta= 0)
+	public static final ItemStack growth = null;
+
+	@ItemStackHolder(value="AWWayofTime:sigilOfMagnetism", meta= 0)
+	public static final ItemStack magnetsigil = null;
+
+	@ItemStackHolder(value="AWWayofTime:sigilOfHolding", meta= 0)
+	public static final ItemStack holding = null;
+
+	@ItemStackHolder(value="AWWayofTime:itemHarvestSigil", meta= 0)
+	public static final ItemStack harvestSigil = null;
+
+	@ItemStackHolder(value="AWWayofTime:waterSigil", meta= 0)
+	public static final ItemStack waterSigil = null;
+
+	@ItemStackHolder(value="AWWayofTime:imbuedSlate", meta= 0)
+	public static final ItemStack imbued = null;
+
+	@ItemStackHolder(value="AWWayofTime:reinforcedSlate", meta= 0)
+	public static final ItemStack reinforced = null;
+
+	@ItemStackHolder(value="AWWayofTime:blankSlate", meta= 0)
+	public static final ItemStack blank = null;
+
+
+	@ItemStackHolder(value="Sanguinmancy:transpositionSigil", meta= 0)
+	public static final ItemStack transposition = null;
+
+	@ItemStackHolder(value="Sanguinmancy:telepositionSigil", meta= 0)
+	public static final ItemStack teleposition = null;
 
 
 	public static void preInit(){}

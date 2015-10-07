@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
 import com.jadedpacks.jctweaks.Main;
+import com.jadedpacks.jctweaks.helpers.Parts;
 
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.event.FMLInterModComms;
@@ -19,16 +20,7 @@ public class FurnaceHelper {
 	public static void init ()
 
 	{
-		Item basiclog = GameRegistry.findItem("minecraft", "log");
-		Item tier2log = GameRegistry.findItem("minecraft", "log2");
 		Item coal = GameRegistry.findItem("minecraft", "coal");
-
-		ItemStack birch = new ItemStack(basiclog, 1, 2);
-		ItemStack oak = new ItemStack(basiclog, 1, 0);
-		ItemStack spruce = new ItemStack(basiclog, 1, 1);
-		ItemStack jungle = new ItemStack(basiclog, 1, 3);
-		ItemStack special = new ItemStack(tier2log, 1, 0);
-		ItemStack darkoak = new ItemStack(tier2log, 1, 1);
 
 
 		ItemStack charcoal   = new ItemStack(coal, 1, 1);
@@ -38,17 +30,17 @@ public class FurnaceHelper {
 		ItemStack charcoal5   = new ItemStack(coal, 5, 1);
 
 
-		if (charcoal !=null)
-		{
-			RecipeRemover.removeFurnaceRecipe(charcoal);
-		}
+		//if (charcoal !=null)
 
-		GameRegistry.addSmelting(oak , (charcoal), 0.1F);
-		GameRegistry.addSmelting(birch , (charcoal2), 0.1F);
-		GameRegistry.addSmelting(jungle , (charcoal3), 0.1F);
-		GameRegistry.addSmelting(spruce , (charcoal3), 0.1F);
-		GameRegistry.addSmelting(special , (charcoal4), 0.1F);
-		GameRegistry.addSmelting(darkoak , (charcoal4), 0.1F);
+		RecipeRemover.removeFurnaceRecipe(charcoal);
+
+
+		GameRegistry.addSmelting(Parts.oak , (charcoal2), 0.1F);
+		GameRegistry.addSmelting(Parts.birch , (charcoal2), 0.1F);
+		GameRegistry.addSmelting(Parts.jungle , (charcoal3), 0.1F);
+		GameRegistry.addSmelting(Parts.spruce , (charcoal3), 0.1F);
+		GameRegistry.addSmelting(Parts.special , (charcoal4), 0.1F);
+		GameRegistry.addSmelting(Parts.darkoak , (charcoal4), 0.1F);
 
 		if (Loader.isModLoaded("Forestry"))
 		{
@@ -717,32 +709,32 @@ public class FurnaceHelper {
 			NBTTagCompound toSend = new NBTTagCompound();
 
 			toSend.setTag("input", new NBTTagCompound());
-			oak.writeToNBT(toSend.getCompoundTag("input"));
+			Parts.oak.writeToNBT(toSend.getCompoundTag("input"));
 			FMLInterModComms.sendMessage("ThermalExpansion", "RemoveFurnaceRecipe", toSend);
 			toSend = new NBTTagCompound();
 
 			toSend.setTag("input", new NBTTagCompound());
-			birch.writeToNBT(toSend.getCompoundTag("input"));
+			Parts.birch.writeToNBT(toSend.getCompoundTag("input"));
 			FMLInterModComms.sendMessage("ThermalExpansion", "RemoveFurnaceRecipe", toSend);
 			toSend = new NBTTagCompound();
 
 			toSend.setTag("input", new NBTTagCompound());
-			jungle.writeToNBT(toSend.getCompoundTag("input"));
+			Parts.jungle.writeToNBT(toSend.getCompoundTag("input"));
 			FMLInterModComms.sendMessage("ThermalExpansion", "RemoveFurnaceRecipe", toSend);
 			toSend = new NBTTagCompound();
 
 			toSend.setTag("input", new NBTTagCompound());
-			spruce.writeToNBT(toSend.getCompoundTag("input"));
+			Parts.spruce.writeToNBT(toSend.getCompoundTag("input"));
 			FMLInterModComms.sendMessage("ThermalExpansion", "RemoveFurnaceRecipe", toSend);
 			toSend = new NBTTagCompound();
 
 			toSend.setTag("input", new NBTTagCompound());
-			special.writeToNBT(toSend.getCompoundTag("input"));
+			Parts.special.writeToNBT(toSend.getCompoundTag("input"));
 			FMLInterModComms.sendMessage("ThermalExpansion", "RemoveFurnaceRecipe", toSend);
 			toSend = new NBTTagCompound();
 
 			toSend.setTag("input", new NBTTagCompound());
-			darkoak.writeToNBT(toSend.getCompoundTag("input"));
+			Parts.darkoak.writeToNBT(toSend.getCompoundTag("input"));
 			FMLInterModComms.sendMessage("ThermalExpansion", "RemoveFurnaceRecipe", toSend);
 			toSend = new NBTTagCompound();
 
@@ -750,8 +742,8 @@ public class FurnaceHelper {
 			toSend.setInteger("energy", 1600);
 			toSend.setTag("input", new NBTTagCompound());
 			toSend.setTag("output", new NBTTagCompound());
-			charcoal.writeToNBT(toSend.getCompoundTag("output"));
-			oak.writeToNBT(toSend.getCompoundTag("input"));
+			charcoal2.writeToNBT(toSend.getCompoundTag("output"));
+			Parts.oak.writeToNBT(toSend.getCompoundTag("input"));
 			FMLInterModComms.sendMessage("ThermalExpansion", "FurnaceRecipe", toSend);
 			toSend = new NBTTagCompound();
 
@@ -760,7 +752,7 @@ public class FurnaceHelper {
 			toSend.setTag("input", new NBTTagCompound());
 			toSend.setTag("output", new NBTTagCompound());
 			charcoal2.writeToNBT(toSend.getCompoundTag("output"));
-			birch.writeToNBT(toSend.getCompoundTag("input"));
+			Parts.birch.writeToNBT(toSend.getCompoundTag("input"));
 			FMLInterModComms.sendMessage("ThermalExpansion", "FurnaceRecipe", toSend);
 			toSend = new NBTTagCompound();
 
@@ -769,7 +761,7 @@ public class FurnaceHelper {
 			toSend.setTag("input", new NBTTagCompound());
 			toSend.setTag("output", new NBTTagCompound());
 			charcoal3.writeToNBT(toSend.getCompoundTag("output"));
-			jungle.writeToNBT(toSend.getCompoundTag("input"));
+			Parts.jungle.writeToNBT(toSend.getCompoundTag("input"));
 			FMLInterModComms.sendMessage("ThermalExpansion", "FurnaceRecipe", toSend);
 			toSend = new NBTTagCompound();
 
@@ -778,7 +770,7 @@ public class FurnaceHelper {
 			toSend.setTag("input", new NBTTagCompound());
 			toSend.setTag("output", new NBTTagCompound());
 			charcoal3.writeToNBT(toSend.getCompoundTag("output"));
-			spruce.writeToNBT(toSend.getCompoundTag("input"));
+			Parts.spruce.writeToNBT(toSend.getCompoundTag("input"));
 			FMLInterModComms.sendMessage("ThermalExpansion", "FurnaceRecipe", toSend);
 			toSend = new NBTTagCompound();
 
@@ -787,7 +779,7 @@ public class FurnaceHelper {
 			toSend.setTag("input", new NBTTagCompound());
 			toSend.setTag("output", new NBTTagCompound());
 			charcoal4.writeToNBT(toSend.getCompoundTag("output"));
-			special.writeToNBT(toSend.getCompoundTag("input"));
+			Parts.special.writeToNBT(toSend.getCompoundTag("input"));
 			FMLInterModComms.sendMessage("ThermalExpansion", "FurnaceRecipe", toSend);
 			toSend = new NBTTagCompound();
 
@@ -796,7 +788,7 @@ public class FurnaceHelper {
 			toSend.setTag("input", new NBTTagCompound());
 			toSend.setTag("output", new NBTTagCompound());
 			charcoal4.writeToNBT(toSend.getCompoundTag("output"));
-			darkoak.writeToNBT(toSend.getCompoundTag("input"));
+			Parts.darkoak.writeToNBT(toSend.getCompoundTag("input"));
 			FMLInterModComms.sendMessage("ThermalExpansion", "FurnaceRecipe", toSend);
 			toSend = new NBTTagCompound();
 			Main.log.info("JadedTweaks Furnace tweaks loaded");
@@ -807,6 +799,12 @@ public class FurnaceHelper {
 	}
 
 	public static void postInit() {
+
+		Item coal = GameRegistry.findItem("minecraft", "coal");
+
+		ItemStack charcoal   = new ItemStack(coal, 1, 1);
+
+		RecipeRemover.removeFurnaceRecipe(charcoal);
 
 	}
 

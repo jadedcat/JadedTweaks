@@ -1,6 +1,8 @@
 package com.jadedpacks.jctweaks.helpers;
 
 import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.registry.GameRegistry.ItemStackHolder;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDictionaryTweaks {
@@ -14,6 +16,24 @@ public class OreDictionaryTweaks {
 		{
 			OreDictionary.registerOre("basestoragecell", Parts.k);
 			OreDictionary.registerOre("essentiastorage", Parts.kessentia);
+		}
+
+		if (Loader.isModLoaded("AWWayofTime"))
+
+		{
+			OreDictionary.registerOre("fastmine", Parts.fastmine);
+			OreDictionary.registerOre("divination", Parts.divination);
+			OreDictionary.registerOre("teleposition", Parts.teleposition);
+			OreDictionary.registerOre("transposition", Parts.transposition);
+			OreDictionary.registerOre("blank", Parts.blank);
+			OreDictionary.registerOre("reinforced", Parts.reinforced);
+			OreDictionary.registerOre("imbued", Parts.imbued);
+			OreDictionary.registerOre("waterSigil", Parts.waterSigil);
+			OreDictionary.registerOre("harvestSigil", Parts.harvestSigil);
+			OreDictionary.registerOre("holding", Parts.holding);
+			OreDictionary.registerOre("magnetsigil", Parts.magnetsigil);
+			OreDictionary.registerOre("growth", Parts.growth);
+			OreDictionary.registerOre("bloodLamp", Parts.bloodLamp);
 		}
 
 
