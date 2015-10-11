@@ -1,0 +1,7 @@
+tc.research_category.AGRIMANCY=地灵咒
+jctweaks.research_name.RECALLSTONE=召回石
+jctweaks.research_page.RECALLSTONE=基础召回石可以储存 10 点力量,每次传送消耗 2 点. 潜行时右击会将您当前站立的地点存入石中作为目的地.<BR>您也可以在这一点重命名石头. 右击石头会被传送到指定的地点.基本传送石不能跨维度传送.<BR> 充能时需要与末影珍珠合成.每个末影珍珠恢复5点力量.
+jctweaks.research_text.RECALLSTONE=[MT]传送石!
+jctweaks.research_page.DIMENSIONSTONE=次元石可跨维度传送. 它可储存25点力量,每次跨纬度传送消耗5点.");
+jctweaks.research_text.DIMENSIONSTONE=跨维度传送!
+jctweaks.research_name.DIMENSIONSTONE=次元石
